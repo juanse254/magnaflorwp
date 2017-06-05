@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Wishlist\n"
-"POT-Creation-Date: 2017-04-03 18:10+0200\n"
-"PO-Revision-Date: 2017-04-03 18:10+0200\n"
+"POT-Creation-Date: 2017-05-11 15:57+0200\n"
+"PO-Revision-Date: 2017-05-11 15:57+0200\n"
 "Last-Translator: W. van Kuipers <w.vankuipers@pwnd.nl>\n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;__ngettext:1,2;"
 "__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
 "_nx_noop:4c,1,2\n"
@@ -574,25 +574,25 @@ msgid "An error occurred while removing products from the wishlist"
 msgstr ""
 "Er ging iets mis bij het verwijderen van de producten van uw wenslijst."
 
-#: ../includes/class.yith-wcwl.php:738
+#: ../includes/class.yith-wcwl.php:774
 msgid "You need to log in before creating a new wishlist"
 msgstr ""
 "U dient ingelogd te zijn voordat u producten aan uw wenslijst kunt toevoegen"
 
-#: ../includes/class.yith-wcwl.php:1518
+#: ../includes/class.yith-wcwl.php:1565
 msgid "Product successfully removed."
 msgstr "Product succesvol verwijderd"
 
-#: ../includes/class.yith-wcwl.php:1522
+#: ../includes/class.yith-wcwl.php:1569
 msgid "Error. Unable to remove the product from the wishlist."
 msgstr ""
 "Er ging iets mis. Het product kon niet verwijderd worden van de wenslijst."
 
-#: ../includes/class.yith-wcwl.php:1526 ../templates/wishlist-view.php:239
+#: ../includes/class.yith-wcwl.php:1573 ../templates/wishlist-view.php:239
 msgid "No products were added to the wishlist"
 msgstr "Er wijn geen producten toegevoegd aan de wenslijst"
 
-#: ../includes/class.yith-wcwl.php:1568
+#: ../includes/class.yith-wcwl.php:1615
 msgid "An error as occurred."
 msgstr "Er is iets misgegaan."
 

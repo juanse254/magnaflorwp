@@ -54,8 +54,17 @@ if ( !class_exists( 'YITH_WCAS' ) ) {
 		        }else {
 			        $this->obj = new YITH_WCAS_Frontend( $this->version );
 		        }
+	        }else{
+		        if ( class_exists( 'YITH_JetPack' ) ) {
+			        include_once( YJP_DIR . 'plugin-fw/yit-woocommerce-compatibility.php' );
+		        } else {
+			        global $plugin_fw_data;
+			        $plugin_fw_file = array_shift( $plugin_fw_data );
+			        require_once( plugin_dir_path( $plugin_fw_file ) . 'yit-woocommerce-compatibility.php' );
+		        }
 	        }
-	        include_once( YITH_WCAS_DIR.'plugin-fw/yit-woocommerce-compatibility.php' );
+
+
             // actions
             add_action( 'widgets_init', array( $this, 'registerWidgets' ) );
 

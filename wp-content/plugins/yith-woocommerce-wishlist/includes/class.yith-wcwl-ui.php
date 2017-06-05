@@ -60,6 +60,7 @@ if( ! class_exists( 'YITH_WCWL_UI' ) ) {
             _deprecated_function( 'add_to_wishlist_button', '2.0.0', 'add-to-wishlist-button.php template' );
 
             global $yith_wcwl, $product;
+            $product_id = yit_get_product_id( $product );
 
             $label_option = get_option( 'yith_wcwl_add_to_wishlist_text' );
             $localize_label = function_exists( 'icl_translate' ) ? icl_translate( 'Plugins', 'plugin_yit_wishlist_button', $label_option ) : $label_option;
@@ -74,7 +75,7 @@ if( ! class_exists( 'YITH_WCWL_UI' ) ) {
 
             $html .= $exists ? ' hide" style="display:none;"' : ' show"';
 
-            $html .= '><a href="' . esc_url( add_query_arg( 'add_to_wishlist', $product->id ) ) . '" data-product-id="' . $product->id . '" data-product-type="' . $product_type . '" ' . $classes . ' >' . $icon . $label . '</a>';
+            $html .= '><a href="' . esc_url( add_query_arg( 'add_to_wishlist', $product_id ) ) . '" data-product-id="' . $product_id . '" data-product-type="' . $product_type . '" ' . $classes . ' >' . $icon . $label . '</a>';
             $html .= '<img src="' . esc_url( admin_url( 'images/wpspin_light.gif' ) ) . '" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />';
             $html .= '</div>';
 

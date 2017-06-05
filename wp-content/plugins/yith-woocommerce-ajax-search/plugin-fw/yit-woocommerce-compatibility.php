@@ -112,13 +112,8 @@ if ( !function_exists( 'yit_save_prop' ) ) {
         foreach ( $arg1 as $key => $value ) {
             yit_set_prop( $object, $key, $value );
 
-            if ( $is_wc_data ) {
-                if ( $force_update ) {
-                    $object->save();
-                } else {
-                    yit_store_changes( $object, $key, $value );
-                }
-            } else {
+            if ( !$is_wc_data ) {
+
                 if ( yit_wc_check_post_columns( $key ) ) {
                     yit_store_changes( $object->post, $key, $value );
                 } else {
@@ -127,6 +122,10 @@ if ( !function_exists( 'yit_save_prop' ) ) {
                     update_post_meta( $object_id, $key, $value );
                 }
             }
+        }
+
+        if ( $is_wc_data ) {
+            $object->save();
         }
     }
 }
@@ -150,7 +149,7 @@ if ( !function_exists( 'yit_delete_prop' ) ) {
                 $object->delete_meta_data( $key, $value );
             }
 
-            yit_store_changes( $object, $key );
+            $object->save();
         } else {
             if ( yit_wc_check_post_columns( $key ) && ( !$value || $object->post->$key == $value ) ) {
                 yit_store_changes( $object->post, $key, '' );
@@ -166,28 +165,30 @@ if ( !function_exists( 'yit_delete_prop' ) ) {
 if ( !function_exists( 'yit_return_new_attribute_map' ) ) {
     function yit_return_new_attribute_map() {
         return array(
-            'post_parent'            => 'parent_id',
-            'post_title'             => 'name',
-            'post_status'            => 'status',
-            'post_content'           => 'description',
-            'post_excerpt'           => 'short_description',
+            'post_parent'                => 'parent_id',
+            'post_title'                 => 'name',
+            'post_status'                => 'status',
+            'post_content'               => 'description',
+            'post_excerpt'               => 'short_description',
             /* Orders */
-            'paid_date'              => 'date_paid',
-            '_paid_date'             => '_date_paid',
-            'completed_date'         => 'date_completed',
-            '_completed_date'        => '_date_completed',
-            '_order_date'            => '_date_created',
-            'order_date'             => 'date_created',
-            'order_total'            => 'total',
-            'customer_user'          => 'customer_id',
-            '_customer_user'         => 'customer_id',
+            'paid_date'                  => 'date_paid',
+            '_paid_date'                 => '_date_paid',
+            'completed_date'             => 'date_completed',
+            '_completed_date'            => '_date_completed',
+            '_order_date'                => '_date_created',
+            'order_date'                 => 'date_created',
+            'order_total'                => 'total',
+            'customer_user'              => 'customer_id',
+            '_customer_user'             => 'customer_id',
             /* Products */
-            'visibility'             => 'catalog_visibility',
-            '_visibility'            => '_catalog_visibility',
-            'sale_price_dates_from'  => 'date_on_sale_from',
-            '_sale_price_dates_from' => '_date_on_sale_from',
-            'sale_price_dates_to'    => 'date_on_sale_to',
-            '_sale_price_dates_to'   => '_date_on_sale_to',
+            'visibility'                 => 'catalog_visibility',
+            '_visibility'                => '_catalog_visibility',
+            'sale_price_dates_from'      => 'date_on_sale_from',
+            '_sale_price_dates_from'     => '_date_on_sale_from',
+            'sale_price_dates_to'        => 'date_on_sale_to',
+            '_sale_price_dates_to'       => '_date_on_sale_to',
+            'product_attributes'         => 'attributes',
+            '_product_attributes'        => '_attributes',
             /*Coupons*/
             'coupon_amount'              => 'amount',
             'exclude_product_ids'        => 'excluded_product_ids',
@@ -210,15 +211,11 @@ if ( !function_exists( 'yit_store_changes' ) ) {
              */
             $object_reference = $object->get_id();
 
-            $cache_type  = is_a( $object, 'WC_Product' ) ? 'product' : 'order';
-            $cache_key   = $cache_type . '-' . $object_reference;
-            $cache_group = $cache_type . 's';
-
             $changed_objects[ $object_reference ][ 'object' ]          = $object;
             $changed_objects[ $object_reference ][ 'changes' ][ $key ] = $value;
 
 
-            wp_cache_set( $cache_key, $object, $cache_group );
+
         } else {
             $changed_objects[ $object->ID ][ $key ] = $value;
         }
@@ -253,7 +250,7 @@ if ( !function_exists( 'yit_get_orders' ) ) {
      *
      */
     function yit_get_orders( $args ) {
-        if ( version_compare( WC()->version, '2.6', '<' ) ) {
+        if ( version_compare( WC()->version, '2.7', '<' ) ) {
             $args[ 'fields' ] = 'objects';
             $posts            = get_posts( $args );
 
@@ -269,7 +266,7 @@ if ( !function_exists( 'yit_get_products' ) ) {
      *
      */
     function yit_get_products( $args ) {
-        if ( version_compare( WC()->version, '2.6', '<' ) ) {
+        if ( version_compare( WC()->version, '2.7', '<' ) ) {
             $args[ 'fields' ] = 'objects';
             $posts            = get_posts( $args );
 
@@ -319,6 +316,7 @@ if ( !function_exists( 'yit_wc_deprecated_filters' ) ) {
             'woocommerce_product_weight'                 => 'woocommerce_product_get_weight',
             'woocommerce_get_sku'                        => 'woocommerce_product_get_sku',
             'woocommerce_get_price'                      => 'woocommerce_product_get_price',
+            'woocommerce_get_price'                      => 'woocommerce_product_variation_get_price',
             'woocommerce_get_regular_price'              => 'woocommerce_product_get_regular_price',
             'woocommerce_get_sale_price'                 => 'woocommerce_product_get_sale_price',
             'woocommerce_product_tax_class'              => 'woocommerce_product_get_tax_class',
@@ -556,7 +554,7 @@ if ( !function_exists( 'yit_get_product_image_id' ) ) {
 
 if ( !function_exists( 'yit_get_refund_amount' ) ) {
     /**
-     * @param $refund \WC_Order_Refund
+     * @param $refund  \WC_Order_Refund
      * @param $context string
      *
      * @return float
@@ -638,7 +636,7 @@ if ( !function_exists( 'yit_add_select2_fields' ) ) {
             <?php
         else :
             if ( $args[ 'data-multiple' ] === false && is_array( $args[ 'data-selected' ] ) ) {
-                $args[ 'data-selected' ] = current($args[ 'data-selected' ]);
+                $args[ 'data-selected' ] = current( $args[ 'data-selected' ] );
             }
 
             ?>
@@ -688,7 +686,7 @@ if ( !function_exists( 'yit_datetime_to_timestamp' ) ) {
      */
     function yit_datetime_to_timestamp( $date ) {
 
-        if ( ! is_int( $date ) ) {
+        if ( !is_int( $date ) ) {
             $date = strtotime( $date );
         }
 

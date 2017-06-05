@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Wishlist\n"
-"POT-Creation-Date: 2017-04-03 18:11+0200\n"
-"PO-Revision-Date: 2017-04-03 18:11+0200\n"
+"POT-Creation-Date: 2017-05-11 15:57+0200\n"
+"PO-Revision-Date: 2017-05-11 15:57+0200\n"
 "Last-Translator: 李明軒 <eggeggxuan@gmail.com>\n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;__ngettext:1,2;"
 "__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
 "_nx_noop:4c,1,2\n"
@@ -551,23 +551,23 @@ msgstr ""
 msgid "An error occurred while removing products from the wishlist"
 msgstr "从「愿望清单」移除商品时，发生了错误。"
 
-#: ../includes/class.yith-wcwl.php:738
+#: ../includes/class.yith-wcwl.php:774
 msgid "You need to log in before creating a new wishlist"
 msgstr ""
 
-#: ../includes/class.yith-wcwl.php:1518
+#: ../includes/class.yith-wcwl.php:1565
 msgid "Product successfully removed."
 msgstr "成功移除商品。"
 
-#: ../includes/class.yith-wcwl.php:1522
+#: ../includes/class.yith-wcwl.php:1569
 msgid "Error. Unable to remove the product from the wishlist."
 msgstr "错误。无法从「愿望清单」移除这个商品。"
 
-#: ../includes/class.yith-wcwl.php:1526 ../templates/wishlist-view.php:239
+#: ../includes/class.yith-wcwl.php:1573 ../templates/wishlist-view.php:239
 msgid "No products were added to the wishlist"
 msgstr "你目前没有加入收藏任何商品到「愿望清单」裡面"
 
-#: ../includes/class.yith-wcwl.php:1568
+#: ../includes/class.yith-wcwl.php:1615
 msgid "An error as occurred."
 msgstr ""
 

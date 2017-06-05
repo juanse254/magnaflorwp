@@ -1153,7 +1153,7 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
 
             $rewrite_rules = get_option( 'rewrite_rules' );
 
-            if( ! array_key_exists( $regex_paged, $rewrite_rules ) || ! array_key_exists( $regex_paged, $rewrite_rules ) ){
+            if( ! is_array( $rewrite_rules ) || ! array_key_exists( $regex_paged, $rewrite_rules ) || ! array_key_exists( $regex_simple, $rewrite_rules ) ){
             	flush_rewrite_rules();
             }
         }
@@ -1258,7 +1258,7 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
 
             global $product;
             	
-            return esc_url( add_query_arg( 'add_to_wishlist', $product->id ) );
+            return esc_url( add_query_arg( 'add_to_wishlist', yit_get_product_id( $product ) ) );
         }
         
         /**

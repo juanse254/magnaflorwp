@@ -1,10 +1,10 @@
 === YITH WooCommerce Wishlist === 
 
 Contributors: yithemes
-Tags: wishlist, woocommerce, products, themes, yit, e-commerce, shop, ecommerce wishlist, yith, woocommerce wishlist, woocommerce 2.3 ready, shop wishlist
+Tags: wishlist, woocommerce, products, yit, e-commerce, shop, ecommerce wishlist, yith, woocommerce wishlist, shop wishlist
 Requires at least: 4.0
-Tested up to: 4.7.3
-Stable tag: 2.1.1
+Tested up to: 4.7.4
+Stable tag: 2.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,11 +14,12 @@ WooCommerce 3.0.x compatible.
 
 == Description ==
 
-What can really make the difference in conversions and amount of sales is without a doubt the freedom to share your own wishlist, even on social networks, increasing indirect sales: can you imagine the sales volume you can generate during holidays or birthdays, when relatives and friends will be looking for the wishlist of your clients to buy a gift?
+What can really make the difference in conversions and amount of sales is, without a doubt, the freedom to share your own wishlist, even on social networks. 
+This increases indirect sales. Can you imagine the sales volume that can be generated during holidays or birthdays, when relatives and friends will be looking at your clients' wishlists in search for a gift to buy?
 
-Offer to your visitors a chance to add the products of your woocommerce store to a wishlist page. With YITH WooCommerce Wishlist you can add a link in each product detail page,
-in order to add the products to the wishlist page. The plugin will create you the specific page and the products will be added in this page and
-afterwards add them to the cart or remove them.
+Offer your visitors the chance to add the products of your WooCommerce store to a wishlist page. With YITH WooCommerce Wishlist you can add a link on each product detail page. 
+Clicking on this will add the product to a Wishlist page, that is automatically created by the plugin for you. 
+Users will then be able to manage their Wishlist by moving products gathered here to the cart or by simply removing them.
 
 Working demo are available:
 
@@ -107,6 +108,13 @@ you should ask theme developers to update custom templates and replace the old t
 4. The Wishlist settings page
 
 == Changelog ==
+
+= 2.1.2 - Released: May, 11 - 2017 =
+
+* Tweak: updated FontAwesome to 4.7.0
+* Fix: possible warning when empty rewrite rules
+* Fix: problem with custom CSS inclusion, when not located in child theme
+* Fix: using current_product instead of global product when retrieving product type (prevents a Fatal error when placing Add to Wishlist outside the loop)
 
 = 2.1.1 - Released: Apr, 21 - 2017 =
 
@@ -427,27 +435,9 @@ Full documentation is available [here](http://yithemes.com/docs-plugins/yith-woo
 
 == Upgrade notice ==
 
-= 2.1.0 - Released: Apr, 03 - 2017 =
+= 2.1.2 - Released: May, 11 - 2017 =
 
-* New: WooCommerce 3.0-RC2 compatibility
-* New: WordPress 4.7.3 compatibility
-* New: Korean translation (thanks to kocne)
-* New: Croatian translation (thanks to Barbara V.)
-* New: flush rewrite rules when installing plugin
-* Tweak: added urlencode to mail content in mailto share link
-* Tweak: count query of count_all_products
-* Tweak: improved WPML list content handling (thanks to Adri)
-* Tweak: double check over wc_add_to_cart_params exists and not null
-* Tweak: added wishlist meta inside wishlist table data attr also for not logged in users (used for shared wishlist)
-* Tweak: remove prettyPhoto-init library
-* Tweak: implemented custom code to enable prettyPhoto on Wishlist elements
-* Tweak: fixed typo in wishlist-view template
-* Tweak: added urlencode to all sharing links
-* Tweak: minimized endpoint usage when not required
-* Tweak: removed unused check for WC_Product_Bundle
-* Fix: get_template_directory for custom wishlist js
-* Fix: stock_status not existing when stock column isn't shown
-* Dev: action as second param for yith_wcwl_wishlist_page_url filter
-* Dev: applied filter yith_wcwl_no_product_to_remove_message also for message on wishlist-view template
-* Dev: added filter yith_wcwl_add_wishlist_user_id
-* Dev: added filter yith_wcwl_add_wishlist_slug
+* Tweak: updated FontAwesome to 4.7.0
+* Fix: possible warning when empty rewrite rules
+* Fix: problem with custom CSS inclusion, when not located in child theme
+* Fix: using current_product instead of global product when retrieving product type (prevents a Fatal error when placing Add to Wishlist outside the loop)

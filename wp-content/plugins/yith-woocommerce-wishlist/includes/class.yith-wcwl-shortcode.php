@@ -358,7 +358,7 @@ if( ! class_exists( 'YITH_WCWL_Shortcode' ) ) {
 			$wishlist_url = YITH_WCWL()->get_wishlist_url();
 
 			// get product type
-			$product_type = $product->get_type();
+			$product_type = $current_product->get_type();
 
 			$additional_params = array(
 				'wishlist_url' => $wishlist_url,

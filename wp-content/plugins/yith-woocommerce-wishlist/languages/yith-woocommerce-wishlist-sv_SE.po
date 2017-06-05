@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WCWL\n"
-"POT-Creation-Date: 2017-04-03 18:10+0200\n"
-"PO-Revision-Date: 2017-04-03 18:10+0200\n"
+"POT-Creation-Date: 2017-05-11 15:57+0200\n"
+"PO-Revision-Date: 2017-05-11 15:57+0200\n"
 "Last-Translator: Nicola Mustone <mail@nicolamustone.it>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -559,23 +559,23 @@ msgstr "“Ta bort”-alternativet kräver inte några parametrar"
 msgid "An error occurred while removing products from the wishlist"
 msgstr "Ett fel uppstod när produkten skulle tas bort ifrån önskelistan"
 
-#: includes/class.yith-wcwl.php:738
+#: includes/class.yith-wcwl.php:774
 msgid "You need to log in before creating a new wishlist"
 msgstr "Du behöver logga in innan du kan skapa en ny önskelista"
 
-#: includes/class.yith-wcwl.php:1518
+#: includes/class.yith-wcwl.php:1565
 msgid "Product successfully removed."
 msgstr "Produkten borttagen."
 
-#: includes/class.yith-wcwl.php:1522
+#: includes/class.yith-wcwl.php:1569
 msgid "Error. Unable to remove the product from the wishlist."
 msgstr "Fel. Kunde inte ta bort produkten ifrån önskelistan."
 
-#: includes/class.yith-wcwl.php:1526 templates/wishlist-view.php:239
+#: includes/class.yith-wcwl.php:1573 templates/wishlist-view.php:239
 msgid "No products were added to the wishlist"
 msgstr "Ingen produkt har blivit tillagd i önskelistan"
 
-#: includes/class.yith-wcwl.php:1568
+#: includes/class.yith-wcwl.php:1615
 msgid "An error as occurred."
 msgstr "Ett fel uppstod"
 

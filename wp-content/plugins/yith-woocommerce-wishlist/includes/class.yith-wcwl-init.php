@@ -49,7 +49,7 @@ if ( ! class_exists( 'YITH_WCWL_Init' ) ) {
 		 * @var string
 		 * @since 1.0.0
 		 */
-		public $version = '2.1.1';
+		public $version = '2.1.2';
 
 		/**
 		 * Plugin database version
@@ -274,23 +274,30 @@ if ( ! class_exists( 'YITH_WCWL_Init' ) ) {
             $woocommerce_base = WC()->template_path();
 			$assets_path = str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/';
 
+			wp_register_style( 'jquery-selectBox', YITH_WCWL_URL . 'assets/css/jquery.selectBox.css', array(), '1.2.0' );
+			wp_register_style( 'yith-wcwl-main', YITH_WCWL_URL . 'assets/css/style.css', array(), $this->version );
+			wp_register_style( 'yith-wcwl-font-awesome', YITH_WCWL_URL . 'assets/css/font-awesome.min.css', array(), '4.7.0' );
+
+			wp_enqueue_style( 'woocommerce_prettyPhoto_css', $assets_path . 'css/prettyPhoto.css' );
+			wp_enqueue_style( 'jquery-selectBox' );
+
 			$located = locate_template( array(
 				$woocommerce_base . 'wishlist.css',
 				'wishlist.css'
 			) );
 
-			wp_register_style( 'jquery-selectBox', YITH_WCWL_URL . 'assets/css/jquery.selectBox.css', array(), '1.2.0' );
-			wp_register_style( 'yith-wcwl-main', YITH_WCWL_URL . 'assets/css/style.css', array(), $this->version );
-			wp_register_style( 'yith-wcwl-user-main', str_replace( get_stylesheet_directory(), get_stylesheet_directory_uri(), $located ), array(), $this->version );
-			wp_register_style( 'yith-wcwl-font-awesome', YITH_WCWL_URL . 'assets/css/font-awesome.min.css', array(), '4.3.0' );
-
-			wp_enqueue_style( 'woocommerce_prettyPhoto_css', $assets_path . 'css/prettyPhoto.css' );
-			wp_enqueue_style( 'jquery-selectBox' );
-
 			if ( ! $located ) {
 				wp_enqueue_style( 'yith-wcwl-main' );
 			}
 			else {
+				$stylesheet_directory = get_stylesheet_directory();
+				$stylesheet_directory_uri = get_stylesheet_directory_uri();
+				$template_directory = get_template_directory();
+				$template_directory_uri = get_template_directory_uri();
+
+				$style_url = ( strpos( $located, $stylesheet_directory ) ) ? str_replace( $stylesheet_directory, $stylesheet_directory_uri, $located ) : str_replace( $template_directory, $template_directory_uri, $located );
+
+				wp_register_style( 'yith-wcwl-user-main', $style_url, array(), $this->version );
 				wp_enqueue_style( 'yith-wcwl-user-main' );
 			}
 

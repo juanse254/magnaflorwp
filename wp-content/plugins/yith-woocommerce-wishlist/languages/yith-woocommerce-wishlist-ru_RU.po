@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WCWL\n"
-"POT-Creation-Date: 2017-04-03 18:10+0200\n"
-"PO-Revision-Date: 2017-04-03 18:10+0200\n"
+"POT-Creation-Date: 2017-05-11 15:57+0200\n"
+"PO-Revision-Date: 2017-05-11 15:57+0200\n"
 "Last-Translator: Valentyn Zubenko <valentyn.zubenko@gmail.com>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
@@ -555,23 +555,23 @@ msgstr ""
 msgid "An error occurred while removing products from the wishlist"
 msgstr "Произошла ошибка при удалении продуктов из избранного"
 
-#: includes/class.yith-wcwl.php:738
+#: includes/class.yith-wcwl.php:774
 msgid "You need to log in before creating a new wishlist"
 msgstr "Вам необходимо авторизоваться перед созданием нового избранного"
 
-#: includes/class.yith-wcwl.php:1518
+#: includes/class.yith-wcwl.php:1565
 msgid "Product successfully removed."
 msgstr "Продукт успешно удален из избранного"
 
-#: includes/class.yith-wcwl.php:1522
+#: includes/class.yith-wcwl.php:1569
 msgid "Error. Unable to remove the product from the wishlist."
 msgstr "Ошибка. Невозможно удалить продукт из избранного."
 
-#: includes/class.yith-wcwl.php:1526 templates/wishlist-view.php:239
+#: includes/class.yith-wcwl.php:1573 templates/wishlist-view.php:239
 msgid "No products were added to the wishlist"
 msgstr "Нет продуктов добавленных в избранное."
 
-#: includes/class.yith-wcwl.php:1568
+#: includes/class.yith-wcwl.php:1615
 msgid "An error as occurred."
 msgstr ""
 
