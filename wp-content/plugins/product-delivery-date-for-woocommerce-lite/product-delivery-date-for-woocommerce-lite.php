@@ -241,6 +241,19 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
         * as per the settings selected when Enable Delivery Date is enabled.
         */
         function prdd_lite_after_add_to_cart() {
+            function wp_add_styles_scripts()
+            {
+
+                wp_enqueue_style('default', '/wp-content/themes/flatsome/assets/css/default.css', false, '', 'all');
+                wp_enqueue_style('default.date', '/wp-content/themes/flatsome/assets/css/default.date.css', false, '', 'all');
+                wp_enqueue_style('default.time', '/wp-content/themes/flatsome/assets/css/default.time.css', false, '', 'all');
+                wp_enqueue_script('legacy', '/wp-content/themes/flatsome/assets/js/legacy.js', array('jquery'), null, true);
+                wp_enqueue_script('picker', '/wp-content/themes/flatsome/assets/js/picker.js', array('jquery'), null, true);
+                wp_enqueue_script('picker.date', '/wp-content/themes/flatsome/assets/js/picker.date.js', array('jquery', 'picker', 'legacy'), null , true);
+                wp_enqueue_script('picker.time', '/wp-content/themes/flatsome/assets/js/picker.time.js', array('jquery', 'picker', 'legacy'), null , true);
+            }
+            add_action('wp_enqueue_scripts', wp_add_styles_scripts());
+
             global $post, $wpdb, $woocommerce;
             $duplicate_of = $this->prdd_lite_get_product_id( $post->ID );
             $prdd_settings = get_post_meta( $duplicate_of, '_woo_prdd_lite_enable_delivery_date', true );
@@ -264,7 +277,7 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
 			    <input type="text" id="delivery_calender_lite" name="delivery_calender_lite" class="delivery_calender_lite" style="cursor: text!important;margin-bottom:10px;" readonly/>   
                 <input type="hidden" id="prdd_lite_hidden_date" name="prdd_lite_hidden_date"/>
                 <script type="text/javascript">
-					jQuery(document).ready(function() {
+					jQuery(document).ready(function() {/*
                         var formats = ["d.m.y", "d-m-yy","MM d, yy"];
                         var min_date = jQuery( "#prdd_lite_hidden_minimum_delivery_time" ).val();
                         var split_date = min_date.split( "-" );
@@ -290,8 +303,66 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
                         });
                         jQuery( "#delivery_cal_lite" ).click(function() {
                             jQuery( "#delivery_calender_lite" ).datepicker( "show" );
+                        });*/
+                        jQuery("#delivery_calender_lite").pickadate({
+                        min: getLimitedDays(),
+                        today: \'\',
+                        format: \'yyyy-mm-dd\',
+                        disable: [1,2,7]
                         });
+                        
+                        
                     });
+				    function getLimitedDays() {
+				        var number_day = new Date().toLocaleString("en-US", {timeZone:"America/New_York", weekday: "long"});
+				        var limited_days = 0;
+				        var ET_hour = new Date().toLocaleString("en-US", {timeZone:"America/New_York", hour: "numeric", hour12: false});
+				        switch (number_day) {
+				            case "Monday": //lunes
+				               if (ET_hour >= 11) { // if purchase is done after 11 ET then processing+delivery time is 4 days.
+				                  limited_days = 4;
+				            }else {
+				                limited_days = 3;
+				            }
+				            break;
+				            case "Tuesday": //martes
+				               if (ET_hour >= 11) {
+				                limited_days = 4;
+				            }else {
+				                limited_days = 3;
+				            }
+				            break;
+            case "Wednesday": //miercoles
+                limited_days = 3;
+                break;
+            case "Thursday": //jueves
+                limited_days = 3;
+                break;
+            case "Friday": //viernes
+                if (ET_hour >= 11) {
+                    limited_days = 5;
+                }
+                else {
+                    limited_days = 4;
+                }
+                break;
+            case "Saturday": //sabado
+                if (ET_hour >= 11) {
+                    limited_days = 5;
+                }
+                else {
+                    limited_days = 4;
+                }
+                break;
+            case "Sunday": //domingo
+                limited_days = 4;
+                break;
+            default:
+                limited_days = 4;
+                break;
+        }
+        return limited_days;
+    }
                 </script>');
             }
         }
