@@ -241,18 +241,14 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
         * as per the settings selected when Enable Delivery Date is enabled.
         */
         function prdd_lite_after_add_to_cart() {
-            function wp_add_styles_scripts()
-            {
 
-                wp_enqueue_style('default', '/wp-content/themes/flatsome/assets/css/default.css', false, '', 'all');
-                wp_enqueue_style('default.date', '/wp-content/themes/flatsome/assets/css/default.date.css', false, '', 'all');
-                wp_enqueue_style('default.time', '/wp-content/themes/flatsome/assets/css/default.time.css', false, '', 'all');
-                wp_enqueue_script('legacy', '/wp-content/themes/flatsome/assets/js/legacy.js', array('jquery'), null, true);
-                wp_enqueue_script('picker', '/wp-content/themes/flatsome/assets/js/picker.js', array('jquery'), null, true);
-                wp_enqueue_script('picker.date', '/wp-content/themes/flatsome/assets/js/picker.date.js', array('jquery', 'picker', 'legacy'), null , true);
-                wp_enqueue_script('picker.time', '/wp-content/themes/flatsome/assets/js/picker.time.js', array('jquery', 'picker', 'legacy'), null , true);
-            }
-            add_action('wp_enqueue_scripts', wp_add_styles_scripts());
+            wp_enqueue_style('default', '/wp-content/themes/flatsome/assets/css/default.css', false, '', 'all');
+            wp_enqueue_style('default.date', '/wp-content/themes/flatsome/assets/css/default.date.css', false, '', 'all');
+            wp_enqueue_style('default.time', '/wp-content/themes/flatsome/assets/css/default.time.css', false, '', 'all');
+            wp_enqueue_script('legacy', '/wp-content/themes/flatsome/assets/js/legacy.js', array('jquery'), null, true);
+            wp_enqueue_script('picker', '/wp-content/themes/flatsome/assets/js/picker.js', array('jquery'), null, true);
+            wp_enqueue_script('picker.date', '/wp-content/themes/flatsome/assets/js/picker.date.js', array('jquery', 'picker', 'legacy'), null, true);
+            wp_enqueue_script('picker.time', '/wp-content/themes/flatsome/assets/js/picker.time.js', array('jquery', 'picker', 'legacy'), null, true);
 
             global $post, $wpdb, $woocommerce;
             $duplicate_of = $this->prdd_lite_get_product_id( $post->ID );
