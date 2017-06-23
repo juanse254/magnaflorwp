@@ -167,21 +167,6 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <b><label for="prdd_lite_maximum_number_days"> <?php _e( 'Number of Dates to choose:', 'woocommerce-prdd-lite' );?> </label></b>
-                    </td>
-                    <td>
-                        <?php
-                        $prdd_maximum_number_days = get_post_meta( $duplicate_of, '_woo_prdd_lite_maximum_number_days', true );
-                        if ( $prdd_maximum_number_days == "" ) {
-                            $prdd_maximum_number_days = "120";
-                        }	
-                        ?>
-                        <input type="text" name="prdd_lite_maximum_number_days" id="prdd_lite_maximum_number_days" value="<?php echo sanitize_text_field( $prdd_maximum_number_days, true );?>" >
-                    </td>
-                    <td>
-                        <img class="help_tip" width="16" height="16" data-tip="<?php _e( 'The maximum number of delivery dates available for your customers to choose deliveries from. For example, if you take only 2 months delivery in advance, enter 60 here.(120 por defecto, deshabilitado tambien).', 'woocommerce-prdd-lite' );?>" src="<?php echo plugins_url() ;?>/woocommerce/assets/images/help.png" />
-                    </td>
                 </tr>
 		    </table>
 		    <?php 
