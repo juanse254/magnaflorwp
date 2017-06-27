@@ -254,13 +254,11 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
             }
             print( '<input type="hidden" name="prdd_lite_hidden_minimum_delivery_time" id="prdd_lite_hidden_minimum_delivery_time" value="' . $min_date . '">' );
             if( isset( $prdd_settings ) && $prdd_settings == "on" ) {
-                print ( '<label class="delivery_date_label">' . __( "Delivery Date", "woocommerce-prdd-lite" ) . ': </label>
-			    <input type="text" id="delivery_calender_lite" name="delivery_calender_lite" class="delivery_calender_lite" style="cursor: text!important;margin-bottom:10px;" readonly/>   
-                <input type="hidden" id="prdd_lite_hidden_date" name="prdd_lite_hidden_date"/>
+                $label_delivery =  '<td class="label"><label class="delivery_date_label">' . __( "Delivery Date", "woocommerce-prdd-lite" ) . ': </label></td>' ;
+                $value_input = '<td class="value"><input type="text" id="delivery_calender_lite" name="delivery_calender_lite" class="delivery_calender_lite" style="cursor: text!important;margin-bottom:10px;" readonly/> <input type="hidden" id="prdd_lite_hidden_date" name="prdd_lite_hidden_date"/></td>';
+                print ( '
                 <script type="text/javascript">
-                    
-        
-                
+                jQuery(".variations tr:last").append(' . "'" . $label_delivery . $value_input .  "'".');
 					jQuery(document).ready(function() {
                         jQuery("#delivery_calender_lite").pickadate({
                         min: getLimitedDays(),
