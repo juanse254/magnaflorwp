@@ -259,6 +259,7 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
                 print ( '
                 <script type="text/javascript">
                 jQuery(".variations tr:last").append(' . "'" . $label_delivery . $value_input .  "'".');
+                jQuery(".variations tr").addClass("mobile_delivery_date");
 					jQuery(document).ready(function() {
                         jQuery("#delivery_calender_lite").pickadate({
                         min: getLimitedDays(),
