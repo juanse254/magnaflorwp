@@ -36,3 +36,16 @@ function reduce_woocommerce_min_strength_requirement( $strength ) {
 add_filter( 'woocommerce_min_password_strength', 'reduce_woocommerce_min_strength_requirement' );
 
 
+//rearrange Products woocommerce
+
+function shuffle_variable_product_elements(){
+    if ( is_product() ) {
+        global $post;
+        $product = wc_get_product( $post->ID );
+        if ( $product->is_type( 'variable' ) ) {
+            remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+            add_action( 'woocommerce_before_variations_form', 'woocommerce_single_variation', 20 );
+        }
+    }
+}
+add_action( 'woocommerce_before_single_product', 'shuffle_variable_product_elements' );

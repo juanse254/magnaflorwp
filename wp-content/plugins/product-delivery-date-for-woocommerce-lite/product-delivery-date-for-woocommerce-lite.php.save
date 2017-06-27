@@ -104,7 +104,7 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
 		* It will be called when update / publish button clicked on admin side.
 		*/
         function prdd_lite_process_box( $post_id, $post ) {
-            $duplicate_of = $this->prdd_lite_get_product_id( $post_id );
+            $duplicate_of = $this->prdd_lite_get_product_idprdd_lite_get_product_id( $post_id );
             $enable_date = $prdd_minimum_delivery_time = $prdd_maximum_number_days = '';
             if ( isset( $_POST[ 'prdd_lite_enable_date' ] ) ) {
                 $enable_date = $_POST[ 'prdd_lite_enable_date' ];
@@ -138,7 +138,7 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
                     </td>
                     <td>
                         <?php 
-                        $enable_date = '';
+                        $enable_date = 'checked';
                         if( isset( $prdd_enable_delivery_date ) && $prdd_enable_delivery_date == 'on' ) {
                             $enable_date = 'checked';
                         }
@@ -167,6 +167,21 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
                     </td>
                 </tr>
                 <tr>
+                    <td>
+                        <b><label for="prdd_lite_maximum_number_days"> <?php _e( 'Number of Dates to choose:', 'woocommerce-prdd-lite' );?> </label></b>
+                    </td>
+                    <td>
+                        <?php
+                        $prdd_maximum_number_days = get_post_meta( $duplicate_of, '_woo_prdd_lite_maximum_number_days', true );
+                        if ( $prdd_maximum_number_days == "" ) {
+                            $prdd_maximum_number_days = "120";
+                        }	
+                        ?>
+                        <input type="text" name="prdd_lite_maximum_number_days" id="prdd_lite_maximum_number_days" value="<?php echo sanitize_text_field( $prdd_maximum_number_days, true );?>" >
+                    </td>
+                    <td>
+                        <img class="help_tip" width="16" height="16" data-tip="<?php _e( 'The maximum number of delivery dates available for your customers to choose deliveries from. For example, if you take only 2 months delivery in advance, enter 60 here.(120 por defecto, deshabilitado tambien).', 'woocommerce-prdd-lite' );?>" src="<?php echo plugins_url() ;?>/woocommerce/assets/images/help.png" />
+                    </td>
                 </tr>
 		    </table>
 		    <?php 
@@ -254,20 +269,45 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
             }
             print( '<input type="hidden" name="prdd_lite_hidden_minimum_delivery_time" id="prdd_lite_hidden_minimum_delivery_time" value="' . $min_date . '">' );
             if( isset( $prdd_settings ) && $prdd_settings == "on" ) {
-                print ( '<label class="delivery_date_label">' . __( "Delivery Date", "woocommerce-prdd-lite" ) . ': </label>
+                print ( '<div><label class="delivery_date_label">' . __( "Delivery Date", "woocommerce-prdd-lite" ) . ': </label>
 			    <input type="text" id="delivery_calender_lite" name="delivery_calender_lite" class="delivery_calender_lite" style="cursor: text!important;margin-bottom:10px;" readonly/>   
                 <input type="hidden" id="prdd_lite_hidden_date" name="prdd_lite_hidden_date"/>
                 <script type="text/javascript">
-                    
-        
-                
-					jQuery(document).ready(function() {
+					jQuery(document).ready(function() {/*
+                        var formats = ["d.m.y", "d-m-yy","MM d, yy"];
+                        var min_date = jQuery( "#prdd_lite_hidden_minimum_delivery_time" ).val();
+                        var split_date = min_date.split( "-" );
+		                var min_date_to_set = new Date ( split_date[1] + "/" + split_date[0] + "/" + split_date[2] );
+						jQuery.extend( jQuery.datepicker, { afterShow: function(event) {
+                            jQuery.datepicker._getInst( event.target ).dpDiv.css( "z-index", 9999 );
+                        }});
+                        jQuery( "#delivery_calender_lite" ).datepicker({
+                            dateFormat: formats[2],
+                            minDate: min_date_to_set,
+                            maxDate: parseInt( ' . $prdd_maximum_number_days . ' )-1,
+                            onClose:function( dateStr, inst ) {
+                                if ( dateStr != "" ) {
+                                    var monthValue = inst.selectedMonth+1;
+                                    var dayValue = inst.selectedDay;
+                                    var yearValue = inst.selectedYear;
+                                    var all = yearValue + "-" + monthValue + "-" + dayValue;
+                                    jQuery( "#prdd_lite_hidden_date" ).val( all );
+                                }
+                            }
+						}).focus(function (event){
+                            jQuery.datepicker.afterShow(event);
+                        });
+                        jQuery( "#delivery_cal_lite" ).click(function() {
+                            jQuery( "#delivery_calender_lite" ).datepicker( "show" );
+                        });*/
                         jQuery("#delivery_calender_lite").pickadate({
                         min: getLimitedDays(),
                         today: \'\',
                         format: \'yyyy-mm-dd\',
                         disable: [1,2,7]
-                        });                  
+                        });
+                        
+                        
                     });
 				    function getLimitedDays() {
 				        var number_day = new Date().toLocaleString("en-US", {timeZone:"America/New_York", weekday: "long"});
