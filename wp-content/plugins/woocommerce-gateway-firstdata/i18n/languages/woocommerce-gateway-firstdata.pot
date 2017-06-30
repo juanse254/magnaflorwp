@@ -523,12 +523,12 @@ msgstr ""
 
 #: woocommerce-gateway-first-data.php:781
 #: woocommerce-gateway-first-data.php:815
-msgid "Credit Card"
+msgid "Credit/Debit Card"
 msgstr ""
 
 #: woocommerce-gateway-first-data.php:782
 #: woocommerce-gateway-first-data.php:816
-msgid "Pay securely using your credit card."
+msgid "Pay securely using your credit or debit card."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
