@@ -903,7 +903,7 @@ msgid "Thank you for your order."
 msgstr "Aitäh tellimuse eest."
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:711
-msgid "Credit Card"
+msgid "Debit/Credit Card"
 msgstr "Krediitkaart"
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:713
@@ -911,7 +911,7 @@ msgid "eCheck"
 msgstr "E-tšekk"
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:731
-msgid "Pay securely using your credit card."
+msgid "Pay securely using your debit/credit card."
 msgstr "Maksa turvaliselt oma krediitkaardiga."
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:733
