@@ -778,8 +778,8 @@ class WC_First_Data extends SV_WC_Payment_Gateway_Plugin {
 
 					$new_settings = array(
 						'enabled'               => ( isset( $old_settings['enabled'] ) && 'yes' === $old_settings['enabled'] ) ? 'yes' : 'no',
-						'title'                 => ( ! empty( $old_settings['title'] ) ) ? $old_settings['title'] : __( 'Credit Card', 'woocommerce-gateway-firstdata' ),
-						'description'           => ( ! empty( $old_settings['description'] ) ) ? $old_settings['description'] : __( 'Pay securely using your credit card.', 'woocommerce-gateway-firstdata' ),
+						'title'                 => ( ! empty( $old_settings['title'] ) ) ? $old_settings['title'] : __( 'Credit Card/Debit Card', 'woocommerce-gateway-firstdata' ),
+						'description'           => ( ! empty( $old_settings['description'] ) ) ? $old_settings['description'] : __( 'Pay securely using your credit/debit card.', 'woocommerce-gateway-firstdata' ),
 						'enable_csc'            => 'yes',
 						'transaction_type'      => 'charge',
 						'card_types'            => array( 'VISA', 'MC', 'AMEX', 'DISC' ),
@@ -812,8 +812,8 @@ class WC_First_Data extends SV_WC_Payment_Gateway_Plugin {
 
 					$new_settings = array(
 						'enabled'                               => ( isset( $old_settings['enabled'] ) && 'yes' === $old_settings['enabled'] ) ? 'yes' : 'no',
-						'title'                                 => ( ! empty( $old_settings['title'] ) ) ? $old_settings['title'] : __( 'Credit Card', 'woocommerce-gateway-firstdata' ),
-						'description'                           => ( ! empty( $old_settings['description'] ) ) ? $old_settings['description'] : __( 'Pay securely using your credit card.', 'woocommerce-gateway-firstdata' ),
+						'title'                                 => ( ! empty( $old_settings['title'] ) ) ? $old_settings['title'] : __( 'Credit/Debit Card', 'woocommerce-gateway-firstdata' ),
+						'description'                           => ( ! empty( $old_settings['description'] ) ) ? $old_settings['description'] : __( 'Pay securely using your credit or debit card.', 'woocommerce-gateway-firstdata' ),
 						'enable_csc'                            => 'yes', // old version required it by default, with no option to disable
 						'transaction_type'                      => ( isset( $old_settings['transaction_type'] ) && 'authorization' === $old_settings['transaction_type'] ) ? 'authorization' : 'charge',
 						'partial_redemption'                    => ( isset( $old_settings['partial_redemption'] ) && 'yes' === $old_settings['partial_redemption'] ) ? 'yes' : 'no',

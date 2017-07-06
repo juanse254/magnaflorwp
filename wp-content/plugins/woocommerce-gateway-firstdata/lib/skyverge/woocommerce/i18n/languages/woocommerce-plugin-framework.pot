@@ -855,7 +855,7 @@ msgid "Thank you for your order."
 msgstr ""
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:711
-msgid "Credit Card"
+msgid "Debit/Credit Card"
 msgstr ""
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:713
@@ -863,7 +863,7 @@ msgid "eCheck"
 msgstr ""
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:731
-msgid "Pay securely using your credit card."
+msgid "Pay securely using your debit/credit card."
 msgstr ""
 
 #: payment-gateway/class-sv-wc-payment-gateway.php:733

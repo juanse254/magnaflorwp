@@ -728,7 +728,7 @@ abstract class SV_WC_Payment_Gateway extends WC_Payment_Gateway {
 
 		// defaults for credit card and echeck, override for others
 		if ( $this->is_credit_card_gateway() ) {
-			return esc_html__( 'Pay securely using your credit card.', 'woocommerce-plugin-framework' );
+			return esc_html__( 'Pay securely using your credit/debit card.', 'woocommerce-plugin-framework' );
 		} elseif ( $this->is_echeck_gateway() ) {
 			return esc_html__( 'Pay securely using your checking account.', 'woocommerce-plugin-framework' );
 		}
