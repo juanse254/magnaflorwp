@@ -265,7 +265,11 @@ if ( !class_exists( 'woocommerce_prdd_lite' ) ) {
                         min: getLimitedDays(),
                         today: \'\',
                         format: \'yyyy-mm-dd\',
-                        disable: [1,2,7]
+                        disable: [1,2,7],
+                        onStart: function (){
+                            var date = new Date();
+                            this.set(\'select\', [date.getFullYear(), date.getMonth(), (date.getDate() + getLimitedDays())])
+                        }
                         });                  
                     });
 				    function getLimitedDays() {
