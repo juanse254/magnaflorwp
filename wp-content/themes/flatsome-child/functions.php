@@ -49,3 +49,15 @@ function shuffle_variable_product_elements(){
     }
 }
 add_action( 'woocommerce_before_single_product', 'shuffle_variable_product_elements' );
+
+//Validate Date is selected
+function so_validate_add_cart_item( $passed, $product_id, $quantity, $variation_id = '', $variations= '' ) {
+
+    // do your validation, if not met switch $passed to false
+    if (empty($_POST['delivery_calender_lite']) ){
+        $passed = false;
+        wc_add_notice( __( 'Please select a Delivery Date', 'textdomain' ), 'error' );
+    }
+    return $passed;
+}
+add_filter( 'woocommerce_add_to_cart_validation', 'so_validate_add_cart_item', 10, 5 );
