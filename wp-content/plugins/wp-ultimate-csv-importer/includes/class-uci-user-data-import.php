@@ -42,7 +42,7 @@ class SmackUCIUserDataImport {
 
 	public function importUserInformation ($data_array, $mode, $eventKey) {
 		global $uci_admin;
-		$data_array = trim($data_array);
+		#$data_array = trim($data_array);
 		if ( isset( $data_array['role'] ) && $data_array['role'] != '') {
 			$user_capability = '';
 			if ( !is_numeric( $data_array['role'] ) ) {

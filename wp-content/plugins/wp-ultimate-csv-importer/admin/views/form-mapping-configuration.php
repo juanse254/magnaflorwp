@@ -59,6 +59,9 @@ if($_POST) {
 $eventKey = sanitize_key($_REQUEST['eventkey']);
 $get_records = $uci_admin->GetPostValues($eventKey);
 $import_type = $get_records[$eventKey]['import_file']['posttype'];
+if(!empty($get_records[$eventKey]['mapping_config']) && $get_records[$eventKey]['mapping_config']) {
+   $mapping_screendata = $uci_admin->get_mapping_screendata( $import_type, $get_records[$eventKey]['mapping_config']);
+}
 $file = SM_UCI_IMPORT_DIR . '/' . $eventKey . '/' . $eventKey;
 $parserObj->parseCSV($file, 0, -1);
 $Headers = $parserObj->get_CSVheaders();
@@ -97,8 +100,8 @@ if(isset($_REQUEST['mapping_type']) && $_REQUEST['mapping_type'] == 'normal') {
 ?>
 <div class="col-md-6 col-md-offset-3">
    <ul class="mapping-switcher">
-      <li class="<?php echo $normal; ?>" onclick="mapping_type('normal');">Normal Mapping</li>
-      <li class="<?php echo $advanced; ?>" onclick="mapping_type('advanced');">Advanced Mapping</li>
+      <li class="<?php echo $normal; ?>" onclick="mapping_type('normal');">Advanced Mode</li>
+      <li class="<?php echo $advanced; ?>" onclick="mapping_type('advanced');">Drag & Drop Mode</li>
    </ul>
 </div>
 <div class="clearfix"></div>
@@ -174,6 +177,13 @@ if(isset($_REQUEST['mapping_type']) && $_REQUEST['mapping_type'] == 'normal') {
                                                             } ?>
                                                             <option value="<?php echo $csvheader; ?>" <?php echo $mapping_selected;?>> <?php echo $csvheader; ?> </option>
                                                          <?php } else {
+                                                            if(!empty($mapping_screendata[$key])){
+                                                      if(array_key_exists($name,$mapping_screendata[$key]) && $csvheader == $mapping_screendata[$key][$name]){
+                                                      $mapping_selected = 'selected'; ?>
+
+                                                      <option value="<?php echo $csvheader; ?>" <?php echo $mapping_selected;?>> <?php echo $csvheader; ?> </option>
+                                                   <?php }
+                                                   }
                                                             if($name == $csvheader) {?>
                                                                <option value="<?php print($csvheader); ?>" selected><?php print($csvheader); ?> </option>
                                                                <?php
@@ -269,7 +279,7 @@ if(isset($_REQUEST['mapping_type']) && $_REQUEST['mapping_type'] == 'normal') {
       </div>
       <div class="clearfix"></div>
          <div class="mb20"></div>
-      <input type="hidden" name="smack_uci_mapping_method" value="<?php echo sanitize_title($_REQUEST['mapping_type']); ?>">
+      <input type="hidden" name="smack_uci_mapping_method" value="<?php if(isset($_REQUEST['mapping_type'])) echo sanitize_title($_REQUEST['mapping_type']); ?>">
 
    </form>
 </div>

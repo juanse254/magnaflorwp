@@ -73,7 +73,8 @@ if(!empty($integrations)) :
    foreach($integrations as $widget_name => $plugin_file) {
       $widget_slug = strtolower( str_replace( ' ', '_', $widget_name ) );
       $fields = $uci_admin->get_widget_fields( $widget_name, $import_type, $importAs );
-      $available_fields[$plugin_file] = $fields[$plugin_file];
+      if(!empty($fields[$plugin_file]))
+         $available_fields[$plugin_file] = $fields[$plugin_file];
    }
 endif;
 # print_r($integrations);
@@ -88,7 +89,7 @@ if($istemplate == 'no'){
    $backlink = esc_url(admin_url() . 'admin.php?page=sm-uci-import&step=suggested_template&eventkey='.$_REQUEST['eventkey']);
    $actionURL = esc_url(admin_url() . 'admin.php?page=sm-uci-import&step=media_config&eventkey='.$_REQUEST['eventkey']);
 }
-$templateName = '';
+$templateName = ''; $template_mapping = array();
 if(isset($_REQUEST['templateid'])) {
    $templateInfo = $wpdb->get_results($wpdb->prepare("select templatename, mapping from wp_ultimate_csv_importer_mappingtemplate where id = %d", $_REQUEST['templateid']));
    $template_mapping = maybe_unserialize($templateInfo[0]->mapping);
@@ -130,8 +131,8 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
             ?>
             <div class="col-md-6 col-md-offset-3">
                <ul class="mapping-switcher">
-                  <li class="<?php echo $normal; ?>"  onclick="mapping_type('normal');">Normal Mapping</li>
-                  <li class="<?php echo $advanced; ?>" onclick="mapping_type('advanced');">Advanced Mapping</li>
+                  <li class="<?php echo $normal; ?>"  onclick="mapping_type('normal');">Advanced Mode</li>
+                  <li class="<?php echo $advanced; ?>" onclick="mapping_type('advanced');">Drag & Drop Mode</li>
                </ul>
             </div>
 
@@ -146,18 +147,18 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                            <div id="core_fieldstoggle" class="widget_fields panel-body widget_open_field" >
                               <div class="droppableHolder">
                                  <div class="wp_csv_ftp form-group">
-                                    <input type="text" placeholder="Drag & drop any element on the right to set the title." name="CORE__post_title" id="CORE__post_title" class="droppable form-control" value="<?php echo $template_mapping['CORE']['post_title']; ?>">
+                                    <input type="text" placeholder="Drag & drop any element on the right to set the title." name="CORE__post_title" id="CORE__post_title" class="droppable form-control" value="<?php if(isset($template_mapping['CORE']['post_title'])) { echo $template_mapping['CORE']['post_title']; } ?>">
                                  </div>
                                  <div class="wp_csv_ftp form-group">
                                    <!--  <input type="text" placeholder="Content" name="CORE__post_content" id="post_content" class="droppable form-control" value="<?php //echo $template_mapping['CORE']['post_content']; ?>"> -->
-                                   <textarea id="CORE__post_content" class="droppable post_content" name="CORE__post_content"><?php echo $template_mapping['CORE']['post_content']; ?></textarea>
+                                   <textarea id="CORE__post_content" class="droppable post_content" name="CORE__post_content"><?php if(isset($template_mapping['CORE']['post_content'])) { echo $template_mapping['CORE']['post_content']; } ?></textarea>
                                  </div>
                                  <div class="wp_csv_ftp form-group">
                                     <!-- <input type="text" placeholder="Short Description" name="CORE__post_excerpt" id="post_excerpt" class="droppable form-control" value="<?php //echo $template_mapping['CORE']['post_excerpt']; ?>"> -->
-                                    <textarea class="form-control droppable" name="CORE__post_excerpt" id="CORE__post_excerpt"><?php echo $template_mapping['CORE']['post_excerpt']; ?></textarea>
+                                    <textarea class="form-control droppable" name="CORE__post_excerpt" id="CORE__post_excerpt"><?php if(isset($template_mapping['CORE']['post_excerpt'])) { echo $template_mapping['CORE']['post_excerpt']; } ?></textarea>
                                  </div>
                                  <div class="wp_csv_ftp form-group">
-                                    <input type="text" placeholder="Featured Image" class="form-control droppable" name="CORE__featured_image" id="CORE__featured_image" value="<?php echo $template_mapping['CORE']['featured_image']; ?>">
+                                    <input type="text" placeholder="Featured Image" class="form-control droppable" name="CORE__featured_image" id="CORE__featured_image" value="<?php if(isset($template_mapping['CORE']['featured_image'])) { echo $template_mapping['CORE']['featured_image']; } ?>">
                                  </div>
                               </div>
                               <div class="pull-right">
@@ -190,7 +191,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                               <div class="droppableHolder">
                                  <?php foreach($available_fields['TERMS'] as $index => $field_info) { ?>
                                     <div class="wp_csv_ftp form-group">
-                                       <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="TERMS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['TERMS'][$field_info['name']]; ?>">
+                                       <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="TERMS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['TERMS'][$field_info['name']])) { echo $template_mapping['TERMS'][$field_info['name']]; } ?>">
                                     </div>
                                  <?php } ?>
                               </div>
@@ -214,7 +215,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                     foreach ( $fields as $key => $value ) {
                                        foreach ($value as $key1 => $value1) { ?>
                                           <div class="wp_csv_ftp form-group">
-                                             <input type="text" placeholder="<?php echo $key1; ?>" name="<?php echo $key;?>__<?php echo $value1['name']; ?>" id="<?php echo $value1['name']; ?>" class="droppable form-control" value="<?php echo $template_mapping['CORE'][$value1['name']]; ?>">
+                                             <input type="text" placeholder="<?php echo $key1; ?>" name="<?php echo $key;?>__<?php echo $value1['name']; ?>" id="<?php echo $value1['name']; ?>" class="droppable form-control" value="<?php if(isset($template_mapping['CORE'][$value1['name']])) { echo $template_mapping['CORE'][$value1['name']]; } ?>">
                                           </div>
                                        <?php }
                                     }
@@ -236,13 +237,13 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                            <div id="wp-memberstoggle" class="widget_fields panel-body" >
                               <div class="droppableHolder">
                                  <?php
-				 if(!empty($available_fields['WPMEMBERS'])){
-                                 foreach($available_fields['WPMEMBERS'] as $index => $field_info) { ?>
-                                             <div class="form-group wp_csv_ftp">
-                                                   <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="WPMEMBERS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['WPMEMBERS'][$field_info['name']]; ?>">
-                                             </div>
-                                 <?php }
-				 }
+                                 if(!empty($available_fields['WPMEMBERS'])) {
+                                    foreach($available_fields['WPMEMBERS'] as $index => $field_info) { ?>
+                                       <div class="form-group wp_csv_ftp">
+                                          <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="WPMEMBERS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['WPMEMBERS'][$field_info['name']])) { echo $template_mapping['WPMEMBERS'][$field_info['name']]; } ?>">
+                                       </div>
+                                    <?php }
+                                 }
                                  ?>
                               </div>
                            </div>
@@ -259,14 +260,14 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                            </div>
                            <div id="ultimate-membertoggle" class="widget_fields panel-body" >
                               <div class="droppableHolder">
-                                 <?php 
-				 if(!empty($available_fields['ULTIMATEMEMBER'])){
-                                 foreach($available_fields['ULTIMATEMEMBER'] as $index => $field_info) { ?>
-                                             <div class="form-group wp_csv_ftp">
-                                                   <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="ULTIMATEMEMBER__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['ULTIMATEMEMBER'][$field_info['name']]; ?>">
-                                             </div>
-                                 <?php }
-				 }
+                                 <?php
+                                 if(!empty($available_fields['ULTIMATEMEMBER'])) {
+                                    foreach($available_fields['ULTIMATEMEMBER'] as $index => $field_info) { ?>
+                                       <div class="form-group wp_csv_ftp">
+                                          <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="ULTIMATEMEMBER__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['ULTIMATEMEMBER'][$field_info['name']])) { echo $template_mapping['ULTIMATEMEMBER'][$field_info['name']]; } ?>">
+                                       </div>
+                                    <?php }
+                                 }
                                  ?>
                               </div>
                            </div>
@@ -284,13 +285,13 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                            <div id="bsitoggle" class="widget_fields panel-body" >
                               <div class="droppableHolder">
                                  <?php
-				 if(!empty($available_fields['BSI'])){
-                                 foreach($available_fields['BSI'] as $index => $field_info) { ?>
-                                             <div class="form-group wp_csv_ftp">
-                                                   <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="BSI__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['BSI'][$field_info['name']]; ?>">
-                                             </div>
-                                 <?php }
-				 }
+                                 if(!empty($available_fields['BSI'])) {
+                                    foreach($available_fields['BSI'] as $index => $field_info) { ?>
+                                       <div class="form-group wp_csv_ftp">
+                                          <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="BSI__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['BSI'][$field_info['name']])) { echo $template_mapping['BSI'][$field_info['name']]; } ?>">
+                                       </div>
+                                    <?php }
+                                 }
                                  ?>
                               </div>
                            </div>
@@ -337,18 +338,12 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                                    $field_row++; ?>
                                                    <div class="form-group" id="ACF-row<?php echo $field_row; ?>">
                                                       <div class="col-md-10">
-                                                         <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="ACF__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['ACF'][ $field_info['name'] ]; ?>">
+                                                         <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="ACF__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['ACF'][ $field_info['name'] ])) { echo $template_mapping['ACF'][ $field_info['name'] ]; } ?>">
                                                       </div>
                                                       <div class="col-md-2"><i class="icon-trash4" onclick='removeRow("ACF-row<?php echo $field_row; ?>")'></i></div>
                                                    </div>
                                                 <?php }
                                              } ?>
-                                             <!-- <div class="form-group ">
-                                                <div class="col-md-10">
-                                                   <input class="form-control droppable" name="ECOMMETA__external_link" type="text">
-                                                </div>
-                                                <div class="col-md-2"><i class="icon-trash4"></i></div>
-                                             </div> -->
                                           </div>
                                           <div class="clearfix"></div>
                                        </div>
@@ -362,18 +357,12 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                                    $field_row++; ?>
                                                    <div class="form-group" id="TYPES-row<?php echo $field_row; ?>">
                                                       <div class="col-md-10">
-                                                         <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="TYPES__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['TYPES'][ $field_info['name'] ]; ?>">
+                                                         <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="TYPES__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['TYPES'][ $field_info['name'] ])) { echo $template_mapping['TYPES'][ $field_info['name'] ]; } ?>">
                                                       </div>
                                                       <div class="col-md-2"><i class="icon-trash4" onclick='removeRow("TYPES-row<?php echo $field_row; ?>");'></i></div>
                                                    </div>
                                                 <?php }
                                              } ?>
-                                             <!-- <div class="form-group ">
-                                                <div class="col-md-10">
-                                                   <input class="form-control droppable" name="ECOMMETA__external_link"
-                                                          type="text"></div>
-                                                <div class="col-md-2"><i class="icon-trash4"></i></div>
-                                             </div> -->
                                           </div>
                                           <div class="clearfix"></div>
                                        </div>
@@ -387,16 +376,12 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                                       $field_row++; ?>
                                                       <div class="form-group" id="PODS-row<?php echo $field_row; ?>">
                                                          <div class="col-md-10">
-                                                            <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="PODS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['PODS'][ $field_info['name'] ]; ?>">
+                                                            <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="PODS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['PODS'][ $field_info['name'] ])) { echo $template_mapping['PODS'][ $field_info['name'] ]; } ?>">
                                                          </div>
                                                          <div class="col-md-2"><i class="icon-trash4" onclick='removeRow("PODS-row<?php echo $field_row; ?>");'></i></div>
                                                       </div>
                                                    <?php }
                                                 } ?>
-                                                <!-- <div class="col-md-10">
-                                                   <input class="form-control droppable" name="ECOMMETA__external_link"
-                                                          type="text"></div>
-                                                <div class="col-md-2"><i class="icon-trash4"></i></div> -->
                                              </div>
                                           </div>
                                           <div class="clearfix"></div>
@@ -411,18 +396,12 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                                       $field_row++; ?>
                                                       <div class="form-group" id="CORECUSTFIELDS-row<?php echo $field_row; ?>">
                                                          <div class="col-md-10">
-                                                            <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="CORECUSTFIELDS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php echo $template_mapping['CORECUSTFIELDS'][ $field_info['name'] ]; ?>">
+                                                            <input type="text" placeholder="<?php echo $field_info['label']; ?>" name="CORECUSTFIELDS__<?php echo $field_info['name']; ?>" id="post_status" class="droppable form-control" value="<?php if(isset($template_mapping['CORECUSTFIELDS'][ $field_info['name'] ])) { echo $template_mapping['CORECUSTFIELDS'][ $field_info['name'] ]; } ?>">
                                                          </div>
                                                          <div class="col-md-2"><i class="icon-trash4" onclick='removeRow("CORECUSTFIELDS-row<?php echo $field_row; ?>");'></i></div>
                                                       </div>
                                                    <?php }
                                                 } ?>
-                                                <!-- <div class="col-md-8">
-                                                   <input class="form-control droppable" name="ECOMMETA__external_link"
-                                                          type="text"></div>
-                                                <div class="col-md-2">
-                                                   <input class="form-control" type="checkbox"></div>
-                                                <div class="col-md-2"><i class="icon-trash4"></i></div>  -->
                                              </div>
                                           </div>
                                           <!-- <div class="clearfix"></div> -->
@@ -529,7 +508,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                     foreach ( $seo_fields as $key => $value ) {
                                        foreach ($value as $key1 => $value1) { ?>
                                           <div class="wp_csv_ftp form-group">
-                                             <input type="text" placeholder="<?php echo $value1['name']; ?>" name="<?php echo $key;?>__<?php echo $value1['name']; ?>" id="<?php echo $value1['name']; ?>" class="droppable form-control" value="<?php echo $template_mapping[$key][$value1['name']]; ?>">
+                                             <input type="text" placeholder="<?php echo $value1['name']; ?>" name="<?php echo $key;?>__<?php echo $value1['name']; ?>" id="<?php echo $value1['name']; ?>" class="droppable form-control" value="<?php if(isset($template_mapping[$key][$value1['name']])) echo $template_mapping[$key][$value1['name']]; ?>">
                                           </div>
                                        <?php }
                                     }
@@ -542,7 +521,6 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                   </div>
                <?php } ?>
                <!-- This widget will be available only for the post types -->
-               <?php #print '<pre>'; print_r(get_post_types()); print '</pre>'; ?>
                <?php if(in_array($get_post_type, get_post_types()) && !in_array($get_records[$eventKey]['import_file']['posttype'], $ecommerce_supported_modules)) { ?>
                   <div class="mapping_widget dropitems col-md-12">
                      <div class="panel-group" id='accordion'>
@@ -557,11 +535,11 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                        <td>
                                           <h6>Post Status</h6>
                                           <div class="form-group wp_ultimate_container">
-                                             <label class="control-label col-md-12"><input checked="checked" id="post_status_published" data-key="false" class="wp_ultimate_slide" name="CORE__is_post_status" type="radio">Published</label>
-                                             <label class="control-label col-md-12"><input  name="CORE__is_post_status" id="post_status_draft" data-key="false" class="wp_ultimate_slide" type="radio">Draft</label>
+                                             <label class="control-label col-md-12"><input checked="checked" id="post_status_published" data-key="false" class="wp_ultimate_slide" name="CORE__is_post_status" type="radio" value="publish">Published</label>
+                                             <label class="control-label col-md-12"><input  name="CORE__is_post_status" id="post_status_draft" data-key="false" class="wp_ultimate_slide" type="radio" value="draft">Draft</label>
                                              <label class="control-label col-md-12"><input name="CORE__is_post_status" id="post_status_csv" data-key="true" class="wp_ultimate_slide" type="radio">Set with CSV</label>
                                              <div class="col-md-8 mt10 set_from_csv source-post_status_csv" style="display: none;">
-                                                <input type="text" class="form-control droppable" name="CORE__post_status" value="<?php echo $template_mapping['CORE']['post_status']; ?>">
+                                                <input type="text" class="form-control droppable" name="CORE__post_status" value="<?php if(isset($template_mapping['CORE']['post_status'])) echo $template_mapping['CORE']['post_status']; ?>">
                                              </div>
                                           </div>
                                           <div class="clearfix"></div>
@@ -583,7 +561,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                              </div>
                                              <label class="control-label col-md-12"><input checked="checked" name="CORE__post_date_option"  type="radio">Set with CSV</label> -->
                                              <div class="col-md-4">
-                                                <input type="text" class="form-control droppable" name="CORE__post_date" value="<?php echo $template_mapping['CORE']['post_date']; ?>">
+                                                <input type="text" class="form-control droppable" name="CORE__post_date" value="<?php if(isset($template_mapping['CORE']['post_date'])) echo $template_mapping['CORE']['post_date']; ?>">
                                              </div>
                                           </div>
                                           <div class="clearfix"></div>
@@ -599,7 +577,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                              <label class="control-label col-md-12"><input  name="CORE__post_comment_status" id="post_comments_closed" data-key="false" class="wp_ultimate_slide" type="radio" value="closed">Closed</label>
                                              <label class="control-label col-md-12"><input name="CORE__post_comment_status" id="post_comments_csv" data-key="true" class="wp_ultimate_slide" type="radio" value="set_from_csv">Set with CSV</label>
                                              <div class="col-md-8 mt10 set_from_csv source-post_comments_csv" style="display: none;">
-                                                <input type="text" class="form-control droppable" name="CORE__comment_status" value="<?php echo $template_mapping['CORE']['comment_status']; ?>">
+                                                <input type="text" class="form-control droppable" name="CORE__comment_status" value="<?php if(isset($template_mapping['CORE']['comment_status'])) echo $template_mapping['CORE']['comment_status']; ?>">
                                              </div>
                                           </div>
                                           <div class="clearfix"></div>
@@ -615,7 +593,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                              <label class="control-label col-md-12"><input name="CORE__post_ping_status" id="ping_status_closed" data-key="false" class="wp_ultimate_slide" type="radio">Closed</label>
                                              <label class="control-label col-md-12"><input name="CORE__post_ping_status" id="ping_status_csv" data-key="true" class="wp_ultimate_slide" type="radio">Set with CSV</label>
                                              <div class="col-md-8 mt10 set_from_csv source-ping_status_csv" style="display: none;">
-                                                <input type="text" class="form-control droppable" name="CORE__ping_status" value="<?php echo $template_mapping['CORE']['ping_status']; ?>">
+                                                <input type="text" class="form-control droppable" name="CORE__ping_status" value="<?php if(isset($template_mapping['CORE']['ping_status'])) echo $template_mapping['CORE']['ping_status']; ?>">
                                              </div>
                                           </div>
                                           <div class="clearfix"></div>
@@ -627,7 +605,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                        <td>
                                           <h6>Post Slug</h6>
                                           <div class="col-md-8 pl0">
-                                             <input type="text" name="CORE__post_slug" class="form-control droppable" value="<?php echo $template_mapping['CORE']['post_slug']; ?>" >
+                                             <input type="text" name="CORE__post_slug" class="form-control droppable" value="<?php if(isset($template_mapping['CORE']['post_slug'])) echo $template_mapping['CORE']['post_slug']; ?>" >
                                           </div>
                                           <div class="clearfix"></div>
                                           <hr class="border-bottom-hr no-padding">
@@ -638,7 +616,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                        <td>
                                           <h6>Post Author</h6>
                                           <div class="col-md-8 pl0">
-                                             <input type="text" class="form-control droppable" name="CORE__post_author" value="<?php echo $template_mapping['CORE']['post_author']; ?>">
+                                             <input type="text" class="form-control droppable" name="CORE__post_author" value="<?php if(isset($template_mapping['CORE']['post_author'])) echo $template_mapping['CORE']['post_author']; ?>">
                                           </div>
                                           <div class="col-md-1"><a href="#help" class="vertical-middle" >?</a>
                                           </div>
@@ -686,9 +664,9 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                                 <label class="control-label col-md-12 pl0"><input id="post_format_audio" value="7" class="wp_ultimate_slide" data-key="false" name="CORE__post_format_option" value="" type="radio">
                                                    Audio</label>
                                                 <label class="control-label col-md-12 pl0"><input id="post_format_csv" class="wp_ultimate_slide" data-key="true" name="CORE__post_format_option" value="xpath" type="radio">
-                                                   Set with XPath</label>
+                                                   Set with CSV</label>
                                                 <div class="set_from_csv source-post_format_csv col-md-8 pl0 mt10" style="display: none;">
-                                                   <input type="text" class="form-control droppable" name="CORE__post_format" value="<?php echo $template_mapping['CORE']['post_format']; ?>">
+                                                   <input type="text" class="form-control droppable" name="CORE__post_format" value="<?php if(isset($template_mapping['CORE']['post_format'])) echo $template_mapping['CORE']['post_format']; ?>">
                                                 </div>
                                              </div>
                                              <div class="clearfix"></div>
@@ -701,7 +679,7 @@ $ecommerce_module = array('WooCommerce', 'MarketPress', 'WPeCommerce', 'eShop');
                                        <td>
                                           <h6>Menu Order</h6>
                                           <div class="col-md-8 pl0">
-                                             <input type="text" class="form-control droppable" name="CORE__menu_order" value="<?php echo $template_mapping['CORE']['menu_order']; ?>">
+                                             <input type="text" class="form-control droppable" name="CORE__menu_order" value="<?php if(isset($template_mapping['CORE']['menu_order'])) echo $template_mapping['CORE']['menu_order']; ?>">
                                           </div>
                                           <div class="clearfix"></div>
                                           <hr class="border-bottom-hr no-padding">

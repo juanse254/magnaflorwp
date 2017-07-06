@@ -1779,6 +1779,15 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 				case 'YOASTSEO':
 					# Note: Removed data import for WordPress Yoast SEO fields
 					break;
+				case 'CFS':
+					$cfs_row_mapping = $this->getRowMapping('CFS');
+					if(empty($cfs_row_mapping) || !file_exists(SM_UCI_PRO_DIR . 'includes/class-uci-cfs-data-import.php')) {
+						break;
+					}
+					require_once "class-uci-cfs-data-import.php";
+					global $cfsHelper;
+					$cfsHelper->push_cfs_data();
+				break;
 				case 'TERMS':
 					$terms_row_mapping = $this->getRowMapping('TERMS');
 					if(empty($terms_row_mapping))
@@ -1840,6 +1849,7 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 					if(!in_array($data_array['comment_approved'], $valid_status)) {
 						$data_array['comment_approved'] = 0;
 					}
+					$data_array['comment_approved'] = trim($data_array['comment_approved']);
 					if ($post_exists) {
 						$retID = wp_insert_comment($data_array);
 						$uci_admin->setInsertedRowCount($uci_admin->getInsertedRowCount() + 1);
@@ -2041,7 +2051,7 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 							$nextGenInfo           = array();
 							$media_settings = $this->parse_media_settings($mediaConfig, $data_array);
 							$featured_image_info = array(
-								'value'           => $data_array['featured_image'],
+								'value'           => trim($data_array['featured_image']),
 								//'rename_image' => $renameimage,
 								'nextgen_gallery' => $nextGenInfo,
 								'media_settings'  => $media_settings
@@ -2085,6 +2095,36 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 		return $createdFields;
 
 	}
+
+	public function CFSFields(){
+		global $wpdb;
+		$customFields = $cfs_field = array();
+		$get_cfs_groups = $wpdb->get_results($wpdb->prepare("select ID from $wpdb->posts where post_type = %s", 'cfs'),ARRAY_A);
+		$group_id_arr = '';
+		foreach ( $get_cfs_groups as $item => $group_rules ) {
+			$group_id_arr .= $group_rules['ID'] . ',';
+		}
+		if($group_id_arr != '') {
+			$group_id_arr = substr( $group_id_arr, 0, - 1 );
+			// Get available CFS fields based on the import type and group id
+			$get_cfs_fields = $wpdb->get_results( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE post_id IN ($group_id_arr) and meta_key = 'cfs_fields'"), ARRAY_A);
+		}
+		// Available CFS fields
+		if (!empty($get_cfs_fields)) {
+			foreach ($get_cfs_fields as $key => $value) {
+				$get_cfs_field = @unserialize($value['meta_value']);
+				foreach($get_cfs_field as $fk => $fv){
+					$customFields["CFS"][$fv['name']]['label'] = $fv['label'];
+					$customFields["CFS"][$fv['name']]['name'] = $fv['name'];
+					$customFields["CFS"][$fv['name']]['type'] = $fv['type'];
+					$customFields["CFS"][$fv['name']]['fieldid'] = $fv['id'];
+					$cfs_field[] = $fv['name'];
+				}
+			}
+		}
+		return $customFields;
+	}
+
 
 	public function assignTermsAndTaxonomies($categories, $category_name, $pID) {
 		$get_category_list = $category_list = array();
@@ -2546,6 +2586,53 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 		#NOTE: Removed save mapping template feature
 	}
 
+	public function get_mapping_screendata($module,$post_values){
+		global $uci_admin;
+		$available_group = $uci_admin->available_widgets($module, $importAs);
+		foreach ($available_group as $groupname => $groupvalue) {
+			foreach ($post_values as $mapping_key => $mapping_value) {
+				$current_mapped_group_mapkey = explode($groupvalue . '__mapping', $mapping_key);
+				$current_mapped_group_key = explode($groupvalue . '__fieldname', $mapping_key);
+				$current_static_group_key = explode($groupvalue . '_statictext_mapping', $mapping_key);
+				$current_formula_group_key = explode($groupvalue . '_formulatext_mapping', $mapping_key);
+				if (is_array($current_mapped_group_mapkey) && count($current_mapped_group_mapkey) == 2) {
+					$set_mapping_groups[$groupvalue][] = $mapping_value;
+				}
+				if (is_array($current_mapped_group_key) && count($current_mapped_group_key) == 2) {
+					$set_fields_group[$groupvalue][] = $mapping_value;
+					$current_row_val = $mapping_value;
+				}
+				//static and formula features
+				if(is_array($current_static_group_key) && count($current_static_group_key) == 2){
+					$set_static_group[$groupvalue][$current_row_val] = $mapping_value;
+				}
+				if(is_array($current_formula_group_key) && count($current_formula_group_key) == 2){
+					$set_formula_group[$groupvalue][$current_row_val] = $mapping_value;
+				}
+
+			}
+			if (!empty($set_fields_group[$groupvalue]) && !empty($set_mapping_groups[$groupvalue])) {
+				$new_mapped_array[$groupvalue] = array_combine($set_fields_group[$groupvalue], $set_mapping_groups[$groupvalue]);
+			}
+			//static and formula features
+			if(!empty($set_static_group[$groupvalue] )) {
+				foreach ($set_static_group[$groupvalue] as $grp => $val) {
+					if (!empty($new_mapped_array) && array_key_exists($grp, $new_mapped_array[$groupvalue])) {
+						$new_mapped_array[$groupvalue][$grp] = $val;
+					}
+				}
+			}
+			if(!empty($set_formula_group[$groupvalue] )) {
+				foreach ($set_formula_group[$groupvalue] as $grp => $val) {
+					if (!empty($new_mapped_array) && array_key_exists($grp, $new_mapped_array[$groupvalue])) {
+						$new_mapped_array[$groupvalue][$grp] = $val;
+					}
+				}
+			}
+		}
+		return $new_mapped_array;
+	}
+
 	/**
 	 * @param $filename
 	 * @param $version
@@ -2652,6 +2739,10 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 	}
 
 	public function assign_post_status($data_array) {
+		if (isset($data_array['is_post_status']) && $data_array['is_post_status'] != 'on') {
+			$data_array ['post_status'] = $data_array['is_post_status'];
+			unset($data_array['is_post_status']);
+		}
 		if (isset($data_array ['post_type']) && $data_array ['post_type'] == 'page') {
 			$data_array ['post_status'] = 'publish';
 		} else {
@@ -2661,6 +2752,7 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 				} else {
 					$data_array['post_status'] = strtolower( $data_array['coupon_status'] );
 				}
+				$data_array['post_status'] = trim($data_array['post_status']);
 				if ($data_array['post_status'] != 'publish' && $data_array['post_status'] != 'private' && $data_array['post_status'] != 'draft' && $data_array['post_status'] != 'pending' && $data_array['post_status'] != 'sticky') {
 					$stripPSF = strpos($data_array['post_status'], '{');
 					if ($stripPSF === 0) {
@@ -3178,6 +3270,13 @@ $currentMapping = $this->generateDataArrayBasedOnGroups( $available_groups_type,
 		}
 
 		return $media_settings;
+	}
+
+	public function updateMaintenance($value)
+	{
+		$mode = array();
+		$mode['enable_main_mode'] = $value;
+		update_option('sm_uci_pro_settings', $mode);
 	}
 
 	// Push core fields data into database

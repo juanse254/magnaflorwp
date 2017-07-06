@@ -2,7 +2,7 @@
 /******************************
  * Plugin Name: WP Ultimate CSV Importer
  * Description: Seamlessly create posts, custom posts, pages, media, SEO and more from your CSV data with ease.
- * Version: 5.2
+ * Version: 5.3
  * Author: smackcoders
  * Plugin URI: http://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=plugin&utm_campaign=csv_importer_pro&utm_medium=wordpress
  * Author URI: http://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=plugin&utm_campaign=csv_importer_pro&utm_medium=wordpress
@@ -57,7 +57,7 @@ if ( ! class_exists( 'SM_WPUltimateCSVImporter' ) ) :
 	 */
 	class SM_WPUltimateCSVImporter {
 
-		public $version = '5.2';
+		public $version = '5.3';
 
 		/**
 		 * The single instance of the class.
@@ -263,6 +263,7 @@ if ( ! class_exists( 'SM_WPUltimateCSVImporter' ) ) :
 				//new files include
 				wp_enqueue_style('custom-new-style', plugins_url('assets/css/custom-new-style.css', __FILE__));
 			}
+			wp_enqueue_style('style-maintenance', plugins_url('assets/css/style-maintenance.css', __FILE__));
 		}
 
 		/**
@@ -354,3 +355,37 @@ function SmackUCI() {
 }
 // Global for backwards compatibility.
 $GLOBALS['wp_ultimate_csv_importer'] = SmackUCI();
+
+//Maintenance mode
+$options = get_option('sm_uci_pro_settings');
+$enable_main_mode = isset($options['enable_main_mode']) ? $options['enable_main_mode'] : '';
+$maintainance_text = isset($options['main_mode_text']) ? $options['main_mode_text'] : '';
+
+if($maintainance_text == "")
+ $maintainance_text = "Site is under maintenance mode. Please wait few min!";
+
+
+function activate_maintenance_mode() { 
+	include(ABSPATH . "wp-includes/pluggable.php");
+	global $maintainance_text;
+	if(!current_user_can('manage_options')) {
+    ?> 
+    <div class="main-mode-front"> <span> <?php echo $maintainance_text; ?> </span> </div> 
+    <?php }
+} 
+
+function admin_bar_menu(){
+            global $wp_admin_bar;
+                $wp_admin_bar->add_menu( array(
+                    'id'     => 'debug-bar',
+                    'href' => admin_url().'admin.php?page=sm-uci-import',
+                    'parent' => 'top-secondary',
+                    'title'  => apply_filters( 'debug_bar_title', __('Maintenance Mode', 'ultimate-maintenance-mode') ),
+                    'meta'   => array( 'class' => 'smack-main-mode' ),
+                ) );
+        }
+
+if($enable_main_mode == "on"){
+  add_action( 'admin_bar_menu', 'admin_bar_menu' );
+  add_action('wp_head', 'activate_maintenance_mode');
+}

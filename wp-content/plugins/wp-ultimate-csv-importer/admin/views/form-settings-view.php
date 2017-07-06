@@ -42,6 +42,8 @@ $ucisettings = get_option('sm_uci_pro_settings');
 $ucioptimize = get_option('sm_uci_pro_optimization');
 $droptable = isset($ucisettings['drop_table']) ? $ucisettings['drop_table'] : '';
 $schedule_mail = isset($ucisettings['send_log_email']) ? $ucisettings['send_log_email'] : '';
+$main_mode = isset($ucisettings['enable_main_mode']) ? $ucisettings['enable_main_mode'] : '';
+$maintenance_text = isset($ucisettings['main_mode_text']) ? $ucisettings['main_mode_text'] : '';
 $send_password = isset($ucisettings['send_user_password']) ? $ucisettings['send_user_password'] : '';
 $woocomattr = isset($ucisettings['woocomattr']) ? $ucisettings['woocomattr'] : '';
 $author_editor_access = isset($ucisettings['author_editor_access']) ? $ucisettings['author_editor_access'] : '';
@@ -72,6 +74,26 @@ if(!empty($schedule_mail)){
         $data['mailon_status'] = '';
         $data['mailoff_status'] = 'checked';
     }
+}
+if(!empty($main_mode)){
+    if($main_mode == 'on'){
+        $data['maintenance_on'] = 'enablesetting';
+        $data['maintenance_off'] = 'disablesetting';
+        $data['maintenance_status'] = 'checked';
+        $data['maintenance_status'] = '';
+        $main_mode = "checked='checked'";
+        $mainmode_hide = '';
+    } else {
+        $data['maintenance_off'] = 'enablesetting';
+        $data['maintenance_on'] = 'disablesetting';
+        $data['maintenance_status'] = '';
+        $data['maintenance_status'] = 'checked';
+        $main_mode = "";
+        $mainmode_hide = 'hidden';
+    }
+}
+else{
+    $mainmode_hide = 'hidden';
 }
 if(!empty($send_password)){
     if($send_password == 'on'){
@@ -235,7 +257,26 @@ if(isset($ucioptimize['delete_all_trackback_comments'])) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
+                                <!-- <div class="form-group mt20">
+                                    <div class="col-xs-12 col-sm-8 col-md-8  nopadding">
+                                        <h4><?php //echo esc_html_e('Maintenance mode','wp-ultimate-csv-importer-pro'); ?></h4>
+                                        <p><?php //echo esc_html_e('Enable to maintain your Wordpress site.','wp-ultimate-csv-importer-pro'); ?></p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-3">
+                                        <div class="mt20">
+                                            <input id="enable_main_mode" type='checkbox' class="tgl tgl-skewed noicheck" name='enable_main_mode' <?php //echo $main_mode; ?> style="display:none" onclick="saveoptions(this.id, this.name);" />
+                                            <label data-tg-off="NO" data-tg-on="YES" for="enable_main_mode" id="download_on" class="tgl-btn" style="font-size: 16px;" >
+                                            </label>
+                                         </div>
+                                    </div>
+                                </div>
+                                 <div class="clearfix"></div>
+                                <div class="form-group mt20" <?php //echo $mainmode_hide; ?> >
+                                    <div class="col-xs-12 col-sm-12 col-md-10  nopadding">
+                                    <input type="text" id='main_mode_text' class="form-control" name = 'main_mode_text'  placeholder = 'Site is under maintenance mode. Please wait few min!' value='<?php //echo $maintenance_text;?>' onblur="saveoptions(this.id, this.name);" >
+                                    </div>
+                                    </div> -->
+                                    <div class="clearfix"></div>
                                 <div class="form-group mt20">
                                     <div class="col-xs-12 col-sm-8 col-md-8  nopadding">
                                         <h4><?php echo esc_html_e('Send password to user','wp-ultimate-csv-importer'); ?></h4>

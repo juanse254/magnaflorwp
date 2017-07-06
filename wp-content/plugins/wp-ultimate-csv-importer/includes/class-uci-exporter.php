@@ -93,7 +93,29 @@ class SmackUCIExporter {
 		$this->fileName        = isset($_POST['fileName']) ? sanitize_text_field($_POST['fileName']) : ''; //'Post.csv';
 		$this->offset          = isset($_POST['offset']) ? sanitize_text_field($_POST['offset']) : 0;
 		$this->limit           = isset($_POST['limit']) ? sanitize_text_field($_POST['limit']) : 1000;
+		$this->delimiter       = isset($_POST['conditions']['delimiter']) ? $this->setDelimiter( $_POST['conditions']['delimiter'] ) : ',';
 		$this->exportData();
+	}
+
+	/**
+	 * set the delimiter
+	 */
+	public function setDelimiter($conditions)
+	{
+		if(isset($conditions['delimiter']) && $conditions['delimiter'] != 'Select'){
+			if($conditions['delimiter'] == '{Tab}')
+				return "\t";
+			elseif ($conditions['delimiter'] == '{Space}')
+				return " ";
+			else
+				return $conditions['delimiter'];
+		}
+		elseif (isset($conditions['optional_delimiter']) && $conditions['optional_delimiter'] != '') {
+			return $conditions['optional_delimiter'];
+		}
+		else{
+			return ',';
+		}
 	}
 
 	/**
@@ -471,6 +493,7 @@ class SmackUCIExporter {
 
 	public function FetchComments() {
 		global $wpdb;
+		$this->generateHeaders($this->module, $this->optionalType);
 		$get_comments = "select *from $wpdb->comments";
 		$get_comments .= " where comment_approved in (0,1)";
 		// Check for specific period
@@ -491,9 +514,9 @@ class SmackUCIExporter {
 		if(!empty($comments)) {
 			foreach($comments as $commentInfo) {
 				foreach($commentInfo as $commentKey => $commentVal) {
-					if(!in_array($commentKey, $this->headers)) {
-						$this->headers[] = $commentKey;
-					}
+					//if(!in_array($commentKey, $this->headers)) {
+					//	$this->headers[] = $commentKey;
+					//}
 					$this->data[$commentInfo->comment_ID][$commentKey] = $commentVal;
 				}
 			}
@@ -884,7 +907,7 @@ class SmackUCIExporter {
 		$header_exclusion = array();
 		foreach ($headers as $hVal) {
 			#if($this->eventExclusions['is_check'] === true && array_key_exists($hKey, $this->eventExclusions['exclusion_headers'])) :
-			if(!array_key_exists($hVal, $this->eventExclusions['exclusion_headers'])) :
+			if(array_key_exists($hVal, $this->eventExclusions['exclusion_headers'])) :
 				#unset($this->headers[$hKey]);
 			#else:
 				$header_exclusion[] = $hVal;

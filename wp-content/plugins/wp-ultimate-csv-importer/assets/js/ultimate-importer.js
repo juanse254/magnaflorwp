@@ -775,6 +775,11 @@ function igniteImport() {
     var total = parseInt(totalcount) + 1;
     var startLimit = currentlimit;
     var endLimit = parseInt(importlimit) + parseInt(currentlimit);
+    var main_mode = document.getElementById('main_mode').value;
+    var msg1 = null;
+    if(main_mode == "on"){
+        msg1 = "Maintenance mode enabled";
+     }
 
     var postData = new Array();
     postData = {
@@ -808,8 +813,11 @@ function igniteImport() {
             document.getElementById('updated').value = response.updated;
             document.getElementById('skipped').value = response.skipped;
             jQuery('#innerlog').prepend(jQuery(response.eventLog + "<br>"));
+            if(currentlimit == 2 && msg1 != null){
+              jQuery('#innerlog').append(jQuery("<p style='margin-left:10px;color:green;'>"+msg1+"</p>"));
+            }
             if(currentlimit == total) {
-                var msg = 'Import Successfully Completed';
+               var msg = 'Import Successfully Completed';
                 document.getElementById('continue_import').style.display = 'none';
                 document.getElementById('new_import').style.display = '';
                 document.getElementById('terminate_now').style.display='none';
@@ -1794,14 +1802,45 @@ function settings_div_selection(id) {
     }
 }
 //options_savein_ajax
-function saveoptions(id, name){
-    var value =  document.getElementById(id).checked;
-    if(value == true)
-        value = 'on';
-    else
-        value = 'off';
+function saveoptions(id,name){
+//alert(id+name);
+    if(id!='main_check_rollback' && id!='main_check_import_off' && id!='main_check_import_on'){
+        var value =  document.getElementById(id).checked;
+        if(value == true)
+            value = 'on';
+        else
+            value = 'off';
+    }
+    //cmb2_customization
+    if(name == 'cmb2') {
+        value = document.getElementById(id).value;
+    }
+    if (name == 'main_mode_text') {
+        value = document.getElementById(id).value;
+    }
 
-    //Ajax save option
+    if(id=='main_mode_config')
+        name = 'enable_main_mode';
+
+    if(id=='rollback_mode_config')
+        name = 'rollback_mode';
+
+    if(id == 'main_check_import_off'){
+        name = 'enable_main_mode';
+        value = 'off';
+    }
+
+    if(id == 'main_check_import_on'){
+        name = 'enable_main_mode';
+        value = 'on';
+    } 
+
+    if(id=='main_check_rollback'){
+        name = 'rollback_mode';
+        value = '';
+    }
+//alert(name+value);
+
     jQuery.ajax({
         url: ajaxurl,
         type: 'post',
@@ -1811,11 +1850,23 @@ function saveoptions(id, name){
             'value': value,
         },
         success: function (response) {
-            if(id != 'image-handling-btn' && id != 'gallery-support-btn')
-                swal('Success!', 'Settings successfully updated.', 'success')
+            if( id != 'main_check_import_on'  && id != 'main_check_rollback' && id != 'image-handling-btn' && id != 'gallery-support-btn'){
+                if(name == 'enable_main_mode' || id == 'main_check_import_off' || id == 'rollback_mode_config')
+                    window.location.reload();
+                else
+                    swal('Success!', 'Settings successfully updated.', 'success')
+            }
+            // if (id == 'main_check_import') {
+            //     swal('Success!', 'Maintenance mode disabled.', 'success')
+            // }
+            // if (id == 'main_check_rollback') {
+            //     swal('Success!', 'Roll back mode disabled.', 'success')
+            // }
         }
     });
+
 }
+
 function pro_feature() {
     swal('Warning!', 'This feature is available only in PRO.', 'warning')
 }

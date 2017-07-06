@@ -63,7 +63,16 @@ $backlink = esc_url(admin_url() . 'admin.php?page=sm-uci-import&step=media_confi
 if(isset($_REQUEST['templateid'])) {
 	$actionURL .= '&templateid=' . intval($_REQUEST['templateid']);
 	$backlink .= '&templateid=' . intval($_REQUEST['templateid']);
-} ?>
+} 
+$ucisettings = get_option('sm_uci_pro_settings');
+$main_mode = isset($ucisettings['enable_main_mode']) ? $ucisettings['enable_main_mode'] : '';
+if($main_mode == 'on'){
+	$config_checkbox = "checked = 'checked'";
+}
+else{
+ $config_checkbox = "";
+}
+?>
 	<div class="list-inline pull-right mb10 wp_ultimate_csv_importer_pro">
             <div class="col-md-6 mt10"><a href="https://goo.gl/jdPMW8" target="_blank"><?php echo esc_html__('Documentation','wp-ultimate-csv-importer');?></a></div>
             <div class="col-md-6 mt10"><a href="https://goo.gl/fKvDxH" target="_blank"><?php echo esc_html__('Sample CSV','wp-ultimate-csv-importer');?></a></div>
@@ -74,7 +83,11 @@ if(isset($_REQUEST['templateid'])) {
 		<form class="form-inline" method="post" action="<?php echo $actionURL;?>">
 			<div id='wp_warning' style = 'display:none;' class = 'error'></div>
 			<div class="config_table">
-				<div class="col-md-12">
+			<div class="col-md-12 mt20" id="main_ch">
+				<div class="col-md-12 mb15">
+					<label><input type = "checkbox"  class="import_config_checkbox" name = "main_mode_config" id = "main_mode_config" <?php echo $config_checkbox; ?> ><?php echo esc_html__('Do you want to SWITCH ON Maintenance mode while import ?');?></label></div>
+			</div>
+				<div class="col-md-12 mt20">
 					<div class="col-md-12 mb15">
 						<label style="display:inline;">
 							<input type="checkbox" name="duplicate" id="duplicate" class="import_config_checkbox" onclick = "toggle_configdetails(this.id);" /><?php echo esc_html__('Do you want to handle the duplicate on existing records ?','wp-ultimate-csv-importer');?></label></div>
@@ -102,6 +115,7 @@ if(isset($_REQUEST['templateid'])) {
 					<div class="col-md-12 mb15">
 						<label><input type = "checkbox" class="import_config_checkbox" name = "schedule" id = "schedule" onclick = "toggle_configdetails(this.id);"><?php echo esc_html__('Do you want to Schedule this Import');?></label></div>
 				</div>
+				
 			</div>
 			<input type="hidden" id="eventkey" value="<?php echo sanitize_key($_REQUEST['eventkey']);?>">
 			<input type="hidden" id="import_type" value="<?php echo $import_type;?>">
@@ -111,8 +125,8 @@ if(isset($_REQUEST['templateid'])) {
 					<a class="smack-btn btn-default btn-radius" href="<?php echo $backlink;?>"><?php echo esc_html__('Back','wp-ultimate-csv-importer');?></a>
 				</div>
 				<div class="pull-right mb20" style="margin-top: -10px;">
-					<input type="submit" class="smack-btn smack-btn-primary btn-radius" id="ignite_import" name="ignite_import" value="<?php echo esc_attr__('Schedule right now','wp-ultimate-csv-importer');?>" onsubmit="schedule_rightnow();">
-					<input style="display:none;" disabled="disabled" type="button" class="smack-btn smack-btn-primary btn-radius" id="schedule_import_btn" name="schedule_import" value="<?php echo esc_attr__('Schedule Later','wp-ultimate-csv-importer');?>" onclick="igniteSchedule();"></div>
+					<input type="submit" class="smack-btn smack-btn-primary btn-radius" id="ignite_import" name="ignite_import" value="<?php echo esc_attr__('Import','wp-ultimate-csv-importer');?>" onsubmit="schedule_rightnow();">
+					<input style="display:none;" disabled="disabled" type="button" class="smack-btn smack-btn-primary btn-radius" id="schedule_import_btn" name="schedule_import" value="<?php echo esc_attr__('Schedule','wp-ultimate-csv-importer');?>" onclick="igniteSchedule();"></div>
 			</div>
 			<div class="clearfix"></div>
 		</form>
@@ -121,5 +135,6 @@ if(isset($_REQUEST['templateid'])) {
 <?php if($import_mode != '') { ?>
 	<script type="application/javascript">
 	//	swal('Warning!', 'Please upgrade to PRO for duplicate handling.', 'warning')
+
 	</script>
 <?php } ?>

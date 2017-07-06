@@ -161,13 +161,18 @@ class SmackUCIAdmin extends SmackUCIHelper {
 				if(empty($parserObj->screenData)):
 					$parserObj->wp_session = "Your mapping configuration may lost. Please configure your mapping again!";
 				endif;
-				switch($_REQUEST['mapping_type']) {
-                                        case 'advanced':
-                                                include ( 'views/form-advanced-mapping-configuration.php' );
-                                                break;
-                                        case 'normal':
-                                        default:
-                                                include ( 'views/form-mapping-configuration.php' );
+				if(isset($_REQUEST['mapping_type'])) {
+					$mapping_type = $_REQUEST['mapping_type'];
+				} else {
+					$mapping_type = '';
+				}
+				switch($mapping_type) {
+					case 'advanced':
+						include ( 'views/form-advanced-mapping-configuration.php' );
+						break;
+					case 'normal':
+					default:
+						include ( 'views/form-mapping-configuration.php' );
 						break;
 				}
 				break;
@@ -241,7 +246,7 @@ class SmackUCIAdmin extends SmackUCIHelper {
 			case 'ticket':
 				$widgets = array('Core Fields', 'WordPress Custom Fields', 'ACF Pro Fields', 'ACF Fields', 'ACF Repeater Fields',
 					'Types Custom Fields', 'PODS Custom Fields', 'CCTM Custom Fields', 'All-in-One SEO Fields',
-					'Yoast SEO Fields', 'Terms and Taxonomies');
+					'Yoast SEO Fields', 'Terms and Taxonomies', 'Custom-Field-Suite Fields');
 				break;
 			case 'Users':
 				$widgets = array('Core Fields','WordPress Custom Fields', 'Custom Fields by WP-Members', 'Billing And Shipping Information',
@@ -332,10 +337,10 @@ class SmackUCIAdmin extends SmackUCIHelper {
 		if(!empty($active_plugins)) {
 			foreach($active_plugins as $plugin) {
 				switch ($plugin) {
-					case 'advanced-custom-fields-pro/acf.php';
+					case 'advanced-custom-fields-pro/acf.php':
 						$possible_widgets['ACF Pro Fields'] = 'ACF';
 						break;
-					case 'advanced-custom-fields/acf.php';
+					case 'advanced-custom-fields/acf.php':
 						/** ACF PRO version 5.3.7 */
 						$acf_pro_pluginPath = WP_PLUGIN_DIR . '/advanced-custom-fields/pro';
 						if(is_dir($acf_pro_pluginPath))
@@ -343,35 +348,40 @@ class SmackUCIAdmin extends SmackUCIHelper {
 						else
 							$possible_widgets['ACF Fields'] = 'ACF';
 						break;
-					case 'acf-repeater/acf-repeater.php';
+					case 'acf-repeater/acf-repeater.php':
 						$possible_widgets['ACF Repeater Fields'] = 'RF';
 						break;
-					case 'custom-content-type-manager/index.php';
+					case 'custom-content-type-manager/index.php':
 						$possible_widgets['CCTM Custom Fields'] = 'CCTM';
 						break;
-					case 'types/wpcf.php';
+					case 'types/wpcf.php':
 						$possible_widgets['Types Custom Fields'] = 'TYPES';
 						break;
-					case 'pods/init.php';
+					case 'pods/init.php':
 						$possible_widgets['PODS Custom Fields'] = 'PODS';
 						break;
-					case 'all-in-one-seo-pack/all_in_one_seo_pack.php';
+					case 'all-in-one-seo-pack/all_in_one_seo_pack.php':
 						$possible_widgets['All-in-One SEO Fields'] = 'AIOSEO';
 						break;
-					case 'wordpress-seo/wp-seo.php';
+					case 'wordpress-seo/wp-seo.php':
 						$possible_widgets['Yoast SEO Fields'] = 'YOASTSEO';
 						break;
-					case 'wordpress-seo-premium/wp-seo-premium.php';
+					case 'wordpress-seo-premium/wp-seo-premium.php':
                                                 $possible_widgets['Yoast SEO Fields'] = 'YOASTSEO';
                                                 break;
-					case 'wp-e-commerce-custom-fields/custom-fields.php';
+					case 'wp-e-commerce-custom-fields/custom-fields.php':
 						$possible_widgets['WP e-Commerce Custom Fields'] = 'WPECOMMETA';
 						break;
-					case 'wp-members/wp-members.php';
+					case 'wp-members/wp-members.php':
 						if($import_type == 'Users') {
 							$possible_widgets['Custom Fields by WP-Members'] = 'WPMEMBERS';
 						}
 						break;
+					// Custom Field Suite Support
+					case 'custom-field-suite/cfs.php':
+						$possible_widgets['Custom-Field-Suite Fields'] = 'CFS';
+						break;
+					// Custom Field Suite Support
 					case 'woocommerce/woocommerce.php':
 					case 'marketpress/marketpress.php':
 					case 'wordpress-ecommerce/marketpress.php':
@@ -452,6 +462,9 @@ class SmackUCIAdmin extends SmackUCIHelper {
 				break;
 			case 'Yoast SEO Fields':
 				$fields = $this->YoastSEOFields();
+				break;
+			case 'Custom-Field-Suite Fields':
+				$fields = $this->CFSFields();
 				break;
 			case 'Billing And Shipping Information':
 				$fields = $this->billing_information_for_users();

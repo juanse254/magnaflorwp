@@ -1,22 +1,24 @@
-=== CSV Import for WordPress ===
+=== CSV Importer & Exporter ===
 Contributors: smackcoders, smacksupport
 Donate link: https://www.paypal.me/smackcoders
-Tags: csv importer, import csv, import woocommerce, import marketpress, import seo by yoast, import all in one seo, scheduled import, import remote file, export woocommerce, import types fields, import acf fields, Events Manager
-Requires at least: 4.0
-Tested up to: 4.7.3
-Stable tag: 5.2
-Version: 5.2
+Tags: csv, wordpress csv import, csv importer, import, import csv, import seo, import woocommerce, acf, excel, export, spreadsheet
+Requires at least: 4.1
+Tested up to: 4.8
+Stable tag: 5.3
+Version: 5.3
 Author: smackcoders
 Author URI: http://profiles.wordpress.org/smackcoders/
 License: GPLv2 or later
-WP Ultimate CSV Importer enables to import Post types, images from external URL and export all Post Types as CSV file.
+Simple, powerful and easy CSV Import export plugin even for newbies and novice users.
 
 == Description ==
-WP Ultimate CSV Importer is an import and export tool that helps to build a WordPress site at the drop of a hat by importing Post, Page, Custom Post, Users, Comments, [WordPress Custom Fields](http://www.smackcoders.com/blog/adding-custom-fields-data-wordpress-free-wp-ultimate-csv-importer.html?utm_source=web&utm_campaign=wp_org&utm_medium=readme) & [CustomPress fields](http://www.smackcoders.com/blog/custompress-import.html?utm_source=web&utm_campaign=wp_org&utm_medium=readme), Reviews of WP Customer Reviews and SEO fields of All in One SEO. The plugin supports export and import of all Custom Post Types. The import is for selective modules, but the export is for all the core modules along with few third party plugins.
+Rated as one of the Top 500 plugins by [WPMETA.ORG](http://www.wpmeta.org/plugins/wp-ultimate-csv-importer/). The only well managed, supported and regularly updated importer plugin with great track record. Manage your wordpress content as simple as in a spreadsheet editor like Microsoft Excel or Open Office etc.
+
+[Ultimate CSV Importer](http://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) is an import and export tool that helps to build a WordPress site at the drop of a hat by importing Post, Page, Custom Post, Users, Comments, [WordPress Custom Fields](http://www.smackcoders.com/blog/adding-custom-fields-data-wordpress-free-wp-ultimate-csv-importer.html?utm_source=web&utm_campaign=wp_org&utm_medium=readme) & [CustomPress fields](http://www.smackcoders.com/blog/custompress-import.html?utm_source=web&utm_campaign=wp_org&utm_medium=readme), Reviews of WP Customer Reviews and SEO fields of All in One SEO. The plugin supports export and import of all Custom Post Types. The import is for selective modules, but the export is for all the core modules along with few third party plugins.
 
 The image can be imported from external URL like Google image, pixabay, shutterstock, etc,. The images are imported in the background with the help of WP-CRON to enhance the performance. You can [easily configure your WP-Cron](http://www.smackcoders.com/blog/enable-configure-wp-cron.html?utm_source=web&utm_campaign=wp_org&utm_medium=readme) for faster import.
 
-Please show your support for WP Ultimate CSV Importer by giving it a [rating](https://wordpress.org/support/view/plugin-reviews/wp-ultimate-csv-importer?rate=5#postform) :)
+Please show your support for CSV Importer by giving it a [rating](https://wordpress.org/support/view/plugin-reviews/wp-ultimate-csv-importer?rate=5#postform) :)
 
 = Modules supported in Import and Export =
 * Core Modules - Post, Page, Custom Post, Comments and Users.
@@ -51,7 +53,7 @@ Please show your support for WP Ultimate CSV Importer by giving it a [rating](ht
 [youtube https://www.youtube.com/watch?v=Uho22R0BCHQ&feature=youtu.be]
 
 = Ultimate CSV Importer PRO =
-Ultimate CSV Importer PRO has all the features of WP Ultimate CSV Importer and it is extended with a lot of features that enables to import, schedule, update and export CSV files. The import details over a year is in dashboard chart to easily track the site updates in a fraction of a second. Any changes like modifying existing content or appending new content can be done in simple update flow. You can also update or import periodically with scheduler. The update or schedule is done with the templates which is created with mapped fields in the mapping section of the import. The export option enables to export the imported modules as CSV based on the filters.
+CSV Importer PRO has all the features of WP Ultimate CSV Importer and it is extended with a lot of features that enables to import, schedule, update and export CSV files. The import details over a year is in dashboard chart to easily track the site updates in a fraction of a second. Any changes like modifying existing content or appending new content can be done in simple update flow. You can also update or import periodically with scheduler. The update or schedule is done with the templates which is created with mapped fields in the mapping section of the import. The export option enables to export the imported modules as CSV based on the filters.
 
 = Supported Modules To Import and Export =
 * Core Module - Post, Page, Custom Post, Comments, Category, Tags, Users, Customer Reviews.
@@ -74,7 +76,7 @@ Ultimate CSV Importer PRO has all the features of WP Ultimate CSV Importer and i
 * Imported modules can be managed in the File manager.
 * Detailed logs are maintained in the Log manager.
 * Duplicate handling with any of the WordPress field.
-* Import all the supported features of WP Ultimate CSV Importer with [Rest API](http://www.smackcoders.com/document/wp-ultimate-csv-importer-rest-api.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org).
+* Import all the supported features of CSV Importer plugin with [Rest API](http://www.smackcoders.com/document/wp-ultimate-csv-importer-rest-api.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org).
 * Extendable for your needs with [API](https://www.smackcoders.com/document/docs/api/classes/SmackUCI_API.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org).
 
 = Helpful Links =
@@ -83,7 +85,7 @@ Ultimate CSV Importer PRO has all the features of WP Ultimate CSV Importer and i
 Watch our [product video](https://youtu.be/Uho22R0BCHQ)
 You can try the [live demo](http://demo.smackcoders.com/wordpress/wp-admin/admin.php?page=sm-uci-dashboard) or request for free trial by clicking Try Now in [WordPress Ultimate CSV Importer](http://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) page to generate your own WordPress test environment.
 
-Read our [blog](http://www.smackcoders.com/blog/category/wordpress-products?utm_source=web&utm_campaign=readme&utm_medium=wp_org) to know more about the new [features](http://www.smackcoders.com/wp-ultimate-csv-importer-pro/features.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) of our WordPress plugins.
+Read our [blog](http://www.smackcoders.com/blog/category/wordpress-products?utm_source=web&utm_campaign=readme&utm_medium=wp_org) to know more about the new [features](http://www.smackcoders.com/wp-ultimate-csv-importer-pro.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) of our WordPress plugins.
 
 [FAQ](http://www.smackcoders.com/wordpress-products-faq.html?utm_source=web&utm_campaign=readme&utm_medium=wp_org) and [Troubleshooting tips](https://wordpress.org/support/topic/tips-to-trouble-shoot-wp-ultimate-csv-importer-issues-1)
 
@@ -110,13 +112,13 @@ Import may hang due to the following reasons<br />
 	* System Requirements are not matched the required values.<br />
 
 2. How to validate a CSV? <br />
-WP Ultimate CSV Importer allows you to import CSVs that are validated. So kindly validate your CSV using CSV Lint. Your CSV may have any escape characters and misplaced skip characters which may cause the import to cease.<br />
+CSV Importer plugin allows you to import CSVs that are validated. So kindly validate your CSV using CSV Lint. Your CSV may have any escape characters and misplaced skip characters which may cause the import to cease.<br />
 
 3. What are the supported CSV Formats? <br />
-WP Ultimate CSV Importer recognizes only the UTF-8 encoded characters. You can check on the UTF-8 encode with CSV Lint. Any chance if you are using Excel, we recommend you to use Google Sheets. Excel will miss some characters to be encoded to proper UTF-8.<br />
+Wordpress CSV Importer plugin recognizes only the UTF-8 encoded characters. You can check on the UTF-8 encode with CSV Lint. Any chance if you are using Excel, we recommend you to use Google Sheets. Excel will miss some characters to be encoded to proper UTF-8.<br />
 
 4. What are the Minimum Requirements needed to upload CSV? <br />
-Basic System Requirements need to be met to upload a CSV with bulk of records. Kindly check your System Requirements by Settings → Security and Performance on WP Ultimate CSV Importer plugin. You have to increase the system requirements values to the minimum values mentioned in the plugin. <br />
+Basic System Requirements need to be met to upload a CSV with bulk of records. Kindly check your System Requirements by Settings → Security and Performance on CSV Importer plugin settings tab. You have to increase the system requirements values to the minimum values mentioned in the plugin. <br />
 
 5. Why my featured images not getting uploaded? <br />
 The importer uploads images in the background for faster performance and it requires WP-Cron to be enabled. You can [easily configure WP-Cron](http://www.smackcoders.com/blog/enable-configure-wp-cron.html?utm_source=wp_org&utm_campaign=readme&utm_medium=faq) for smooth and speedy import. <br />
@@ -127,6 +129,22 @@ The importer supports [default WordPress Text and Text area fields](http://www.s
 For more FAQ, you can refer [here](http://www.smackcoders.com/wordpress-products-faq.html?utm_source=wp_org&utm_campaign=readme&utm_medium=faq).
 
 == Changelog ==
+= 5.3 =
+* Added: Prevent loss of Mapping data
+* Added: Custom field group plug-in support
+* Added: Maintenance mode
+* Added: Inclusion feature 
+* Updated: Exclude selection as include selection in export module
+* Fixed: User import
+* Fixed: Delimiter issue
+* Fixed: Advance Mapping issues
+* Fixed: Post status in Mapping 
+* Fixed: Featured image in Mapping 
+* Fixed: Post comment in Mapping 
+* Fixed: Export page radio button based on plug-in activation
+* Fixed: Comment Export
+* Fixed: Text changes
+
 = 5.2 =
 * Added: Advance mapping view with Drag ‘n’ Drop support.
 * Added: Ultimate member plugin support for Users Import.
@@ -447,13 +465,15 @@ For more FAQ, you can refer [here](http://www.smackcoders.com/wordpress-products
 * Added featured image import feature along with post/page/custom post.
 = 1.0.2 =
 * Bug fixed to recognize the trimmed trailing space in the CSV file
-* Added validation for the duplicate field mapping.
+* Added validation for  the duplicate field mapping.
 = 1.0.1 =
 * Added features to import multiple tags and categories with different delimiters.
 = 1.0.0 =
 * Initial release version. Tested and found works well without any issues.
 
 == Upgrade Notice ==
+= 5.3 =
+* Major improvements and fix updates, verify change log for upgrade.
 = 5.2 =
 * Upgrade now to get enhanced User Interface and support for latest version of All in one SEO. 2.3.12.1.
 = 5.1.1 =

@@ -59,6 +59,11 @@ $total_row_count = $parserObj->total_row_cont - 1;
 $get_upload_url = wp_upload_dir();
 $uploadLogURL = $get_upload_url['baseurl'] . '/smack_uci_uploads/imports/'. $eventkey . '/' . $eventkey;
 $logfilename = $uploadLogURL.".log";
+$ucisettings = get_option('sm_uci_pro_settings');
+$main_mode = isset($_POST['main_mode_config']) ? $_POST['main_mode_config'] : '';
+if($main_mode == 'on'){
+	$uci_admin->updateMaintenance('on');
+}
 ?>
 <div class="list-inline pull-right mb10 wp_ultimate_csv_importer_pro">
             <div class="col-md-6 mt10"><a href="https://goo.gl/jdPMW8" target="_blank"><?php echo esc_html__('Documentation','wp-ultimate-csv-importer');?></a></div>
@@ -71,7 +76,7 @@ $logfilename = $uploadLogURL.".log";
 <div class="col-md-12 mt40" style="text-align: center;">
 	<input type="button" class="smack-btn smack-btn-primary btn-radius" value="<?php echo esc_attr('Resume','wp-ultimate-csv-importer');?>" style="display:none;" id="continue_import" onclick="continueImport();" >
 	<input type="button" class="smack-btn smack-btn-danger btn-radius" value="<?php echo esc_attr('Pause','wp-ultimate-csv-importer');?>" id="terminate_now" onclick="terminateImport()">
-	<input type="button" class="smack-btn smack-btn-danger btn-radius" value="<?php echo esc_attr('New Import','wp-ultimate-csv-importer');?>" id="new_import" onclick="reload_to_new_import()" style="display: none;">
+	<input type="button" class="smack-btn smack-btn-danger btn-radius" value="<?php echo esc_attr('Verify import and Close','wp-ultimate-csv-importer');?>" id="new_import" onclick="reload_to_new_import()" style="display: none;">
 </div></div>
 	<div class="clearfix"></div>
 	<!-- <input type="button" class="smack-btn smack-btn-primary btn-radius import_config_btn" id="ignite_import" name="ignite_import" value="Confirm-Import" onclick="igniteImport();"> -->
@@ -121,6 +126,8 @@ $logfilename = $uploadLogURL.".log";
 	<input type="hidden" id="skipped" value="0" >
 	<input type="hidden" id="totalcount" name="totalcount" value = "<?php echo  $total_row_count;?>">
 	<input type="hidden" id="terminate_action" name="terminate_action" value="<?php echo esc_html__('continue','wp-ultimate-csv-importer');?>" />
+	<input type="hidden" name="main_mode" id="main_mode" value="<?php echo $main_mode; ?>">
+
 </form>
 </div>
 <script>

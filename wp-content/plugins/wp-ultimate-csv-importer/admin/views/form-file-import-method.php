@@ -37,9 +37,18 @@
 
 if ( ! defined( 'ABSPATH' ) )
         exit; // Exit if accessed directly
+$ucisettings = get_option('sm_uci_pro_settings');
+$main_mode = isset($ucisettings['enable_main_mode']) ? $ucisettings['enable_main_mode'] : '';
 ?>
 <div class="whole_body wp_ultimate_csv_importer_pro">
    <form class="form-horizontal" id="form_import_file" method="post" action= "<?php echo esc_url(admin_url() . 'admin.php?page=sm-uci-import&step=suggested_template');?>" enctype="multipart/form-data">
+   <div id='wp_warning_main' class = 'updated notice'>
+   <p>Supported file types .csv .zip .txt 
+   </p></div>
+
+ <?php if($main_mode == 'on') { ?>
+      <div id='wp_warning_main' style = 'margin-top: 10px;font-size: 15px;color: red;' class = 'error' > Maintenance mode is enabled. <a style="cursor: pointer;" onclick="saveoptions('main_check_import_off', 'off')"> Disable </a> </div>
+<?php } ?>
       <div id='wp_warning' style = 'display:none;' class = 'error'></div>
       <input type='hidden' id="siteurl" value="<?php echo site_url(); ?>" />
       <!-- Code Added For POP UP  Starts here -->

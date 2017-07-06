@@ -52,7 +52,47 @@ if(is_array( $exportAs )) {
 	$exportAs = $exportAs[$module];
 }
 $exportType = 'csv';
-#print('Module: ' . $module . ' || Optional Type: ' . $exportAs . '<br>');
+$active_plugins = get_option('active_plugins');
+if( in_array( "woocommerce/woocommerce.php", $active_plugins) ) {
+	$woo_dis = "";
+	$woo_text = "";
+}
+else{
+	$woo_dis = "disabled='disabled'";
+	$woo_text = "title='WooCommerce is not activated'";
+}
+if( in_array( "eshop/eshop.php", $active_plugins) ) {
+	$eshop_dis = "";
+	$eshop_text = "";
+}
+else{
+	$eshop_dis = "disabled='disabled'";
+	$eshop_text = "title='Eshop is not activated'";
+}
+if( in_array( "wp-e-commerce/wp-shopping-cart.php", $active_plugins) ) {
+	$wpcom_dis = "";
+	$wpcom_text = "";
+}
+else{
+	$wpcom_dis = "disabled='disabled'";
+	$wpcom_text = "title='Wp-Commerce is not activated'";
+}
+if( in_array( "wordpress-ecommerce/marketpress.php", $active_plugins) || in_array( "marketpress/marketpress.php", $active_plugins) ) {
+	$market_dis = "";
+	$market_text = "";
+}
+else{
+	$market_dis = "disabled='disabled'";
+	$market_text = "title='MarketPress is not activated'";
+}
+if( in_array("wp-customer-reviews/wp-customer-reviews-3.php", $active_plugins) || in_array("wp-customer-reviews/wp-customer-reviews.php", $active_plugins) ) {
+	$cusre_dis = "";
+	$cusre_text = "";
+}
+else{
+	$cusre_dis = "disabled='disabled'";
+	$cusre_text = "title='CustomerReviews is not activated'";
+}
 ?>
 <div id='wp_warning' style = 'display:none;' class = 'error'></div>
 <?php if(!isset($_REQUEST['exportType'])) { ?>
@@ -69,11 +109,11 @@ $exportType = 'csv';
 						<th colspan='2'><label class='h-exportmodule csv-importer-heading'><h3 id="innertitle"><?php echo esc_html__('Select your module to export the data','wp-ultimate-csv-importer')?> </h3></label></th>
 						<tr>
 							<td class='exportdatatype'><label> <input type="radio" name="export_type" value="Posts"><span id="align"><?php echo esc_html__('Post','wp-ultimate-csv-importer'); ?></span> </label></td>
-							<td class='exportdatatype'><label> <input type="radio" name="export_type" value="eShop"><span id="align"><?php echo esc_html__('Eshop','wp-ultimate-csv-importer'); ?></span> </label></td>
+							<td class='exportdatatype' <?php echo $eshop_text; ?> ><label> <input type="radio" name="export_type" <?php echo $eshop_dis; ?> value="eShop"><span id="align"><?php echo esc_html__('Eshop','wp-ultimate-csv-importer'); ?></span> </label></td>
 						</tr>
 						<tr>
 							<td class='exportdatatype'><label> <input type="radio" name="export_type" value="Pages"><span id="align"> <?php echo esc_html__('Page','wp-ultimate-csv-importer'); ?></span> </label></td>
-							<td class='exportdatatype'><label> <input type="radio" name="export_type" value="WPeCommerce"><span id="align"> <?php echo esc_html__('Wp-Commerce','wp-ultimate-csv-importer'); ?></span></label></td>
+							<td class='exportdatatype' <?php echo $wpcom_text; ?> ><label> <input type="radio" name="export_type" <?php echo $wpcom_dis; ?> value="WPeCommerce"><span id="align"> <?php echo esc_html__('Wp-Commerce','wp-ultimate-csv-importer'); ?></span></label></td>
 						</tr>
 						<tr>
 							<td class='exportdatatype'  style="">
@@ -91,15 +131,15 @@ $exportType = 'csv';
 									?>
 								</select>
 							</td>
-							<td class='exportdatatype'><label><input type="radio" name="export_type" value="WooCommerce"><span id="align"> <?php echo esc_html__('Woo-Commerce','wp-ultimate-csv-importer'); ?></span></label></td>
+							<td class='exportdatatype' <?php echo $woo_text; ?> ><label><input type="radio" name="export_type" <?php echo $woo_dis; ?> value="WooCommerce"><span id="align"> <?php echo esc_html__('Woo-Commerce','wp-ultimate-csv-importer'); ?></span></label></td>
 						</tr>
 						<tr>
 							<td class='exportdatatype'><label><input type="radio" name="export_type" value="Categories"><span id="align"> <?php echo esc_html__('Category','wp-ultimate-csv-importer'); ?></span></label></td>
-							<td class='exportdatatype'><label><input type="radio" name="export_type" value="MarketPress"><span id="align"> <?php echo esc_html__('Marketpress','wp-ultimate-csv-importer'); ?></span></label></td>
+							<td class='exportdatatype' <?php echo $market_text; ?> ><label><input type="radio" name="export_type" <?php echo $market_dis; ?> value="MarketPress"><span id="align"> <?php echo esc_html__('Marketpress','wp-ultimate-csv-importer'); ?></span></label></td>
 						</tr>
 						<tr>
 							<td class='exportdatatype'><label><input type="radio" id="tags_id" name="export_type" value="Tags"><span id="align"> <?php echo esc_html__('Tags','wp-ultimate-csv-importer'); ?> </label></span></td>
-							<td class='exportdatatype'><label> <input type="radio" name="export_type" value="CustomerReviews"><span id="align"> <?php echo esc_html__('Customer Reviews','wp-ultimate-csv-importer'); ?></span></label></td>
+							<td class='exportdatatype' <?php echo $cusre_text; ?> ><label> <input type="radio" name="export_type" <?php echo $cusre_dis; ?> value="CustomerReviews"><span id="align"> <?php echo esc_html__('Customer Reviews','wp-ultimate-csv-importer'); ?></span></label></td>
 						</tr>
 						<tr>
 							<td class='exportdatatype' style="">
@@ -225,7 +265,7 @@ if($exportType) :
 				</p>
 			<?php } ?>
 			<p>
-				<label class="media_styles"><input type='checkbox' name='getdatabasedonexclusions' id='getdatabasedonexclusions' value='getdatabasedonexclusions' onclick='addexportfilter(this.id);' /><span id="align"> <?php echo esc_html__('Export data based on specific exclusions','wp-ultimate-csv-importer');?> </span></label>
+				<label class="media_styles"><input type='checkbox' name='getdatabasedonexclusions' id='getdatabasedonexclusions' value='getdatabasedonexclusions' onclick='addexportfilter(this.id);' /><span id="align"> <?php echo esc_html__('Export data based on specific inclusions','wp-ultimate-csv-importer');?> </span></label>
 			<div id="exclusiongrouplist" style="display:none;">
 				<?php
 				$shortLabel = $shortName = '';
