@@ -56,7 +56,10 @@ function so_validate_add_cart_item( $passed, $product_id, $quantity, $variation_
     // do your validation, if not met switch $passed to false
     if (empty($_POST['delivery_calender_lite']) ){
         $passed = false;
-        wc_add_notice( __( 'Please select a Delivery Date', 'textdomain' ), 'error' );
+        wc_add_notice( __( 'Please select a Delivery Date', 'textdomain' ), 'error' ); //TODO Quitar la notificacion de wc y poner una decente en javascript (con hooks).
+        print('<script type="text/javascript"> 
+            alert("Please Select a Delivery Date");
+            </script>');
     }
     return $passed;
 }
