@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPLC-SN\n"
+"POT-Creation-Date: 2015-10-19 09:45+0200\n"
+"PO-Revision-Date: 2015-10-19 09:45+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress38\\wp-content\\plugins\\wp-"
+"live-chat-support-slack-notifications\n"
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:95
+#, php-format
+msgid ""
+"Incoming chat from *%s* (Email: *%s*).\n"
+"<%s|Click here> to answer the chat."
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:129
+#, php-format
+msgid ""
+"The following chat was not answered:\n"
+"Name: *%s* \n"
+"Email: *%s*\n"
+"\n"
+"<%s|Click here> to view more information."
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:165
+#, php-format
+msgid ""
+"New live chat offline message received from %s\n"
+"Name: *%s* \n"
+"Email: *%s*\n"
+"Message: *%s*\n"
+"\n"
+"<%s|Click here> to view more information."
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:194
+#, php-format
+msgid ""
+"<strong><a href=\"%1$s\" title=\"Update WP Live Chat Support\">Please update "
+"your version of WP Live Chat Support</strong></a> for the <strong>WP Live "
+"Chat Support - Slack Notifications</strong> add-on to work."
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:218
+#, php-format
+msgid ""
+"<strong><a href=\"%1$s\" title=\"Install WP Live Chat Support\">WP Live Chat "
+"Support</strong></a> is required for the <strong>WP Live Chat Support - "
+"Slack Notifications</strong> add-on to work. Please install and activate it."
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:304
+msgid "Slack Notification Settings"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:305
+#, php-format
+msgid ""
+"Please ensure you have enabled <a href=\"%1$s\" target=\"_BLANK\">Incoming "
+"Webhooks</a> for this to work."
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:310
+msgid "Notify me of new chats:"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:319
+msgid "Notify me of missed chats:"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:329
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:338
+msgid "Notify me of offline messages:"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:341
+#, php-format
+msgid "<a href=\"%1$s\" target=\"_BLANK\">Pro version only</a>"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:350
+msgid "Slack Channel"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:355
+msgid "(excluding the \"#\")"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:360
+msgid "Slack WebHook"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:365
+#, php-format
+msgid "<a href=\"%1$s\" target=\"_BLANK\">Where do I find this?</a>"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:373
+msgid "Slack Icon"
+msgstr ""
+
+#: C:\wamp\www\wordpress38\wp-content\plugins\wp-live-chat-support-slack-notifications/wp-live-chat-support-slack-notifications.php:378
+#, php-format
+msgid ""
+"<a href=\"%1$s\" target=\"_BLANK\">Click here for a complete list of "
+"available icons.</a>"
+msgstr ""
