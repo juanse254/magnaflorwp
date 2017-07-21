@@ -64,3 +64,14 @@ function so_validate_add_cart_item( $passed, $product_id, $quantity, $variation_
     return $passed;
 }
 add_filter( 'woocommerce_add_to_cart_validation', 'so_validate_add_cart_item', 10, 5 );
+
+//Add disscount for first time visitors
+
+function popup_first_time(){
+    wp_enqueue_style( 'jqueryuicss', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css', array(), '1.12.1' );
+    wp_enqueue_script( 'jqueryui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), 3.3, true);
+    wp_enqueue_script('popup', '/wp-content/themes/flatsome-child/js/popup.js', array(), '');
+}
+
+add_action('wp_enqueue_scripts', 'popup_first_time');
+
