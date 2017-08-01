@@ -79,7 +79,7 @@ add_action('wp_enqueue_scripts', 'popup_first_time');
 
 function add_async_attribute($tag, $handle) {
     // agregar los handles de los scripts en el array
-    $scripts_to_async = array('jqueryui', 'popup','jquery');
+    $scripts_to_async = array('jqueryui', 'popup','jquery', 'jquery-migrate');
 
     foreach($scripts_to_async as $async_script) {
         if ($async_script === $handle) {
