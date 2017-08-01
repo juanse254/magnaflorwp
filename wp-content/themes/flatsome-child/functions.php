@@ -69,9 +69,23 @@ add_filter( 'woocommerce_add_to_cart_validation', 'so_validate_add_cart_item', 1
 
 function popup_first_time(){
     wp_enqueue_style( 'jqueryuicss', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.min.css', array(), '1.11.3' );
-    wp_enqueue_script( 'jqueryui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js#asyncload', array('jquery'), 3.3, true);
+    wp_enqueue_script( 'jqueryui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), 3.3, true);
     wp_enqueue_script('popup', '/wp-content/themes/flatsome-child/js/popup.js', array(), '');
 }
 
 add_action('wp_enqueue_scripts', 'popup_first_time');
 
+// async javascript loads
+
+function add_async_attribute($tag, $handle) {
+    // agregar los handles de los scripts en el array
+    $scripts_to_async = array('jqueryui', 'popup');
+
+    foreach($scripts_to_async as $async_script) {
+        if ($async_script === $handle) {
+            return str_replace(' src', ' async defer src', $tag);
+        }
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
