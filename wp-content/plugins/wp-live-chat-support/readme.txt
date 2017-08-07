@@ -206,6 +206,9 @@ If the live chat box still does not appear on your website, please go through th
 
 == Upgrade Notice ==
 
+= 7.1.05 = 
+It is highly recommended that you upgrade to WP Live Chat Support version 7.1.05 for security reasons.
+
 = 7.1.03 = 
 It is highly recommended that you upgrade to WP Live Chat Support version 7.1.04 for security reasons.
 
@@ -222,6 +225,9 @@ It is highly recommended that you upgrade to WP Live Chat Support version 6.0.02
 It is highly recommended that you upgrade to WP Live Chat Support version 4.4.0 for security reasons.
 
 == Changelog ==
+
+= 7.1.05 - 2017-08-01 - High Priority =
+* XSS Vulenrability Fixed - Thank you Omaid Faizyar
 
 = 7.1.04 - 2017-07-10 - Medium Priority =
 * Fixed a fatal error when trying to delete chat history

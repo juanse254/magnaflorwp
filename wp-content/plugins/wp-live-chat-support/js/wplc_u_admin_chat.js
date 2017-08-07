@@ -135,7 +135,7 @@ function wplc_loop_response_handler(response){
                 wplc_run = false;
              } else {
                 jQuery(".end_chat_div").empty();
-                jQuery('#admin_chat_box').empty().append("<h2>This chat has already been answered. Please close the chat window</h2>");
+                jQuery('#admin_chat_box').empty().append("<h2>1This chat has already been answered. Please close the chat window</h2>");
                 wplc_run = false;
             }
         }

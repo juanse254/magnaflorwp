@@ -34,11 +34,13 @@ function Popup() {
     var h2Header2 = document.createElement('p');
     h2Header2.appendChild(document.createTextNode('And 3 day free shipping on all orders!'));
     var imgHeader = document.createElement('img');
-    imgHeader.setAttribute("src","/wp-content/uploads/2017/07/png_model_the_girl_and_flower_by__tothituongvy2512_by_tothituongvy25122003-dbgvdqu.png");
-
-    headerDiv.appendChild(h2Header);
-    headerDiv.appendChild(h1Header);
-    headerDiv.appendChild(h2Header2);
+    imgHeader.setAttribute("src","/wp-content/uploads/2017/07/imgpsh_fullsize-1.png");
+    imgHeader.setAttribute("class","img-responsive");
+    imgHeader.setAttribute("alt","Promo 15% off");
+    imgHeader.setAttribute("style","margin: auto; max-height:300px");
+   // headerDiv.appendChild(h2Header);
+   // headerDiv.appendChild(h1Header);
+   // headerDiv.appendChild(h2Header2);
     headerDiv.appendChild(imgHeader);
 
     var bodyDiv = document.createElement('div'); //body
@@ -76,6 +78,7 @@ function Popup() {
             register_button.setAttribute("class", "woocomerce-FormRow form-row");
             var inputregister1 = document.createElement('input');
                 inputregister1.setAttribute("type","submit");
+		inputregister1.setAttribute("id","register_first_time");
                 inputregister1.setAttribute("class","woocommerce-Button button");
                 inputregister1.setAttribute("name","register");
                 inputregister1.setAttribute("value","Register");

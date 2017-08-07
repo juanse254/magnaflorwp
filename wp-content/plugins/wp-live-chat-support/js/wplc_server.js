@@ -672,6 +672,8 @@ function wplc_push_message_to_chatbox(the_message, aoru, next) {
 	        }
 
 	        if(message_content !== ""){
+	        	message_content = wplc_sanitize_attributes(message_content);
+
 	            var concatenated_message = "<span class='" + message_class + "'>";
 	            if (typeof wplc_show_chat_detail !== "undefined") {
 	                if (typeof wplc_show_chat_detail.avatar !== "undefined" && wplc_show_chat_detail.avatar === "1") {
@@ -705,6 +707,17 @@ function wplc_push_message_to_chatbox(the_message, aoru, next) {
 	    }  
 	}
     next();
+}
+
+function wplc_sanitize_attributes( str ){
+	var wplc_allowed_attributes = "onload,onclick,alert,onerror,dalert";
+	var allowed_attr = wplc_allowed_attributes.split(",");
+	for( i = 0; i < allowed_attr.length; i++ ){
+		str = str.replace(allowed_attr[i], '');
+	}
+
+	return str;
+
 }
 
 jQuery(function(){
