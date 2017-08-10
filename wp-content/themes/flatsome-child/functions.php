@@ -89,3 +89,12 @@ function add_async_attribute($tag, $handle) {
     return $tag;
 }
 add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
+
+//ADD FAVICONS
+
+add_action('wp_head', 'favicons_add');
+
+function favicons_add(){
+
+}

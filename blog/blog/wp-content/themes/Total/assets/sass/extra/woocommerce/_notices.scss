@@ -1,0 +1,43 @@
+/*------------------------------------------------------------------
+[Notices]
+-------------------------------------------------------------------*/
+.woocommerce {
+
+    .woocommerce-error,
+    .woocommerce-info,
+    .woocommerce-message {
+        background-color: #f7f7f7;
+        border-left: 1px solid #e4e4e4;
+        border-right: 1px solid #e4e4e4;
+        border-bottom: 1px solid #e4e4e4;
+        padding: 15px 15px 15px 40px !important;
+        color: #777;
+
+        &:before {
+            font-family: "FontAwesome";
+            top: 15px;
+            left: 15px;
+        }
+
+        .button {
+            padding: 0 1em;
+            height: 30px;
+            line-height: 30px;
+        }
+
+    }
+    
+    // Change icons
+    .woocommerce-error:before {
+        content: "\f071"
+    }
+
+    .woocommerce-message:before {
+        content: "\f00c"
+    }
+
+    .woocommerce-info:before {
+        content: "\f05a"
+    }
+
+}

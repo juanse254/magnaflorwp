@@ -95,9 +95,9 @@ function Popup() {
             var div_inside_social = document.createElement('div');
                 div_inside_social.setAttribute("class", "text-center social-login");
                 var facebook_atrr = document.createElement('a');
-                    facebook_atrr.setAttribute("href","http://magnaflorwp.ml/wp-login.php?loginFacebook=1&redirect=http://magnaflorwp.ml/"); //TODO actualizar url
+                    facebook_atrr.setAttribute("href","http://magnaflor.com/wp-login.php?loginFacebook=1&redirect=http://magnaflor.com/"); //TODO actualizar url
                     facebook_atrr.setAttribute("class", "button social-button large facebook circle");
-                    facebook_atrr.setAttribute("onclick", "window.location = 'http://magnaflorwp.ml/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;");
+                    facebook_atrr.setAttribute("onclick", "window.location = 'http://magnaflor.com/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;");
                     facebook_atrr.setAttribute("style","margin-bottom: 5px");
                         var facebook_icon = document.createElement('i');
                             facebook_icon.setAttribute("class", "icon-facebook");
@@ -106,9 +106,9 @@ function Popup() {
                     facebook_atrr.appendChild(facebook_icon);
                     facebook_atrr.appendChild(facebook_span);
                 var google_atrr = document.createElement('a');
-                    google_atrr.setAttribute("href","http://magnaflorwp.ml/wp-login.php?loginGoogle=1&redirect=http://magnaflorwp.ml/"); //TODO actualizar url
+                    google_atrr.setAttribute("href","http://magnaflor.com/wp-login.php?loginGoogle=1&redirect=http://magnaflor.com/"); //TODO actualizar url
                     google_atrr.setAttribute("class", "button social-button large google-plus circle");
-                    google_atrr.setAttribute("onclick", "window.location = 'http://magnaflorwp.ml/wp-login.php?loginGoogle=1&redirect='+window.location.href; return false;");
+                    google_atrr.setAttribute("onclick", "window.location = 'http://magnaflor.com/wp-login.php?loginGoogle=1&redirect='+window.location.href; return false;");
                         var google_icon = document.createElement('i');
                             google_icon.setAttribute("class", "icon-google-plus");
                         var google_span = document.createElement('span');

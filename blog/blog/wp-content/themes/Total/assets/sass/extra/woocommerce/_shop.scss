@@ -1,0 +1,71 @@
+/*------------------------------------------------------------------
+[Store]
+-------------------------------------------------------------------*/
+.woocommerce .products ul,
+.woocommerce ul.products {
+    margin: 0 -10px;
+}
+
+/* Shop > ordering & sorting */
+.woocommerce .woocommerce-ordering,
+.woocommerce .woocommerce-result-count {
+    margin: 0 10px 30px 0;
+}
+
+.woocommerce .woocommerce-ordering {
+    margin: 0;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.woocommerce .woocommerce-ordering select {
+    vertical-align: top;
+}
+
+.woocommerce .woocommerce-result-count {
+    display: block;
+    float: left;
+    color: $text__color-main-light;
+    font-size: 1em;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 1em;
+    border: 1px solid $borders__color;
+    margin-right: 10px;
+}
+
+.woocommerce .woocommerce-result-count span.strong {
+    color: #000;
+    font-weight: 600;
+}
+
+.woocommerce .woocommerce-ordering .orderby,
+.woocommerce .woocommerce-ordering .orderby span {
+    width: auto !important
+}
+
+/* Shop > pagination */
+.woocommerce nav.woocommerce-pagination ul {
+    display: block;
+    border: none;
+    margin: 0;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+    display: block;
+    border-right: none;
+    margin: 0 4px 4px 0;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+    padding: 0.4em 0.7em;
+    font-size: 0.923em;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    background: $background__light-gray;
+    color: #000;
+}
