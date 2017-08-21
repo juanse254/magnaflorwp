@@ -84,13 +84,13 @@ function first_order_add_fee() {
 		if ($orderNumCheck == 0 and $discountType != 'off') { // if first order by user
 			$subtotal = WC()->cart->cart_contents_total;
 			if ($discountType == 'fixed') {
-				WC()->cart->add_fee( 'Fee', -$discountValue );
+				WC()->cart->add_fee( 'First Time Discount', -$discountValue );
 			} else {
 				$discount = $discountValue/100;
-	    		WC()->cart->add_fee( 'Fee', -$subtotal*$discount );
+	    		WC()->cart->add_fee( 'First Time Discount', -$subtotal*$discount );
 			}
 		} else {
-			WC()->cart->add_fee( 'Fee', 0 );
+			WC()->cart->add_fee( 'First Time Discount', 0 );
 		}
 	}
 }
