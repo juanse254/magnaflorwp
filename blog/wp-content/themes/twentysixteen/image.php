@@ -63,7 +63,7 @@ get_header(); ?>
 						?>
 					</div><!-- .entry-content -->
 
-					<barter class="entry-barter">
+					<footer class="entry-footer">
 						<?php twentysixteen_entry_meta(); ?>
 						<?php
 							// Retrieve attachment metadata.
@@ -88,7 +88,7 @@ get_header(); ?>
 								'</span>'
 							);
 						?>
-					</barter><!-- .entry-barter -->
+					</footer><!-- .entry-footer -->
 				</article><!-- #post-## -->
 
 				<?php
@@ -109,4 +109,4 @@ get_header(); ?>
 	</div><!-- .content-area -->
 
 <?php get_sidebar(); ?>
-<?php get_barter(); ?>
+<?php get_footer(); ?>

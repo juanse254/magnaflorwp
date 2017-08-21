@@ -23,14 +23,14 @@
 
 	<?php if ( 'post' == get_post_type() ) : ?>
 
-		<barter class="entry-barter">
+		<footer class="entry-footer">
 			<?php twentyfifteen_entry_meta(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<span class="edit-link">', '</span>' ); ?>
-		</barter><!-- .entry-barter -->
+		</footer><!-- .entry-footer -->
 
 	<?php else : ?>
 
-		<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<barter class="entry-barter"><span class="edit-link">', '</span></barter><!-- .entry-barter -->' ); ?>
+		<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
 
 	<?php endif; ?>
 

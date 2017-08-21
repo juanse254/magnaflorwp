@@ -94,11 +94,11 @@ if ( ! class_exists( 'WPEX_Customizer' ) ) {
 				'callout' => array(
 					'title' => __( 'Callout', 'total' ),
 				),
-				'barter_widgets' => array(
+				'footer_widgets' => array(
 					'title' => __( 'Footer Widgets', 'total' ),
 					'is_section' => true,
 				),
-				'barter_bottom' => array(
+				'footer_bottom' => array(
 					'title' => __( 'Footer Bottom', 'total' ),
 					'is_section' => true,
 				),
@@ -252,8 +252,8 @@ if ( ! class_exists( 'WPEX_Customizer' ) ) {
 				#accordion-panel-wpex_staff > h3:before,
 				#accordion-section-wpex_testimonials > h3:before,
 				#accordion-panel-wpex_callout > h3:before,
-				#accordion-section-wpex_barter_widgets > h3:before,
-				#accordion-section-wpex_barter_bottom > h3:before,
+				#accordion-section-wpex_footer_widgets > h3:before,
+				#accordion-section-wpex_footer_bottom > h3:before,
 				#accordion-section-wpex_visual_composer > h3:before,
 				#accordion-panel-wpex_woocommerce > h3:before,
 				#accordion-section-wpex_tribe_events > h3:before,
@@ -270,8 +270,8 @@ if ( ! class_exists( 'WPEX_Customizer' ) ) {
 				#accordion-panel-wpex_staff > h3:before { content: "\<?php echo esc_attr( $staff_icon ); ?>" }
 				#accordion-section-wpex_testimonials > h3:before { content: "\<?php echo esc_attr( $testimonials_icon ); ?>" }
 				#accordion-panel-wpex_callout > h3:before { content: "\f488" }
-				#accordion-section-wpex_barter_widgets > h3:before { content: "\f209" }
-				#accordion-section-wpex_barter_bottom > h3:before { content: "\f209"; }
+				#accordion-section-wpex_footer_widgets > h3:before { content: "\f209" }
+				#accordion-section-wpex_footer_bottom > h3:before { content: "\f209"; }
 				#accordion-section-wpex_visual_composer > h3:before { content: "\f540" }
 				#accordion-panel-wpex_woocommerce > h3:before { content: "\f174" }
 				#accordion-section-wpex_tribe_events > h3:before { content: "\f145" }

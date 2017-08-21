@@ -41,9 +41,9 @@ get_header(); ?>
 
 						<div id="attachment-post-media"><?php echo wp_get_attachment_image( get_the_ID(), 'large' ); ?></div>
 						<div id="attachment-post-content" class="entry clr"><?php the_content(); ?></div>
-						<div id="attachment-post-barter">
+						<div id="attachment-post-footer">
 							<?php
-							$barter_links = array();
+							$footer_links = array();
 							$sizes = array( 'full', 'large', 'medium', 'thumbnail' );
 							if ( $sizes ) {
 								foreach ( $sizes as $size ) {
@@ -51,12 +51,12 @@ get_header(); ?>
 									if ( $image ) {
 										$dims  = $image[1] . 'x' . $image[2];
 										$name  = $size . ' (' . $dims . ')';
-										if ( ! isset( $barter_links[$dims] ) ) {
-											$barter_links[$dims] = '<a href="' . $image[0] . '" title="' . esc_attr( $name ) . '">' . esc_html( $name ) . '</a>';
+										if ( ! isset( $footer_links[$dims] ) ) {
+											$footer_links[$dims] = '<a href="' . $image[0] . '" title="' . esc_attr( $name ) . '">' . esc_html( $name ) . '</a>';
 										}
 									}
 								}
-								echo '<strong>' . esc_html__( 'Downloads', 'total' ) . '</strong>: '. implode( ' | ', $barter_links );
+								echo '<strong>' . esc_html__( 'Downloads', 'total' ) . '</strong>: '. implode( ' | ', $footer_links );
 							} ?>
 						</div>
 
@@ -66,9 +66,9 @@ get_header(); ?>
 						
 						<div id="attachment-post-content" class="entry clr"><?php the_content(); ?></div>
 
-						<div id="attachment-post-barter">
+						<div id="attachment-post-footer">
 							<?php
-							$barter_details = array();
+							$footer_details = array();
 							$meta = wp_get_attachment_metadata( $post_id ); ?>
 							<?php
 							// Display video format
@@ -107,4 +107,4 @@ get_header(); ?>
 
 	</div><!-- .container -->
 
-<?php get_barter(); ?>
+<?php get_footer(); ?>

@@ -45,8 +45,8 @@ if ( ! class_exists( 'WPEX_Typography' ) ) {
 			else {
 
 				// Load Google Font scripts
-				if ( wpex_get_mod( 'google_fonts_in_barter' ) ) {
-					add_action( 'wp_barter', array( 'WPEX_Typography', 'load_fonts' ) );
+				if ( wpex_get_mod( 'google_fonts_in_footer' ) ) {
+					add_action( 'wp_footer', array( 'WPEX_Typography', 'load_fonts' ) );
 				} else {
 					add_action( 'wp_enqueue_scripts', array( 'WPEX_Typography', 'load_fonts' ) );
 				}
@@ -170,27 +170,27 @@ if ( ! class_exists( 'WPEX_Typography' ) ) {
 					'target' => '.entry h4',
 					'margin' => true,
 				),
-				'barter_widget_title' => array(
+				'footer_widget_title' => array(
 					'label' => __( 'Footer Widget Heading', 'total' ),
-					'target' => '.barter-widget .widget-title',
-					'active_callback' => 'wpex_cac_has_barter_widgets',
+					'target' => '.footer-widget .widget-title',
+					'active_callback' => 'wpex_cac_has_footer_widgets',
 				),
 				'callout' => array(
 					'label' => __( 'Footer Callout', 'total' ),
-					'target' => '.barter-callout-content',
+					'target' => '.footer-callout-content',
 					'exclude' => array( 'font-color' ),
 				),
 				'copyright' => array(
 					'label' => __( 'Footer Bottom Text', 'total' ),
 					'target' => '#copyright',
 					'exclude' => array( 'font-color' ),
-					'active_callback' => 'wpex_cac_has_barter_bottom',
+					'active_callback' => 'wpex_cac_has_footer_bottom',
 				),
-				'barter_menu' => array(
+				'footer_menu' => array(
 					'label' => __( 'Footer Bottom Menu', 'total' ),
-					'target' => '#barter-bottom-menu',
+					'target' => '#footer-bottom-menu',
 					'exclude' => array( 'font-color' ),
-					'active_callback' => 'wpex_cac_has_barter_bottom',
+					'active_callback' => 'wpex_cac_has_footer_bottom',
 				),
 			) );
 
@@ -266,16 +266,16 @@ if ( ! class_exists( 'WPEX_Typography' ) ) {
 			// Font Smoothing
 			if ( ! wpex_disable_google_services() ) {
 
-				// Load fonts in barter
-				$wp_customize->add_setting( 'google_fonts_in_barter', array(
+				// Load fonts in footer
+				$wp_customize->add_setting( 'google_fonts_in_footer', array(
 					'type' => 'theme_mod',
 					'sanitize_callback' => false,
 				) );
 
-				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_fonts_in_barter', array(
+				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_fonts_in_footer', array(
 					'label' => __( 'Load Fonts After The Body Tag', 'total' ),
 					'section' => 'wpex_typography_general',
-					'settings' => 'google_fonts_in_barter',
+					'settings' => 'google_fonts_in_footer',
 					'priority' => 1,
 					'type' => 'checkbox',
 				) ) );

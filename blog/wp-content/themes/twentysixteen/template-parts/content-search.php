@@ -19,7 +19,7 @@
 
 	<?php if ( 'post' === get_post_type() ) : ?>
 
-		<barter class="entry-barter">
+		<footer class="entry-footer">
 			<?php twentysixteen_entry_meta(); ?>
 			<?php
 				edit_post_link(
@@ -32,7 +32,7 @@
 					'</span>'
 				);
 			?>
-		</barter><!-- .entry-barter -->
+		</footer><!-- .entry-footer -->
 
 	<?php else : ?>
 
@@ -43,8 +43,8 @@
 					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
 					get_the_title()
 				),
-				'<barter class="entry-barter"><span class="edit-link">',
-				'</span></barter><!-- .entry-barter -->'
+				'<footer class="entry-footer"><span class="edit-link">',
+				'</span></footer><!-- .entry-footer -->'
 			);
 		?>
 

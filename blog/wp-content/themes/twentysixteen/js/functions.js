@@ -144,7 +144,7 @@
 			var element              = $( this ),
 				elementPos           = element.offset(),
 				elementPosTop        = elementPos.top,
-				entryFooter          = element.closest( 'article' ).find( '.entry-barter' ),
+				entryFooter          = element.closest( 'article' ).find( '.entry-footer' ),
 				entryFooterPos       = entryFooter.offset(),
 				entryFooterPosBottom = entryFooterPos.top + ( entryFooter.height() + 28 ),
 				caption              = element.closest( 'figure' ),

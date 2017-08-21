@@ -73,7 +73,7 @@ aside,
 details,
 figcaption,
 figure,
-barter,
+footer,
 header,
 main,
 menu,
@@ -761,7 +761,7 @@ a:active {
 .comment-content a,
 .pingback .comment-body > a,
 .textwidget a,
-.entry-barter a:hover,
+.entry-footer a:hover,
 .site-info a:hover {
 	box-shadow: 0 1px 0 0 currentColor;
 }
@@ -805,7 +805,7 @@ a:active {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 }
 
-.site-barter .main-navigation {
+.site-footer .main-navigation {
 	margin-bottom: 1.75em;
 }
 
@@ -906,7 +906,7 @@ a:active {
 	margin-top: 1.75em;
 }
 
-.site-barter .social-navigation {
+.site-footer .social-navigation {
 	margin-bottom: 1.75em;
 }
 
@@ -1685,7 +1685,7 @@ blockquote:after,
 .entry-header,
 .entry-summary,
 .entry-content,
-.entry-barter,
+.entry-footer,
 .page-content {
 	margin-right: 7.6923%;
 	margin-left: 7.6923%;
@@ -1975,7 +1975,7 @@ body:not(.search-results) .entry-summary > :last-child,
 	white-space: nowrap;
 }
 
-.entry-barter {
+.entry-footer {
 	color: #686868;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 13px;
@@ -1984,27 +1984,27 @@ body:not(.search-results) .entry-summary > :last-child,
 	margin-top: 2.1538461538em;
 }
 
-.entry-barter:empty {
+.entry-footer:empty {
 	margin: 0;
 }
 
-.entry-barter a {
+.entry-footer a {
 	color: #686868;
 }
 
-.entry-barter a:hover,
-.entry-barter a:focus {
+.entry-footer a:hover,
+.entry-footer a:focus {
 	color: #007acc;
 }
 
-.entry-barter > span:not(:last-child):after {
+.entry-footer > span:not(:last-child):after {
 	content: "\002f";
 	display: inline-block;
 	opacity: 0.7;
 	padding: 0 0.538461538em;
 }
 
-.entry-barter .avatar {
+.entry-footer .avatar {
 	height: 21px;
 	margin: -0.1538461538em 0.5384615385em 0 0;
 	width: 21px;
@@ -2400,7 +2400,7 @@ body.search-no-results .page-header {
  * 11.6 - Footer
  */
 
-.site-barter {
+.site-footer {
 	padding: 0 7.6923% 1.75em;
 }
 
@@ -2420,13 +2420,13 @@ body.search-no-results .page-header {
 	color: #007acc;
 }
 
-.site-barter .site-title {
+.site-footer .site-title {
 	font-family: inherit;
 	font-size: inherit;
 	font-weight: 400;
 }
 
-.site-barter .site-title:after {
+.site-footer .site-title:after {
 	content: "\002f";
 	display: inline-block;
 	font-family: Montserrat, sans-serif;
@@ -2836,7 +2836,7 @@ p > video {
 	.post-thumbnail,
 	.entry-content,
 	.entry-summary,
-	.entry-barter,
+	.entry-footer,
 	.comments-area,
 	.image-navigation,
 	.post-navigation,
@@ -3099,7 +3099,7 @@ p > video {
 	.main-navigation ul .dropdown-toggle.toggled-on,
 	.menu-toggle,
 	.site-header .social-navigation,
-	.site-barter .main-navigation {
+	.site-footer .main-navigation {
 		display: none;
 	}
 
@@ -3117,7 +3117,7 @@ p > video {
 	.post-thumbnail,
 	.entry-content,
 	.entry-summary,
-	.entry-barter,
+	.entry-footer,
 	.comments-area,
 	.image-navigation,
 	.post-navigation,
@@ -3337,7 +3337,7 @@ p > video {
 		margin-right: 0;
 	}
 
-	.site-barter {
+	.site-footer {
 		-webkit-align-items: center;
 		-ms-flex-align: center;
 		align-items: center;
@@ -3350,7 +3350,7 @@ p > video {
 		padding: 0 4.5455% 3.5em;
 	}
 
-	.site-barter .social-navigation {
+	.site-footer .social-navigation {
 		margin: 0;
 		-webkit-order: 2;
 		-ms-flex-order: 2;
@@ -3373,7 +3373,7 @@ p > video {
 	.no-sidebar .entry-header,
 	.no-sidebar .entry-content,
 	.no-sidebar .entry-summary,
-	.no-sidebar .entry-barter,
+	.no-sidebar .entry-footer,
 	.no-sidebar .comments-area,
 	.no-sidebar .image-navigation,
 	.no-sidebar .post-navigation,
@@ -3568,13 +3568,13 @@ p > video {
 		max-width: 100%;
 	}
 
-	body:not(.search-results) article:not(.type-page) .entry-barter {
+	body:not(.search-results) article:not(.type-page) .entry-footer {
 		float: left;
 		margin-top: 0.1538461538em;
 		width: 21.42857143%;
 	}
 
-	body:not(.search-results) article:not(.type-page) .entry-barter > span:not(:last-child):after {
+	body:not(.search-results) article:not(.type-page) .entry-footer > span:not(:last-child):after {
 		display: none;
 	}
 
@@ -3586,16 +3586,16 @@ p > video {
 	body:not(.search-results) .tags-links,
 	body:not(.search-results) article:not(.sticky) .posted-on,
 	body:not(.search-results) article:not(.type-page) .comments-link,
-	body:not(.search-results) article:not(.type-page) .entry-barter .edit-link {
+	body:not(.search-results) article:not(.type-page) .entry-footer .edit-link {
 		display: block;
 		margin-bottom: 0.5384615385em;
 	}
 
-	body:not(.search-results) article:not(.type-page) .entry-barter > span:last-child {
+	body:not(.search-results) article:not(.type-page) .entry-footer > span:last-child {
 		margin-bottom: 0;
 	}
 
-	body:not(.search-results) article:not(.type-page) .entry-barter .avatar {
+	body:not(.search-results) article:not(.type-page) .entry-footer .avatar {
 		display: block;
 		height: auto;
 		margin: 0 0 0.5384615385em;
@@ -3609,7 +3609,7 @@ p > video {
 		width: 50.00000001%;
 	}
 
-	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-barter {
+	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer {
 		margin-right: -100%;
 		margin-left: 15%;
 		width: 15%;
@@ -3836,7 +3836,7 @@ p > video {
 
 	.site-description,
 	.author-bio,
-	.entry-barter,
+	.entry-footer,
 	.sticky-post,
 	.taxonomy-description,
 	.entry-caption,
@@ -3874,8 +3874,8 @@ p > video {
 	body:not(.search-results) .entry-summary,
 	body:not(.search-results) .entry-summary blockquote,
 	.author-bio,
-	.entry-barter,
-	.entry-barter a,
+	.entry-footer,
+	.entry-footer a,
 	.sticky-post,
 	.taxonomy-description,
 	.entry-caption,
@@ -3944,7 +3944,7 @@ p > video {
 	}
 
 	.entry-header,
-	.entry-barter,
+	.entry-footer,
 	.page-header,
 	.page-content,
 	.entry-content,
@@ -3972,7 +3972,7 @@ p > video {
 		margin-top: -1.473684211em;
 	}
 
-	.site-barter,
+	.site-footer,
 	.widecolumn {
 		padding: 0;
 	}

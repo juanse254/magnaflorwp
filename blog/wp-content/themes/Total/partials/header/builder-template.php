@@ -36,7 +36,7 @@
 
 	<?php wpex_hook_header_after(); ?>
 
-<?php wp_barter(); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

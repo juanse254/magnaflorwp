@@ -91,7 +91,7 @@ class WP_Import extends WP_Importer {
 				break;
 		}
 
-		$this->barter();
+		$this->footer();
 	}
 
 	/**
@@ -131,7 +131,7 @@ class WP_Import extends WP_Importer {
 		if ( ! is_file($file) ) {
 			echo '<p><strong>' . __( 'Sorry, there has been an error.', 'wordpress-importer' ) . '</strong><br />';
 			echo __( 'The file does not exist, please try again.', 'wordpress-importer' ) . '</p>';
-			$this->barter();
+			$this->footer();
 			die();
 		}
 
@@ -140,7 +140,7 @@ class WP_Import extends WP_Importer {
 		if ( is_wp_error( $import_data ) ) {
 			echo '<p><strong>' . __( 'Sorry, there has been an error.', 'wordpress-importer' ) . '</strong><br />';
 			echo esc_html( $import_data->get_error_message() ) . '</p>';
-			$this->barter();
+			$this->footer();
 			die();
 		}
 
@@ -1129,7 +1129,7 @@ class WP_Import extends WP_Importer {
 	}
 
 	// Close div.wrap
-	function barter() {
+	function footer() {
 		echo '</div>';
 	}
 

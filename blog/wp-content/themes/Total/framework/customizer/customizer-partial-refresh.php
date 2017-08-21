@@ -160,7 +160,7 @@ $wp_customize->selective_refresh->add_partial( 'header_aside', array(
 
 // Callout
 $wp_customize->selective_refresh->add_partial( 'callout_text', array(
-	'selector'            => '#barter-callout-wrap',
+	'selector'            => '#footer-callout-wrap',
 	'settings'            => array(
 		'callout',
 		'callout_text',
@@ -186,19 +186,19 @@ $wp_customize->selective_refresh->add_partial( 'callout_text', array(
 		}
 
 		// Get callout content
-		wpex_get_template_part( 'barter_callout' );
+		wpex_get_template_part( 'footer_callout' );
 
 	},
 ) );
 
 // Footer Bottom
-$wp_customize->selective_refresh->add_partial( 'barter_bottom', array(
-	'selector'            => '#barter-bottom',
-	'settings'            => array( 'barter_bottom', 'bottom_barter_text_align', 'barter_copyright_text' ),
-	'primarySetting'      => 'barter_bottom',
+$wp_customize->selective_refresh->add_partial( 'footer_bottom', array(
+	'selector'            => '#footer-bottom',
+	'settings'            => array( 'footer_bottom', 'bottom_footer_text_align', 'footer_copyright_text' ),
+	'primarySetting'      => 'footer_bottom',
 	'container_inclusive' => true,
 	'render_callback'     => function() {
-		wpex_get_template_part( 'barter_bottom' );
+		wpex_get_template_part( 'footer_bottom' );
 	},
 ) );
 

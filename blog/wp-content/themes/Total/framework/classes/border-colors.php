@@ -72,7 +72,7 @@ if ( ! class_exists( 'WPEX_Theme_Border_Color' ) ) {
 				 #main .widget_product_categories li:first-child,
 				 #main .widget_layered_nav li:first-child,
 				 #main .widget-recent-posts-icons li:first-child,
-				 #main .site-barter .widget_nav_menu li:first-child',
+				 #main .site-footer .widget_nav_menu li:first-child',
 
 				'#main .wpex-widget-recent-posts-li,
 				 #main .widget_categories li,
@@ -82,7 +82,7 @@ if ( ! class_exists( 'WPEX_Theme_Border_Color' ) ) {
 				 #main .widget_product_categories li,
 				 #main .widget_layered_nav li,
 				 #main .widget-recent-posts-icons li,
-				 #main .site-barter .widget_nav_menu li',
+				 #main .site-footer .widget_nav_menu li',
 
 				'.modern-menu-widget',
 				'.modern-menu-widget li',

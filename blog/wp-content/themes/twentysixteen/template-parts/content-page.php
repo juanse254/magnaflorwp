@@ -37,8 +37,8 @@
 				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
 				get_the_title()
 			),
-			'<barter class="entry-barter"><span class="edit-link">',
-			'</span></barter><!-- .entry-barter -->'
+			'<footer class="entry-footer"><span class="edit-link">',
+			'</span></footer><!-- .entry-footer -->'
 		);
 	?>
 

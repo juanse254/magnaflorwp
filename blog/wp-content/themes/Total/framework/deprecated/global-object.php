@@ -141,12 +141,12 @@ class WPEX_Global_Theme_Object {
 	}
 
 	/**
-	 * Checks if barter builder is enabled
+	 * Checks if footer builder is enabled
 	 *
 	 * @since 3.0.0
 	 */
-	private function barter_builder() {
-		return wpex_barter_builder_id();
+	private function footer_builder() {
+		return wpex_footer_builder_id();
 	}
 
 	/**
@@ -533,38 +533,38 @@ class WPEX_Global_Theme_Object {
 	}
 
 	/**
-	 * Checks if the barter is enabled
+	 * Checks if the footer is enabled
 	 *
 	 * @since 3.0.0
 	 */
-	private function has_barter() {
-		return wpex_has_barter();
+	private function has_footer() {
+		return wpex_has_footer();
 	}
 
 	/**
-	 * Checks if barter widgets are enabled
+	 * Checks if footer widgets are enabled
 	 *
 	 * @since 3.0.0
 	 */
-	private function has_barter_widgets() {
-		return wpex_barter_has_widgets();
+	private function has_footer_widgets() {
+		return wpex_footer_has_widgets();
 	}
 
 	/**
-	 * Checks if barter widgets are enabled
+	 * Checks if footer widgets are enabled
 	 *
 	 * @since 3.0.0
 	 */
-	private function has_barter_reveal() {
-		return wpex_barter_has_reveal();
+	private function has_footer_reveal() {
+		return wpex_footer_has_reveal();
 	}
 
 	/**
-	 * Checks if barter callout is enabled
+	 * Checks if footer callout is enabled
 	 *
 	 * @since 3.0.0
 	 */
-	private function has_barter_callout() {
+	private function has_footer_callout() {
 		return wpex_has_callout();
 	}
 
@@ -573,7 +573,7 @@ class WPEX_Global_Theme_Object {
 	 *
 	 * @since 3.0.0
 	 */
-	private function barter_callout_content() {
+	private function footer_callout_content() {
 		return wpex_callout_content();
 	}
 

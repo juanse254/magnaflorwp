@@ -1843,7 +1843,7 @@ Item.prototype.enableTransition = function(/* style */) {
     return;
   }
 
-  // make `transition: bar, bar, baz` from style object
+  // make `transition: foo, bar, baz` from style object
   // HACK un-comment this when enableTransition can work
   // while a transition is happening
   // var transitionValues = [];
@@ -3976,10 +3976,10 @@ var getText = docElem.textContent ?
   // other functions in here are just for munging
   var mungeSorter = ( function() {
     // add a magic layer to sorters for convienent shorthands
-    // `.bar-bar` will use the text of .bar-bar querySelector
-    // `[bar-bar]` will use attribute
+    // `.foo-bar` will use the text of .foo-bar querySelector
+    // `[foo-bar]` will use attribute
     // you can also add parser
-    // `.bar-bar parseInt` will parse that as a number
+    // `.foo-bar parseInt` will parse that as a number
     function mungeSorter( sorter ) {
       // if not a string, return function or whatever it is
       if ( typeof sorter != 'string' ) {
@@ -4009,7 +4009,7 @@ var getText = docElem.textContent ?
     // get an attribute getter, or get text of the querySelector
     function getValueGetter( attr, query ) {
       var getValue;
-      // if query looks like [bar-bar], get attribute
+      // if query looks like [foo-bar], get attribute
       if ( attr ) {
         getValue = function( elem ) {
           return elem.getAttribute( attr );

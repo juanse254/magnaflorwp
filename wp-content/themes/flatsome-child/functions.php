@@ -98,3 +98,13 @@ add_action('wp_head', 'favicons_add');
 function favicons_add(){
 
 }
+//REDIRECTS TO CART
+
+/**
+ * Set a custom add to cart URL to redirect to
+ * @return string
+ */
+function custom_add_to_cart_redirect() { 
+    return 'https://magnaflor.com/cart/'; 
+}
+add_filter( 'woocommerce_add_to_cart_redirect', 'custom_add_to_cart_redirect' );

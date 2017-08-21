@@ -32,7 +32,7 @@ function wpex_has_callout( $post_id = '' ) {
 	$bool = apply_filters( 'wpex_callout_enabled', $bool );
 
 	// Check page settings
-	if ( $post_id && $meta = get_post_meta( $post_id, 'wpex_disable_barter_callout', true ) ) {
+	if ( $post_id && $meta = get_post_meta( $post_id, 'wpex_disable_footer_callout', true ) ) {
 		if ( 'on' == $meta ) {
 			$bool = false;
 		} elseif ( 'enable' == $meta ) {
@@ -73,10 +73,10 @@ function wpex_callout_content( $post_id = '' ) {
 	else {
 
 		// Get content from theme mod
-		$content = wpex_get_translated_theme_mod( 'callout_text', 'I am the barter call-to-action block, here you can add some relevant/important information about your company or product. I can be disabled in the theme options.' );
+		$content = wpex_get_translated_theme_mod( 'callout_text', 'I am the footer call-to-action block, here you can add some relevant/important information about your company or product. I can be disabled in the theme options.' );
 
 		// Apply filters if meta is not defined since meta should always override
-		$content = apply_filters( 'wpex_get_barter_callout_content', $content );
+		$content = apply_filters( 'wpex_get_footer_callout_content', $content );
 
 	}
 

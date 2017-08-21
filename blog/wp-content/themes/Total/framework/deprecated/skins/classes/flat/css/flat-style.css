@@ -190,7 +190,7 @@ body #header-two-search #header-two-search-submit { background-color: #31b383; b
 .woocommerce .button:active,
 input[type="submit"]:active,
 button:active,
-#barter-callout .theme-button:active,
+#footer-callout .theme-button:active,
 .wpex-carousel .owl-prev:active,
 .wpex-carousel .owl-next:active { border-color: transparent }
 
@@ -326,29 +326,29 @@ body .vc_text_separator_two span { border-bottom-color: #000 }
 --------------------------------------------------------------*/
 
 /* Footer > Callout */
-#barter-callout-wrap { background: #edf2f9; border-color: #dee3eb; }
-#barter-callout { color: #788397 }
+#footer-callout-wrap { background: #edf2f9; border-color: #dee3eb; }
+#footer-callout { color: #788397 }
 
 /* Footer > Main */
-#barter { background: #181e26 }
+#footer { background: #181e26 }
 
 /* Footer > Typography */
-#barter,
-#barter p { color: #536884 }
-#barter a { color: #1bbc9b }
-#barter a:hover { color: #fff }
-#barter a:active { color: #1bbc9b }
-#barter li { border-color: #252e3b }
-#barter li a:before { color: #1bbc9b }
-.site-barter a,
-.site-barter strong { color: #748aa7 }
-.site-barter strong { font-weight: 600; }
+#footer,
+#footer p { color: #536884 }
+#footer a { color: #1bbc9b }
+#footer a:hover { color: #fff }
+#footer a:active { color: #1bbc9b }
+#footer li { border-color: #252e3b }
+#footer li a:before { color: #1bbc9b }
+.site-footer a,
+.site-footer strong { color: #748aa7 }
+.site-footer strong { font-weight: 600; }
 
 /* Footer > Footer Bottom */
-#barter-bottom { background: #0b0e11; color: #46586f; }
-#barter-bottom a { color: #fff }
-#barter-bottom a:hover,
-#barter-bottom a:active { color: #1bbc9b }
+#footer-bottom { background: #0b0e11; color: #46586f; }
+#footer-bottom a { color: #fff }
+#footer-bottom a:hover,
+#footer-bottom a:active { color: #1bbc9b }
 
 /* Footer > Scroll top */
 #site-scroll-top, #site-scroll-top:hover, #site-scroll-top:active { border-color: transparent; }

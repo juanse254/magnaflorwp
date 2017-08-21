@@ -57,9 +57,9 @@ class WPEX_Post_Metaboxes {
 	 */
 	public function post_meta( $post ) {
 
-		// Disable on barter builder
-		$barter_builder_page = wpex_get_mod( 'barter_builder_page_id' );
-		if ( 'page' == get_post_type( $post->ID ) && $barter_builder_page == $post->ID ) {
+		// Disable on footer builder
+		$footer_builder_page = wpex_get_mod( 'footer_builder_page_id' );
+		if ( 'page' == get_post_type( $post->ID ) && $footer_builder_page == $post->ID ) {
 			return;
 		}
 
@@ -933,12 +933,12 @@ class WPEX_Post_Metaboxes {
 		);
 
 		// Footer tab
-		$array['barter'] = array(
+		$array['footer'] = array(
 			'title' => esc_html__( 'Footer', 'total' ),
 			'settings' => array(
-				'disable_barter' => array(
+				'disable_footer' => array(
 					'title' => esc_html__( 'Footer', 'total' ),
-					'id' => $prefix . 'disable_barter',
+					'id' => $prefix . 'disable_footer',
 					'type' => 'select',
 					'description' => esc_html__( 'Enable or disable this element on this page or post.', 'total' ),
 					'options' => array(
@@ -947,9 +947,9 @@ class WPEX_Post_Metaboxes {
 						'on' => $s_disable,
 					),
 				),
-				'disable_barter_widgets' => array(
+				'disable_footer_widgets' => array(
 					'title' => esc_html__( 'Footer Widgets', 'total' ),
-					'id' => $prefix . 'disable_barter_widgets',
+					'id' => $prefix . 'disable_footer_widgets',
 					'type' => 'select',
 					'description' => esc_html__( 'Enable or disable this element on this page or post.', 'total' ),
 					'options' => array(
@@ -957,10 +957,10 @@ class WPEX_Post_Metaboxes {
 						'on' => $s_disable,
 					),
 				),
-				'barter_reveal' => array(
+				'footer_reveal' => array(
 					'title' => esc_html__( 'Footer Reveal', 'total' ),
-					'description' => esc_html__( 'Enable the barter reveal style. The barter will be placed in a fixed postion and display on scroll. This setting is for the "Full-Width" layout only and desktops only.', 'total' ),
-					'id' => $prefix . 'barter_reveal',
+					'description' => esc_html__( 'Enable the footer reveal style. The footer will be placed in a fixed postion and display on scroll. This setting is for the "Full-Width" layout only and desktops only.', 'total' ),
+					'id' => $prefix . 'footer_reveal',
 					'type' => 'select',
 					'options' => array(
 						'' => $s_default,
@@ -975,9 +975,9 @@ class WPEX_Post_Metaboxes {
 		$array['callout'] = array(
 			'title' => esc_html__( 'Callout', 'total' ),
 			'settings' => array(
-				'disable_barter_callout' => array(
+				'disable_footer_callout' => array(
 					'title' => esc_html__( 'Callout', 'total' ),
-					'id' => $prefix . 'disable_barter_callout',
+					'id' => $prefix . 'disable_footer_callout',
 					'type' => 'select',
 					'description' => esc_html__( 'Enable or disable this element on this page or post.', 'total' ),
 					'options' => array(

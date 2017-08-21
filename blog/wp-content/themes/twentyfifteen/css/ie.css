@@ -167,7 +167,7 @@ textarea {
 .image-navigation,
 .author-heading,
 .author-bio,
-.entry-barter,
+.entry-footer,
 .page-links a,
 .page-links span,
 .comment-metadata,
@@ -544,7 +544,7 @@ img.aligncenter {
 	top: 0;
 }
 
-.entry-barter {
+.entry-footer {
 	padding: 4.5454% 9.0909%;
 }
 
@@ -703,7 +703,7 @@ img.aligncenter {
 	margin-top: 0;
 }
 
-.site-barter {
+.site-footer {
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
 	margin: 0 auto;

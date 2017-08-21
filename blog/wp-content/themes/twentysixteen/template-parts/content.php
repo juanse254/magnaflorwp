@@ -40,7 +40,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<barter class="entry-barter">
+	<footer class="entry-footer">
 		<?php twentysixteen_entry_meta(); ?>
 		<?php
 			edit_post_link(
@@ -53,5 +53,5 @@
 				'</span>'
 			);
 		?>
-	</barter><!-- .entry-barter -->
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

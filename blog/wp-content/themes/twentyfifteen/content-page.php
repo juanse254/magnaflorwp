@@ -32,6 +32,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<barter class="entry-barter"><span class="edit-link">', '</span></barter><!-- .entry-barter -->' ); ?>
+	<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
 
 </article><!-- #post-## -->

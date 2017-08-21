@@ -519,8 +519,8 @@ function twentysixteen_get_color_scheme_css( $colors ) {
 	.site-branding .site-title a:focus,
 	.entry-title a:hover,
 	.entry-title a:focus,
-	.entry-barter a:hover,
-	.entry-barter a:focus,
+	.entry-footer a:hover,
+	.entry-footer a:focus,
 	.comment-metadata a:hover,
 	.comment-metadata a:focus,
 	.pingback .comment-edit-link:hover,
@@ -656,8 +656,8 @@ function twentysixteen_get_color_scheme_css( $colors ) {
 	.widget_rss cite,
 	.site-description,
 	.author-bio,
-	.entry-barter,
-	.entry-barter a,
+	.entry-footer,
+	.entry-footer a,
 	.sticky-post,
 	.taxonomy-description,
 	.entry-caption,
@@ -786,7 +786,7 @@ function twentysixteen_color_scheme_css_template() {
 	</script>
 	<?php
 }
-add_action( 'customize_controls_print_barter_scripts', 'twentysixteen_color_scheme_css_template' );
+add_action( 'customize_controls_print_footer_scripts', 'twentysixteen_color_scheme_css_template' );
 
 /**
  * Enqueues front-end CSS for the page background color.
@@ -897,8 +897,8 @@ function twentysixteen_link_color_css() {
 		.site-branding .site-title a:focus,
 		.entry-title a:hover,
 		.entry-title a:focus,
-		.entry-barter a:hover,
-		.entry-barter a:focus,
+		.entry-footer a:hover,
+		.entry-footer a:focus,
 		.comment-metadata a:hover,
 		.comment-metadata a:focus,
 		.pingback .comment-edit-link:hover,
@@ -1159,8 +1159,8 @@ function twentysixteen_secondary_text_color_css() {
 		.widget_rss cite,
 		.site-description,
 		.author-bio,
-		.entry-barter,
-		.entry-barter a,
+		.entry-footer,
+		.entry-footer a,
 		.sticky-post,
 		.taxonomy-description,
 		.entry-caption,

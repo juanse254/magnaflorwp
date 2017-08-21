@@ -97,17 +97,17 @@ function wpex_theme_hooks() {
 				'wpex_hook_sidebar_after',
 			),
 		),
-		'barter' => array(
+		'footer' => array(
 			'label' => __( 'Footer', 'total' ),
 			'hooks' => array(
-				'wpex_hook_barter_before',
-				'wpex_hook_barter_top',
-				'wpex_hook_barter_inner',
-				'wpex_hook_barter_bottom',
-				'wpex_hook_barter_after',
-				'wpex_hook_barter_bottom_before',
-				'wpex_hook_barter_bottom_inner',
-				'wpex_hook_barter_bottom_after',
+				'wpex_hook_footer_before',
+				'wpex_hook_footer_top',
+				'wpex_hook_footer_inner',
+				'wpex_hook_footer_bottom',
+				'wpex_hook_footer_after',
+				'wpex_hook_footer_bottom_before',
+				'wpex_hook_footer_bottom_inner',
+				'wpex_hook_footer_bottom_after',
 			),
 		),
 		'page_header' => array(
@@ -288,20 +288,20 @@ function wpex_hook_sidebar_inner() {
  *
  * @since 1.0
  */
-function wpex_hook_barter_before() {
-	do_action( 'wpex_hook_barter_before' );
+function wpex_hook_footer_before() {
+	do_action( 'wpex_hook_footer_before' );
 }
-function wpex_hook_barter_top() {
-	do_action( 'wpex_hook_barter_top' );
+function wpex_hook_footer_top() {
+	do_action( 'wpex_hook_footer_top' );
 }
-function wpex_hook_barter_inner() {
-	do_action( 'wpex_hook_barter_inner' );
+function wpex_hook_footer_inner() {
+	do_action( 'wpex_hook_footer_inner' );
 }
-function wpex_hook_barter_bottom() {
-	do_action( 'wpex_hook_barter_bottom' );
+function wpex_hook_footer_bottom() {
+	do_action( 'wpex_hook_footer_bottom' );
 }
-function wpex_hook_barter_after() {
-	do_action( 'wpex_hook_barter_after' );
+function wpex_hook_footer_after() {
+	do_action( 'wpex_hook_footer_after' );
 }
 
 /**
@@ -309,14 +309,14 @@ function wpex_hook_barter_after() {
  *
  * @since 4.0
  */
-function wpex_hook_barter_bottom_before() {
-	do_action( 'wpex_hook_barter_bottom_before' );
+function wpex_hook_footer_bottom_before() {
+	do_action( 'wpex_hook_footer_bottom_before' );
 }
-function wpex_hook_barter_bottom_inner() {
-	do_action( 'wpex_hook_barter_bottom_inner' );
+function wpex_hook_footer_bottom_inner() {
+	do_action( 'wpex_hook_footer_bottom_inner' );
 }
-function wpex_hook_barter_bottom_after() {
-	do_action( 'wpex_hook_barter_bottom_after' );
+function wpex_hook_footer_bottom_after() {
+	do_action( 'wpex_hook_footer_bottom_after' );
 }
 
 

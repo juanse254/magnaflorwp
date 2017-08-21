@@ -12,24 +12,24 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 } ?>
 
-<?php wpex_hook_barter_before(); ?>
+<?php wpex_hook_footer_before(); ?>
 
-<?php if ( wpex_barter_has_widgets() ) : ?>
+<?php if ( wpex_footer_has_widgets() ) : ?>
 
-    <barter id="barter" class="site-barter"<?php wpex_schema_markup( 'barter' ); ?>>
+    <footer id="footer" class="site-footer"<?php wpex_schema_markup( 'footer' ); ?>>
 
-        <?php wpex_hook_barter_top(); ?>
+        <?php wpex_hook_footer_top(); ?>
 
-        <div id="barter-inner" class="site-barter-inner container clr">
+        <div id="footer-inner" class="site-footer-inner container clr">
 
-            <?php wpex_hook_barter_inner(); // widgets are added via this hook ?>
+            <?php wpex_hook_footer_inner(); // widgets are added via this hook ?>
 
-        </div><!-- #barter-widgets -->
+        </div><!-- #footer-widgets -->
 
-        <?php wpex_hook_barter_bottom(); ?>
+        <?php wpex_hook_footer_bottom(); ?>
 
-    </barter><!-- #barter -->
+    </footer><!-- #footer -->
 
 <?php endif; ?>
 
-<?php wpex_hook_barter_after(); ?>
+<?php wpex_hook_footer_after(); ?>

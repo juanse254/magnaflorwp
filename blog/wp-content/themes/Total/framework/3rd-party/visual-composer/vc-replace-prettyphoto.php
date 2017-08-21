@@ -25,7 +25,7 @@ function wpex_vc_remove_prettyphoto_scripts() {
 		}
 	}	
 }
-add_action( 'wp_barter', 'wpex_vc_remove_prettyphoto_scripts' );
+add_action( 'wp_footer', 'wpex_vc_remove_prettyphoto_scripts' );
 
 // Add param to localize array
 function wpex_vc_lightbox_localize_array( $array ) {

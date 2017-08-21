@@ -496,44 +496,44 @@ function wpex_blog_single_media_above() {
 /*-------------------------------------------------------------------------------*/
 
 /**
- * Gets the barter callout template part.
+ * Gets the footer callout template part.
  *
  * @since 1.0.0
  */
-function wpex_barter_callout() {
+function wpex_footer_callout() {
 	if ( wpex_has_callout() ) {
-		wpex_get_template_part( 'barter_callout' );
+		wpex_get_template_part( 'footer_callout' );
 	}
 }
 
 /**
- * Gets the barter layout template part.
+ * Gets the footer layout template part.
  *
  * @since 2.0.0
  */
-function wpex_barter() {
-	if ( wpex_has_barter() ) {
-		wpex_get_template_part( 'barter' );
+function wpex_footer() {
+	if ( wpex_has_footer() ) {
+		wpex_get_template_part( 'footer' );
 	}
 }
 
 /**
- * Get the barter widgets template part.
+ * Get the footer widgets template part.
  *
  * @since 1.0.0
  */
-function wpex_barter_widgets() {
-	wpex_get_template_part( 'barter_widgets' );
+function wpex_footer_widgets() {
+	wpex_get_template_part( 'footer_widgets' );
 }
 
 /**
- * Gets the barter bottom template part.
+ * Gets the footer bottom template part.
  *
  * @since 1.0.0
  */
-function wpex_barter_bottom() {
-	if ( wpex_get_mod( 'barter_bottom', true ) ) {
-		wpex_get_template_part( 'barter_bottom' );
+function wpex_footer_bottom() {
+	if ( wpex_get_mod( 'footer_bottom', true ) ) {
+		wpex_get_template_part( 'footer_bottom' );
 	}
 }
 
@@ -553,9 +553,9 @@ function wpex_scroll_top() {
  *
  * @since 2.0.0
  */
-function wpex_barter_reveal_open() {
-	if ( wpex_barter_has_reveal() ) {
-		wpex_get_template_part( 'barter_reveal_open' );
+function wpex_footer_reveal_open() {
+	if ( wpex_footer_has_reveal() ) {
+		wpex_get_template_part( 'footer_reveal_open' );
 	}
 }
 
@@ -564,9 +564,9 @@ function wpex_barter_reveal_open() {
  *
  * @since 2.0.0
  */
-function wpex_barter_reveal_close() {
-	if ( wpex_barter_has_reveal() ) {
-		wpex_get_template_part( 'barter_reveal_close' );
+function wpex_footer_reveal_close() {
+	if ( wpex_footer_has_reveal() ) {
+		wpex_get_template_part( 'footer_reveal_close' );
 	}
 }
 
@@ -579,8 +579,8 @@ function wpex_barter_reveal_close() {
  *
  * @since 2.0.0
  */
-function wpex_barter_bottom_copyright() {
-	wpex_get_template_part( 'barter_bottom_copyright' );
+function wpex_footer_bottom_copyright() {
+	wpex_get_template_part( 'footer_bottom_copyright' );
 }
 
 /**
@@ -588,8 +588,8 @@ function wpex_barter_bottom_copyright() {
  *
  * @since 2.0.0
  */
-function wpex_barter_bottom_menu() {
-	wpex_get_template_part( 'barter_bottom_menu' );
+function wpex_footer_bottom_menu() {
+	wpex_get_template_part( 'footer_bottom_menu' );
 }
 
 /*-------------------------------------------------------------------------------*/
@@ -615,7 +615,7 @@ function wpex_social_share() {
 }
 
 /**
- * Adds a hidden searchbox in the barter for use with the mobile menu
+ * Adds a hidden searchbox in the footer for use with the mobile menu
  *
  * @since 1.5.1
  */

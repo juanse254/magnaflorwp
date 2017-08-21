@@ -73,15 +73,15 @@ if ( 'always-visible' != wpex_get_mod( 'callout_visibility', 'always-visible' ) 
 	$classes .= ' '. wpex_get_mod( 'callout_visibility' );
 } ?>
 	
-<div id="barter-callout-wrap" class="<?php echo esc_attr( $classes ); ?>">
+<div id="footer-callout-wrap" class="<?php echo esc_attr( $classes ); ?>">
 
-	<div id="barter-callout" class="clr<?php if ( $content ) echo ' container'; ?>">
+	<div id="footer-callout" class="clr<?php if ( $content ) echo ' container'; ?>">
 
 		<?php
 		// Display content
 		if ( $content ) : ?>
 
-			<div id="barter-callout-left" class="barter-callout-content clr<?php if ( ! $link ) echo ' full-width'; ?>"><?php
+			<div id="footer-callout-left" class="footer-callout-content clr<?php if ( ! $link ) echo ' full-width'; ?>"><?php
 
 				// Output content
 				echo do_shortcode( wp_kses_post( $content ) );
@@ -91,10 +91,10 @@ if ( 'always-visible' != wpex_get_mod( 'callout_visibility', 'always-visible' ) 
 		<?php endif; ?>
 
 		<?php
-		// Display barter callout button if callout link & text options are not blank in the admin
+		// Display footer callout button if callout link & text options are not blank in the admin
 		if ( $link ) : ?>
 
-			<div id="barter-callout-right" class="barter-callout-button wpex-clr">
+			<div id="footer-callout-right" class="footer-callout-button wpex-clr">
 				<a href="<?php echo esc_url( $link ); ?>" class="theme-button" title="<?php echo esc_attr( $link_text ); ?>"<?php echo $btn_target; ?><?php echo $btn_rel; ?>><?php echo wp_kses_post( $link_text ); ?><?php echo $icon; ?></a>
 			</div>
 

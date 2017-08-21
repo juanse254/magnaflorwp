@@ -119,13 +119,13 @@ function wpex_body_class( $classes ) {
 	}
 
 	// Footer reveal
-	if ( wpex_barter_has_reveal() ) {
-		$classes[] = 'barter-has-reveal';
+	if ( wpex_footer_has_reveal() ) {
+		$classes[] = 'footer-has-reveal';
 	}
 
 	// Fixed Footer - adds min-height to main wraper
-	if ( wpex_get_mod( 'fixed_barter', false ) ) {
-		$classes[] = 'wpex-has-fixed-barter';
+	if ( wpex_get_mod( 'fixed_footer', false ) ) {
+		$classes[] = 'wpex-has-fixed-footer';
 	}
 
 	// Disabled header

@@ -81,7 +81,7 @@ $this->sections['wpex_header_general'] = array(
 					'#site-header',
 					'#site-header-sticky-wrapper',
 					'#site-header-sticky-wrapper.is-sticky #site-header',
-					'.barter-has-reveal #site-header',
+					'.footer-has-reveal #site-header',
 					'#searchform-header-replace',
 					'body.wpex-has-vertical-header #site-header',
 				),

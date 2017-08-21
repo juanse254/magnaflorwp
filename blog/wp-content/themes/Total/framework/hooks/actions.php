@@ -115,34 +115,34 @@ add_action( 'wpex_hook_sidebar_inner', 'wpex_display_sidebar' );
 
 /* Wrap > Bottom
 -------------------------------------------------------------------------------*/
-add_action( 'wpex_hook_wrap_bottom', 'wpex_barter' );
+add_action( 'wpex_hook_wrap_bottom', 'wpex_footer' );
 
 /* Footer > Before
 -------------------------------------------------------------------------------*/
-add_action( 'wpex_hook_barter_before', 'wpex_barter_reveal_open', 0 );
-add_action( 'wpex_hook_barter_before', 'wpex_barter_callout' );
+add_action( 'wpex_hook_footer_before', 'wpex_footer_reveal_open', 0 );
+add_action( 'wpex_hook_footer_before', 'wpex_footer_callout' );
 
 /* Footer > Inner
 -------------------------------------------------------------------------------*/
-add_action( 'wpex_hook_barter_inner', 'wpex_barter_widgets' );
+add_action( 'wpex_hook_footer_inner', 'wpex_footer_widgets' );
 
 /* Footer > After
 -------------------------------------------------------------------------------*/
-add_action( 'wpex_hook_barter_after', 'wpex_barter_bottom' );
-add_action( 'wpex_hook_barter_after', 'wpex_barter_reveal_close', 99 );
+add_action( 'wpex_hook_footer_after', 'wpex_footer_bottom' );
+add_action( 'wpex_hook_footer_after', 'wpex_footer_reveal_close', 99 );
 
 /* Footer Bottom > Inner
 -------------------------------------------------------------------------------*/
-add_action( 'wpex_hook_barter_bottom_inner', 'wpex_barter_bottom_copyright' );
-add_action( 'wpex_hook_barter_bottom_inner', 'wpex_barter_bottom_menu' );
+add_action( 'wpex_hook_footer_bottom_inner', 'wpex_footer_bottom_copyright' );
+add_action( 'wpex_hook_footer_bottom_inner', 'wpex_footer_bottom_menu' );
 
 /* WP_Footer
 -------------------------------------------------------------------------------*/
-add_action( 'wp_barter', 'wpex_mobile_menu_alt' );
-add_action( 'wp_barter', 'wpex_mobile_searchform' );
-add_action( 'wp_barter', 'wpex_scroll_top' );
-add_action( 'wp_barter', 'wpex_search_overlay' );
-add_action( 'wp_barter', 'wpex_sidr_close' );
+add_action( 'wp_footer', 'wpex_mobile_menu_alt' );
+add_action( 'wp_footer', 'wpex_mobile_searchform' );
+add_action( 'wp_footer', 'wpex_scroll_top' );
+add_action( 'wp_footer', 'wpex_search_overlay' );
+add_action( 'wp_footer', 'wpex_sidr_close' );
 
 
 

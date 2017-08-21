@@ -99,8 +99,8 @@ if ( ! class_exists( 'WPEX_Site_Backgrounds' ) ) {
 				$css .= 'background-color:#'. $color .'!important;';
 
 				// Footer reveal fix
-				if ( wpex_barter_has_reveal() ) {
-					$output .= '.barter-has-reveal #main{ background-color:#'. $color .'!important;}';
+				if ( wpex_footer_has_reveal() ) {
+					$output .= '.footer-has-reveal #main{ background-color:#'. $color .'!important;}';
 				}
 
 			}

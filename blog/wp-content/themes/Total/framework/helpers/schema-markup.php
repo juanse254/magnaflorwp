@@ -63,9 +63,9 @@ function wpex_get_schema_markup( $location ) {
 		//$schema = 'itemprop="'. $itemprop .'" itemscope="itemscope" itemtype="'. $itemtype .'"';
 	} elseif ( 'sidebar' == $location ) {
 		$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPSideBar"';
-	} elseif ( 'barter' == $location ) {
+	} elseif ( 'footer' == $location ) {
 		$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPFooter"';
-	} elseif ( 'barter_bottom' == $location ) {
+	} elseif ( 'footer_bottom' == $location ) {
 		$schema = '';
 	} elseif ( 'headline' == $location ) {
 		$schema = 'itemprop="headline"';

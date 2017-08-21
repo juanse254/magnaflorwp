@@ -37,20 +37,20 @@ class WPEX_Footer_Builder {
 
 		}
 
-		// Run actions and filters if barter_builder ID is defined
-		if ( $builder_post_id = self::barter_builder_id() ) {
+		// Run actions and filters if footer_builder ID is defined
+		if ( $builder_post_id = self::footer_builder_id() ) {
 
-			// Do not register barter sidebars
-			add_filter( 'wpex_register_barter_sidebars', '__return_false' );
+			// Do not register footer sidebars
+			add_filter( 'wpex_register_footer_sidebars', '__return_false' );
 
-			// Alter the barter on init
-			add_action( 'wp', array( 'WPEX_Footer_Builder', 'alter_barter' ) );
+			// Alter the footer on init
+			add_action( 'wp', array( 'WPEX_Footer_Builder', 'alter_footer' ) );
 
 			// Include ID for Visual Composer custom CSS
 			add_filter( 'wpex_vc_css_ids', array( 'WPEX_Footer_Builder', 'wpex_vc_css_ids' ) );
 
-			// Remove barter customizer settings
-			add_filter( 'wpex_customizer_panels', array( 'WPEX_Footer_Builder', 'remove_customizer_barter_panel' ) );
+			// Remove footer customizer settings
+			add_filter( 'wpex_customizer_panels', array( 'WPEX_Footer_Builder', 'remove_customizer_footer_panel' ) );
 
 			// Tweaks when standard page set for id
 			if ( 'templatera' != get_post_type( $builder_post_id ) ) {
@@ -79,8 +79,8 @@ class WPEX_Footer_Builder {
 	 *
 	 * @since 3.5.0
 	 */
-	public static function barter_builder_id() {
-		$pageid = intval( apply_filters( 'wpex_barter_builder_page_id', wpex_get_mod( 'barter_builder_page_id' ) ) );
+	public static function footer_builder_id() {
+		$pageid = intval( apply_filters( 'wpex_footer_builder_page_id', wpex_get_mod( 'footer_builder_page_id' ) ) );
 		return $pageid ? wpex_parse_obj_id( $pageid, 'page' ) : '';
 	}
 
@@ -95,7 +95,7 @@ class WPEX_Footer_Builder {
 			esc_html__( 'Footer Builder', 'total' ),
 			esc_html__( 'Footer Builder', 'total' ),
 			'administrator',
-			WPEX_THEME_PANEL_SLUG .'-barter-builder',
+			WPEX_THEME_PANEL_SLUG .'-footer-builder',
 			array( 'WPEX_Footer_Builder', 'create_admin_page' )
 		);
 	}
@@ -107,7 +107,7 @@ class WPEX_Footer_Builder {
 	 */
 	public static function scripts( $hook ) {
 
-		if ( WPEX_ADMIN_PANEL_HOOK_PREFIX . '-barter-builder' != $hook ) {
+		if ( WPEX_ADMIN_PANEL_HOOK_PREFIX . '-footer-builder' != $hook ) {
 			return;
 		}
 
@@ -140,45 +140,45 @@ class WPEX_Footer_Builder {
 	public static function register_page_options() {
 
 		// Register settings
-		register_setting( 'wpex_barter_builder', 'barter_builder', array( 'WPEX_Footer_Builder', 'sanitize' ) );
+		register_setting( 'wpex_footer_builder', 'footer_builder', array( 'WPEX_Footer_Builder', 'sanitize' ) );
 
 		// Add main section to our options page
-		add_settings_section( 'wpex_barter_builder_main', false, array( 'WPEX_Footer_Builder', 'section_main_callback' ), 'wpex-barter-builder-admin' );
+		add_settings_section( 'wpex_footer_builder_main', false, array( 'WPEX_Footer_Builder', 'section_main_callback' ), 'wpex-footer-builder-admin' );
 
 		// Custom Page ID
 		add_settings_field(
-			'barter_builder_page_id',
+			'footer_builder_page_id',
 			esc_html__( 'Footer Builder page', 'total' ),
 			array( 'WPEX_Footer_Builder', 'content_id_field_callback' ),
-			'wpex-barter-builder-admin',
-			'wpex_barter_builder_main'
+			'wpex-footer-builder-admin',
+			'wpex_footer_builder_main'
 		);
 
 		// Footer Bottom
 		add_settings_field(
-			'barter_builder_barter_bottom',
+			'footer_builder_footer_bottom',
 			esc_html__( 'Footer Bottom', 'total' ),
-			array( 'WPEX_Footer_Builder', 'barter_builder_barter_bottom_field_callback' ),
-			'wpex-barter-builder-admin',
-			'wpex_barter_builder_main'
+			array( 'WPEX_Footer_Builder', 'footer_builder_footer_bottom_field_callback' ),
+			'wpex-footer-builder-admin',
+			'wpex_footer_builder_main'
 		);
 
 		// Fixed Footer
 		add_settings_field(
-			'fixed_barter',
+			'fixed_footer',
 			esc_html__( 'Fixed Footer', 'total' ),
-			array( 'WPEX_Footer_Builder', 'fixed_barter_field_callback' ),
-			'wpex-barter-builder-admin',
-			'wpex_barter_builder_main'
+			array( 'WPEX_Footer_Builder', 'fixed_footer_field_callback' ),
+			'wpex-footer-builder-admin',
+			'wpex_footer_builder_main'
 		);
 
 		// Footer Reveal
 		add_settings_field(
-			'barter_reveal',
+			'footer_reveal',
 			esc_html__( 'Footer Reveal', 'total' ),
-			array( 'WPEX_Footer_Builder', 'barter_reveal_field_callback' ),
-			'wpex-barter-builder-admin',
-			'wpex_barter_builder_main'
+			array( 'WPEX_Footer_Builder', 'footer_reveal_field_callback' ),
+			'wpex-footer-builder-admin',
+			'wpex_footer_builder_main'
 		);
 
 		// Bg
@@ -186,8 +186,8 @@ class WPEX_Footer_Builder {
 			'bg',
 			esc_html__( 'Background Color', 'total' ),
 			array( 'WPEX_Footer_Builder', 'bg_field_callback' ),
-			'wpex-barter-builder-admin',
-			'wpex_barter_builder_main'
+			'wpex-footer-builder-admin',
+			'wpex_footer_builder_main'
 		);
 
 		// BG img
@@ -195,8 +195,8 @@ class WPEX_Footer_Builder {
 			'bg_img',
 			esc_html__( 'Background Image', 'total' ),
 			array( 'WPEX_Footer_Builder', 'bg_img_field_callback' ),
-			'wpex-barter-builder-admin',
-			'wpex_barter_builder_main'
+			'wpex-footer-builder-admin',
+			'wpex_footer_builder_main'
 		);
 
 		// BG img style
@@ -204,8 +204,8 @@ class WPEX_Footer_Builder {
 			'bg_img_style',
 			esc_html__( 'Background Image Style', 'total' ),
 			array( 'WPEX_Footer_Builder', 'bg_img_style_field_callback' ),
-			'wpex-barter-builder-admin',
-			'wpex_barter_builder_main'
+			'wpex-footer-builder-admin',
+			'wpex_footer_builder_main'
 		);
 
 	}
@@ -217,53 +217,53 @@ class WPEX_Footer_Builder {
 	 */
 	public static function sanitize( $options ) {
 
-		// Update barter builder page ID
+		// Update footer builder page ID
 		if ( ! empty( $options['content_id'] ) ) {
-			set_theme_mod( 'barter_builder_page_id', $options['content_id'] );
+			set_theme_mod( 'footer_builder_page_id', $options['content_id'] );
 		} else {
-			remove_theme_mod( 'barter_builder_page_id' );
+			remove_theme_mod( 'footer_builder_page_id' );
 		}
 
 		// Footer Bottom - Disabled by default
-		if ( empty( $options['barter_builder_barter_bottom'] ) ) {
-			remove_theme_mod( 'barter_builder_barter_bottom' );
+		if ( empty( $options['footer_builder_footer_bottom'] ) ) {
+			remove_theme_mod( 'footer_builder_footer_bottom' );
 		} else {
-			set_theme_mod( 'barter_builder_barter_bottom', 1 );
+			set_theme_mod( 'footer_builder_footer_bottom', 1 );
 		}
 
-		// Update fixed barter - Disabled by default
-		if ( empty( $options['fixed_barter'] ) ) {
-			remove_theme_mod( 'fixed_barter' );
+		// Update fixed footer - Disabled by default
+		if ( empty( $options['fixed_footer'] ) ) {
+			remove_theme_mod( 'fixed_footer' );
 		} else {
-			set_theme_mod( 'fixed_barter', 1 );
+			set_theme_mod( 'fixed_footer', 1 );
 		}
 
-		// Update barter Reveal - Disabled by default
-		if ( empty( $options['barter_reveal'] ) ) {
-			remove_theme_mod( 'barter_reveal' );
+		// Update footer Reveal - Disabled by default
+		if ( empty( $options['footer_reveal'] ) ) {
+			remove_theme_mod( 'footer_reveal' );
 		} else {
-			set_theme_mod( 'barter_reveal', true );
+			set_theme_mod( 'footer_reveal', true );
 		}
 
 		// Update bg
 		if ( empty( $options['bg'] ) ) {
-			remove_theme_mod( 'barter_builder_bg' );
+			remove_theme_mod( 'footer_builder_bg' );
 		} else {
-			set_theme_mod( 'barter_builder_bg', $options['bg'] );
+			set_theme_mod( 'footer_builder_bg', $options['bg'] );
 		}
 
 		// Update bg img
 		if ( empty( $options['bg_img'] ) ) {
-			remove_theme_mod( 'barter_builder_bg_img' );
+			remove_theme_mod( 'footer_builder_bg_img' );
 		} else {
-			set_theme_mod( 'barter_builder_bg_img', $options['bg_img'] );
+			set_theme_mod( 'footer_builder_bg_img', $options['bg_img'] );
 		}
 
 		// Update bg img style
 		if ( empty( $options['bg_img_style'] ) ) {
-			remove_theme_mod( 'barter_builder_bg_img_style' );
+			remove_theme_mod( 'footer_builder_bg_img_style' );
 		} else {
-			set_theme_mod( 'barter_builder_bg_img_style', $options['bg_img_style'] );
+			set_theme_mod( 'footer_builder_bg_img_style', $options['bg_img_style'] );
 		}
 
 		// Dont save anything in the options table
@@ -303,10 +303,10 @@ class WPEX_Footer_Builder {
 			'1.4.1'
 		);
 
-		// Get barter builder page ID
-		$page_id = wpex_get_mod( 'barter_builder_page_id' ); ?>
+		// Get footer builder page ID
+		$page_id = wpex_get_mod( 'footer_builder_page_id' ); ?>
 
-		<select name="barter_builder[content_id]" id="wpex-barter-builder-select" class="wpex-chosen">
+		<select name="footer_builder[content_id]" id="wpex-footer-builder-select" class="wpex-chosen">
 
 			<option value=""><?php esc_html_e( 'None - Display Widgetized Footer', 'total' ); ?></option>
 
@@ -351,11 +351,11 @@ class WPEX_Footer_Builder {
 
 		<br />
 
-		<p class="description"><?php esc_html_e( 'Select your custom page for your barter layout.', 'total' ) ?></p>
+		<p class="description"><?php esc_html_e( 'Select your custom page for your footer layout.', 'total' ) ?></p>
 
 		<br />
 
-		<div id="wpex-barter-builder-edit-links">
+		<div id="wpex-footer-builder-edit-links">
 
 			<a href="<?php echo admin_url( 'post.php?post='. $page_id .'&action=edit' ); ?>" class="button" target="_blank">
 				<?php esc_html_e( 'Backend Edit', 'total' ); ?>
@@ -382,13 +382,13 @@ class WPEX_Footer_Builder {
 	 *
 	 * @since 2.0.0
 	 */
-	public static function barter_builder_barter_bottom_field_callback() {
+	public static function footer_builder_footer_bottom_field_callback() {
 
 		// Get theme mod val
-		$val = wpex_get_mod( 'barter_builder_barter_bottom', false );
+		$val = wpex_get_mod( 'footer_builder_footer_bottom', false );
 		$val = $val ? 'on' : false; ?>
 
-			<input type="checkbox" name="barter_builder[barter_builder_barter_bottom]" id="wpex-barter-builder-barter-bottom" <?php checked( $val, 'on' ); ?>>
+			<input type="checkbox" name="footer_builder[footer_builder_footer_bottom]" id="wpex-footer-builder-footer-bottom" <?php checked( $val, 'on' ); ?>>
 		<?php
 	}
 
@@ -397,13 +397,13 @@ class WPEX_Footer_Builder {
 	 *
 	 * @since 2.0.0
 	 */
-	public static function fixed_barter_field_callback() {
+	public static function fixed_footer_field_callback() {
 
 		// Get theme mod val
-		$val = wpex_get_mod( 'fixed_barter', false );
+		$val = wpex_get_mod( 'fixed_footer', false );
 		$val = $val ? 'on' : false; ?>
 
-			<input type="checkbox" name="barter_builder[fixed_barter]" id="wpex-barter-builder-fixed" <?php checked( $val, 'on' ); ?>>
+			<input type="checkbox" name="footer_builder[fixed_footer]" id="wpex-footer-builder-fixed" <?php checked( $val, 'on' ); ?>>
 		<?php
 	}
 
@@ -412,13 +412,13 @@ class WPEX_Footer_Builder {
 	 *
 	 * @since 2.0.0
 	 */
-	public static function barter_reveal_field_callback() {
+	public static function footer_reveal_field_callback() {
 
 		// Get theme mod val
-		$val = wpex_get_mod( 'barter_reveal' );
+		$val = wpex_get_mod( 'footer_reveal' );
 		$val = $val ? 'on' : false; ?>
 
-			<input type="checkbox" name="barter_builder[barter_reveal]" id="wpex-barter-builder-reveal" <?php checked( $val, 'on' ); ?>>
+			<input type="checkbox" name="footer_builder[footer_reveal]" id="wpex-footer-builder-reveal" <?php checked( $val, 'on' ); ?>>
 
 		<?php
 	}
@@ -427,9 +427,9 @@ class WPEX_Footer_Builder {
 	public static function bg_field_callback() {
 
 		// Get background
-		$bg = wpex_get_mod( 'barter_builder_bg' ); ?>
+		$bg = wpex_get_mod( 'footer_builder_bg' ); ?>
 
-		<input id="background_color" type="text" name="barter_builder[bg]" value="<?php echo esc_attr( $bg ); ?>" class="wpex-color-field">
+		<input id="background_color" type="text" name="footer_builder[bg]" value="<?php echo esc_attr( $bg ); ?>" class="wpex-color-field">
 
 	<?php }
 
@@ -437,10 +437,10 @@ class WPEX_Footer_Builder {
 	public static function bg_img_field_callback() {
 
 		// Get background
-		$bg = wpex_get_mod( 'barter_builder_bg_img' ); ?>
+		$bg = wpex_get_mod( 'footer_builder_bg_img' ); ?>
 
 		<div class="uploader">
-			<input class="wpex-media-input" type="text" name="barter_builder[bg_img]" value="<?php echo esc_attr( $bg ); ?>">
+			<input class="wpex-media-input" type="text" name="footer_builder[bg_img]" value="<?php echo esc_attr( $bg ); ?>">
 			<input class="wpex-media-upload-button button-secondary" type="button" value="<?php esc_html_e( 'Upload', 'total' ); ?>" />
 			<?php $preview = wpex_sanitize_data( $bg, 'image_src_from_mod' ); ?>
 			<a href="#" class="wpex-media-remove button-secondary" style="display:none;"><span class="dashicons dashicons-no-alt" style="line-height: inherit;"></span></a>
@@ -457,9 +457,9 @@ class WPEX_Footer_Builder {
 	public static function bg_img_style_field_callback() {
 
 		// Get setting
-		$style = wpex_get_mod( 'barter_builder_bg_img_style' ); ?>
+		$style = wpex_get_mod( 'footer_builder_bg_img_style' ); ?>
 
-			<select name="barter_builder[bg_img_style]">
+			<select name="footer_builder[bg_img_style]">
 			<?php
 			$bg_styles = wpex_get_bg_img_styles();
 			foreach ( $bg_styles as $key => $val ) { ?>
@@ -485,14 +485,14 @@ class WPEX_Footer_Builder {
 			<div id="wpex-notice" class="notice notice-info" style="display:none;">
 				
 				<p style="font-size:1.1em;">
-					<?php echo esc_html__( 'By default the barter consists of a simple widgetized area. For more complex layouts you can use the option below to select a page which will hold the content and layout for your site barter. Selecting a custom barter will remove all barter functions (barter widgets and barter customizer options) so you can create an entire barter using the Visual Composer and not load that extra functions.', 'total' ); ?>
+					<?php echo esc_html__( 'By default the footer consists of a simple widgetized area. For more complex layouts you can use the option below to select a page which will hold the content and layout for your site footer. Selecting a custom footer will remove all footer functions (footer widgets and footer customizer options) so you can create an entire footer using the Visual Composer and not load that extra functions.', 'total' ); ?>
 				
 				</p>
 			</div>
 
 			<form method="post" action="options.php">
-				<?php settings_fields( 'wpex_barter_builder' ); ?>
-				<?php do_settings_sections( 'wpex-barter-builder-admin' ); ?>
+				<?php settings_fields( 'wpex_footer_builder' ); ?>
+				<?php do_settings_sections( 'wpex-footer-builder-admin' ); ?>
 				<?php submit_button(); ?>
 			</form>
 
@@ -515,25 +515,25 @@ class WPEX_Footer_Builder {
 						} );
 
 						// Hide/Show fields
-						var	$select      = $( '#wpex-barter-builder-select' );
+						var	$select      = $( '#wpex-footer-builder-select' );
 						var $tableTr     = $( '#wpex-admin-page table tr' );
 						var $selectTr    = $select.parents( 'tr' );
-						var $barterLinks = $( '#wpex-barter-builder-edit-links' );
+						var $footerLinks = $( '#wpex-footer-builder-edit-links' );
 
 						// Check initial val
 						if ( ! $select.val() ) {
 							$tableTr.not( $selectTr ).hide();
-							$barterLinks.hide();
+							$footerLinks.hide();
 						}
 
 						// Check on change
 						$( $select ).change(function () {
 							if ( ! $( this ).val() ) {
 								$tableTr.not( $selectTr ).hide();
-								$barterLinks.hide();
+								$footerLinks.hide();
 							} else {
 								$tableTr.show();
-								$barterLinks.show();
+								$footerLinks.show();
 							}
 						} );
 
@@ -552,9 +552,9 @@ class WPEX_Footer_Builder {
 	 * @since 3.5.0
 	 */
 	public static function builder_template( $template ) {
-		$barter_builder_id = self::barter_builder_id();
-		if ( is_page( $barter_builder_id ) ) {
-			$new_template = locate_template( array( 'partials/barter/builder-template.php' ) );
+		$footer_builder_id = self::footer_builder_id();
+		if ( is_page( $footer_builder_id ) ) {
+			$new_template = locate_template( array( 'partials/footer/builder-template.php' ) );
 			if ( $new_template ) {
 				return $new_template;
 			}
@@ -568,107 +568,107 @@ class WPEX_Footer_Builder {
 	 * @since 3.5.0
 	 */
 	public static function redirect() {
-		$barter_builder_id = self::barter_builder_id();
-		if ( $barter_builder_id == get_option( 'page_on_front' ) || $barter_builder_id == get_option( 'page_for_posts' ) ) {
+		$footer_builder_id = self::footer_builder_id();
+		if ( $footer_builder_id == get_option( 'page_on_front' ) || $footer_builder_id == get_option( 'page_for_posts' ) ) {
 			return;
 		}
-		if ( is_page( $barter_builder_id ) ) {
+		if ( is_page( $footer_builder_id ) ) {
 			wp_redirect( esc_url( home_url( '/' ) ), 301 );
 		}
 	}
 
 	/**
-	 * Add barter builder to array of ID's with CSS to load site-wide
+	 * Add footer builder to array of ID's with CSS to load site-wide
 	 *
 	 * @since 2.0.0
 	 */
 	public static function wpex_vc_css_ids( $ids ) {
-		$barter_builder_id = self::barter_builder_id();
-		if ( $barter_builder_id ) {
-			$ids[] = $barter_builder_id;
+		$footer_builder_id = self::footer_builder_id();
+		if ( $footer_builder_id ) {
+			$ids[] = $footer_builder_id;
 		}
 		return $ids;
 	}
 
 	/**
-	 * Remove the barter and add custom barter if enabled
+	 * Remove the footer and add custom footer if enabled
 	 *
 	 * @since 2.0.0
 	 */
-	public static function alter_barter() {
+	public static function alter_footer() {
 
-		// Remove theme barter
-		remove_action( 'wpex_hook_wrap_bottom', 'wpex_barter', 10 );
+		// Remove theme footer
+		remove_action( 'wpex_hook_wrap_bottom', 'wpex_footer', 10 );
 
-		// Remove all actions in barter hooks
+		// Remove all actions in footer hooks
 		$hooks = wpex_theme_hooks();
-		if ( isset( $hooks['barter']['hooks'] ) ) {
-			foreach( $hooks['barter']['hooks'] as $hook ) {
+		if ( isset( $hooks['footer']['hooks'] ) ) {
+			foreach( $hooks['footer']['hooks'] as $hook ) {
 				remove_all_actions( $hook, false );
 			}
 		}
 
 		// Re add callout
-		add_action( 'wpex_hook_barter_before', 'wpex_barter_callout' );
+		add_action( 'wpex_hook_footer_before', 'wpex_footer_callout' );
 
-		// Re-add barter bottom if enabled
-		if ( wpex_get_mod( 'barter_builder_barter_bottom', false ) ) {
-			add_action( 'wpex_hook_barter_after', 'wpex_barter_bottom' );
+		// Re-add footer bottom if enabled
+		if ( wpex_get_mod( 'footer_builder_footer_bottom', false ) ) {
+			add_action( 'wpex_hook_footer_after', 'wpex_footer_bottom' );
 		}
 
 		// Re add reveal if enabled
-		if ( get_theme_mod( 'barter_reveal' ) ) {
-			add_action( 'wpex_hook_barter_before', 'wpex_barter_reveal_open', 0 );
-			add_action( 'wpex_hook_barter_after', 'wpex_barter_reveal_close', 99 );
+		if ( get_theme_mod( 'footer_reveal' ) ) {
+			add_action( 'wpex_hook_footer_before', 'wpex_footer_reveal_open', 0 );
+			add_action( 'wpex_hook_footer_after', 'wpex_footer_reveal_close', 99 );
 		}
 
-		// Add builder barter
+		// Add builder footer
 		add_action( 'wpex_hook_wrap_bottom', array( 'WPEX_Footer_Builder', 'get_part' ), 10 );
 
 	}
 
 	/**
-	 * Remove the barter and add custom barter if enabled
+	 * Remove the footer and add custom footer if enabled
 	 *
 	 * @since 2.0.0
 	 */
-	public static function remove_customizer_barter_panel( $panels ) {
-		unset( $panels['barter_widgets'] );
-		if ( ! wpex_get_mod( 'barter_builder_barter_bottom', false ) ) {
-			unset( $panels['barter_bottom'] );
+	public static function remove_customizer_footer_panel( $panels ) {
+		unset( $panels['footer_widgets'] );
+		if ( ! wpex_get_mod( 'footer_builder_footer_bottom', false ) ) {
+			unset( $panels['footer_bottom'] );
 		}
 		return $panels;
 	}
 
 	/**
-	 * Gets the barter builder template part if the barter is enabled
+	 * Gets the footer builder template part if the footer is enabled
 	 *
 	 * @since 2.0.0
 	 */
 	public static function get_part() {
-		if ( wpex_has_barter() ) {
-			get_template_part( 'partials/barter/barter-builder' );
+		if ( wpex_has_footer() ) {
+			get_template_part( 'partials/footer/footer-builder' );
 		}
 	}
 
 	/**
-	 * Custom CSS for barter builder
+	 * Custom CSS for footer builder
 	 *
 	 * @since 3.5.0
 	 */
 	public static function wpex_head_css( $css ) {
 		$add_css = '';
-		if ( $bg = wpex_get_mod( 'barter_builder_bg' ) ) {
+		if ( $bg = wpex_get_mod( 'footer_builder_bg' ) ) {
 			$add_css .= 'background-color:'. $bg .';';
 		}
-		if ( $bg_img = wpex_sanitize_data( wpex_get_mod( 'barter_builder_bg_img' ), 'image_src_from_mod' ) ) {
+		if ( $bg_img = wpex_sanitize_data( wpex_get_mod( 'footer_builder_bg_img' ), 'image_src_from_mod' ) ) {
 			$add_css .= 'background-image:url('. $bg_img .');';
 		}
-		if ( $bg_img && $bg_img_style = wpex_sanitize_data( wpex_get_mod( 'barter_builder_bg_img_style' ), 'background_style_css' ) ) {
+		if ( $bg_img && $bg_img_style = wpex_sanitize_data( wpex_get_mod( 'footer_builder_bg_img_style' ), 'background_style_css' ) ) {
 			$add_css .= $bg_img_style;
 		}
 		if ( $add_css ) {
-			$add_css = '#barter-builder{ '. $add_css .'}';
+			$add_css = '#footer-builder{ '. $add_css .'}';
 			$css .= '/*FOOTER BUILDER*/'. $add_css;
 		}
 		return $css;

@@ -187,7 +187,7 @@ if ( ! class_exists( 'WPEX_404_PAGE' ) ) {
 
 				<br />
 
-				<div id="wpex-barter-builder-edit-links">
+				<div id="wpex-footer-builder-edit-links">
 
 					<a href="<?php echo admin_url( 'post.php?post='. $page_id .'&action=edit' ); ?>" class="button" target="_blank">
 						<?php esc_html_e( 'Backend Edit', 'total' ); ?>

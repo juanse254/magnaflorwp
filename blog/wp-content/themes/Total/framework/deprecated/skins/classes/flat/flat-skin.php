@@ -74,8 +74,8 @@ if ( ! class_exists( 'Total_Flat_Skin' ) ) {
             // Add new ones
             $new = array(
                 '#sidr-main a:hover',
-                '#barter a',
-                '#barter li a:before',
+                '#footer a',
+                '#footer li a:before',
                 '.woocommerce ul.products li.product h3:hover',
                 '.woocommerce ul.products li.product h3 mark:hover',
                 '#top-bar a:hover',

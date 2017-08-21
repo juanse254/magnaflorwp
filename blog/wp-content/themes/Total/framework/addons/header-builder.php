@@ -404,11 +404,11 @@ class WPEX_Header_Builder {
 						var $tableTr     = $( '#wpex-admin-page table tr' );
 						var	$select      = $( '#wpex-header-builder-select' );
 						var $selectTr    = $select.parents( 'tr' );
-						var $barterLinks = $( '#wpex-header-builder-edit-links' );
+						var $footerLinks = $( '#wpex-header-builder-edit-links' );
 
 						// Check initial val
 						if ( ! $select.val() ) {
-							$barterLinks.hide();
+							$footerLinks.hide();
 							$tableTr.not( $selectTr ).hide();
 						}
 
@@ -416,10 +416,10 @@ class WPEX_Header_Builder {
 						$( $select ).change(function () {
 							if ( ! $( this ).val() ) {
 								$tableTr.not( $selectTr ).hide();
-								$barterLinks.hide();
+								$footerLinks.hide();
 							} else {
 								$tableTr.show();
-								$barterLinks.show();
+								$footerLinks.show();
 							}
 						} );
 

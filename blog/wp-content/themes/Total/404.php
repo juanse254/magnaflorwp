@@ -79,4 +79,4 @@ get_header(); ?>
 
 	</div><!-- .container -->
 
-<?php get_barter(); ?>
+<?php get_footer(); ?>

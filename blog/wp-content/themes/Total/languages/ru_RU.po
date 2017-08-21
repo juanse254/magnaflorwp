@@ -358,8 +358,8 @@ msgstr ""
 #: framework/customizer/settings/blog.php:152
 #: framework/customizer/settings/blog.php:166
 #: framework/customizer/settings/blog.php:199
-#: framework/customizer/settings/barter_bottom.php:46
-#: framework/customizer/settings/barter_widgets.php:222
+#: framework/customizer/settings/footer_bottom.php:46
+#: framework/customizer/settings/footer_widgets.php:222
 #: framework/customizer/settings/general.php:116
 #: framework/customizer/settings/general.php:294
 #: framework/customizer/settings/general.php:902
@@ -1067,8 +1067,8 @@ msgstr "Шрифт"
 #: framework/classes/post-series.php:227 framework/classes/term-colors.php:99
 #: framework/classes/term-colors.php:157
 #: framework/customizer/settings/callout.php:259
-#: framework/customizer/settings/barter_bottom.php:86
-#: framework/customizer/settings/barter_widgets.php:104
+#: framework/customizer/settings/footer_bottom.php:86
+#: framework/customizer/settings/footer_widgets.php:104
 #: framework/customizer/settings/general.php:649
 #: framework/customizer/settings/general.php:817
 #: framework/customizer/settings/general.php:1030
@@ -1291,8 +1291,8 @@ msgstr "Толщина (вес) шрифта"
 #: framework/3rd-party/visual-composer/shortcodes/heading.php:200
 #: framework/3rd-party/visual-composer/shortcodes/list_item.php:88
 #: framework/3rd-party/visual-composer/shortcodes/teaser.php:88
-#: framework/customizer/settings/barter_bottom.php:44
-#: framework/customizer/settings/barter_widgets.php:220
+#: framework/customizer/settings/footer_bottom.php:44
+#: framework/customizer/settings/footer_widgets.php:220
 #: framework/customizer/settings/sidebar.php:164
 msgid "Text Align"
 msgstr "Выравнивание текста"
@@ -1543,8 +1543,8 @@ msgstr "Вниз"
 #: framework/classes/widgets/about.php:202
 #: framework/classes/widgets/social-fontawesome.php:413
 #: framework/classes/widgets/social.php:242
-#: framework/customizer/settings/barter_bottom.php:47
-#: framework/customizer/settings/barter_widgets.php:223
+#: framework/customizer/settings/footer_bottom.php:47
+#: framework/customizer/settings/footer_widgets.php:223
 #: framework/customizer/settings/general.php:732
 #: framework/customizer/settings/header.php:1067
 #: framework/customizer/settings/sidebar.php:167
@@ -1575,8 +1575,8 @@ msgstr "Слева"
 #: framework/classes/widgets/about.php:204
 #: framework/classes/widgets/social-fontawesome.php:415
 #: framework/classes/widgets/social.php:244
-#: framework/customizer/settings/barter_bottom.php:48
-#: framework/customizer/settings/barter_widgets.php:224
+#: framework/customizer/settings/footer_bottom.php:48
+#: framework/customizer/settings/footer_widgets.php:224
 #: framework/customizer/settings/general.php:734
 #: framework/customizer/settings/header.php:1068
 #: framework/customizer/settings/sidebar.php:168
@@ -1743,8 +1743,8 @@ msgstr "Выравнивание изображения"
 #: framework/classes/widgets/about.php:203
 #: framework/classes/widgets/social-fontawesome.php:414
 #: framework/classes/widgets/social.php:243
-#: framework/customizer/settings/barter_bottom.php:49
-#: framework/customizer/settings/barter_widgets.php:225
+#: framework/customizer/settings/footer_bottom.php:49
+#: framework/customizer/settings/footer_widgets.php:225
 #: framework/customizer/settings/general.php:733
 #: framework/customizer/settings/sidebar.php:169
 msgid "Center"
@@ -3590,9 +3590,9 @@ msgstr "Введите значение в пикселях."
 #: framework/3rd-party/visual-composer/shortcodes/teaser.php:111
 #: framework/3rd-party/visual-composer/shortcodes/users_grid.php:337
 #: framework/customizer/settings/callout.php:208
-#: framework/customizer/settings/barter_bottom.php:59
-#: framework/customizer/settings/barter_widgets.php:77
-#: framework/customizer/settings/barter_widgets.php:206
+#: framework/customizer/settings/footer_bottom.php:59
+#: framework/customizer/settings/footer_widgets.php:77
+#: framework/customizer/settings/footer_widgets.php:206
 #: framework/customizer/settings/general.php:743
 #: framework/customizer/settings/general.php:956
 #: framework/customizer/settings/sidebar.php:44
@@ -3630,9 +3630,9 @@ msgstr "Поля"
 #: framework/customizer/settings/blog.php:466
 #: framework/customizer/settings/callout.php:88
 #: framework/customizer/settings/callout.php:235
-#: framework/customizer/settings/barter_bottom.php:73
-#: framework/customizer/settings/barter_widgets.php:91
-#: framework/customizer/settings/barter_widgets.php:193
+#: framework/customizer/settings/footer_bottom.php:73
+#: framework/customizer/settings/footer_widgets.php:91
+#: framework/customizer/settings/footer_widgets.php:193
 #: framework/customizer/settings/general.php:348
 #: framework/customizer/settings/general.php:673
 #: framework/customizer/settings/general.php:854
@@ -3808,7 +3808,7 @@ msgstr "Стена"
 #: framework/classes/widgets/instagram-grid.php:209
 #: framework/classes/widgets/posts-grid.php:342
 #: framework/classes/widgets/users-grid.php:286
-#: framework/customizer/settings/barter_widgets.php:50
+#: framework/customizer/settings/footer_widgets.php:50
 #: framework/customizer/settings/portfolio.php:58
 #: framework/customizer/settings/staff.php:84
 msgid "Columns"
@@ -3826,7 +3826,7 @@ msgstr "Колонки"
 #: framework/classes/widgets/instagram-grid.php:219
 #: framework/classes/widgets/posts-grid.php:352
 #: framework/customizer/settings/blog.php:178
-#: framework/customizer/settings/barter_widgets.php:66
+#: framework/customizer/settings/footer_widgets.php:66
 #: framework/customizer/settings/portfolio.php:66
 #: framework/customizer/settings/staff.php:92
 msgid "Gap"
@@ -4986,7 +4986,7 @@ msgstr "Цвет границы"
 #: framework/3rd-party/visual-composer/shortcodes/image_grid.php:345
 #: framework/3rd-party/visual-composer/shortcodes/post_type_grid.php:514
 #: framework/3rd-party/visual-composer/shortcodes/users_grid.php:218
-#: framework/customizer/settings/barter_widgets.php:174
+#: framework/customizer/settings/footer_widgets.php:174
 #: framework/customizer/settings/general.php:912
 #: framework/customizer/settings/sidebar.php:121
 msgid "Tag"
@@ -5203,8 +5203,8 @@ msgstr ""
 #: framework/3rd-party/visual-composer/shortcodes/image_grid.php:245
 #: framework/3rd-party/visual-composer/shortcodes/image_grid.php:251
 #: framework/customizer/settings/callout.php:124
-#: framework/customizer/settings/barter_bottom.php:102
-#: framework/customizer/settings/barter_widgets.php:139
+#: framework/customizer/settings/footer_bottom.php:102
+#: framework/customizer/settings/footer_widgets.php:139
 #: framework/customizer/settings/header.php:1223
 #: framework/customizer/settings/header.php:1321
 msgid "Links"
@@ -6803,7 +6803,7 @@ msgstr "С обводкой (старое)"
 
 #: framework/3rd-party/visual-composer/shortcodes/teaser.php:118
 #: framework/addons/custom-login.php:219
-#: framework/addons/barter-builder.php:187
+#: framework/addons/footer-builder.php:187
 #: framework/addons/header-builder.php:148
 #: framework/classes/post-metabox.php:788
 #: framework/classes/post-metabox.php:818
@@ -7139,8 +7139,8 @@ msgstr "Visual Composer"
 #: framework/addons/typography.php:247 framework/classes/image-sizes.php:253
 #: framework/customizer/settings/blog.php:51
 #: framework/customizer/settings/callout.php:17
-#: framework/customizer/settings/barter_bottom.php:17
-#: framework/customizer/settings/barter_widgets.php:17
+#: framework/customizer/settings/footer_bottom.php:17
+#: framework/customizer/settings/footer_widgets.php:17
 #: framework/customizer/settings/header.php:29
 #: framework/customizer/settings/layout.php:17
 #: framework/customizer/settings/sidebar.php:15
@@ -7854,19 +7854,19 @@ msgstr ""
 "Выберите одну из существующих страниц, чтобы использовать Visual Composer "
 "для создания Страницы 404."
 
-#: framework/addons/custom-404.php:193 framework/addons/barter-builder.php:361
+#: framework/addons/custom-404.php:193 framework/addons/footer-builder.php:361
 #: framework/addons/header-builder.php:299
 #: framework/addons/under-construction.php:171
 msgid "Backend Edit"
 msgstr "Редактировать в консоли"
 
-#: framework/addons/custom-404.php:198 framework/addons/barter-builder.php:367
+#: framework/addons/custom-404.php:198 framework/addons/footer-builder.php:367
 #: framework/addons/header-builder.php:305
 #: framework/addons/under-construction.php:176
 msgid "Frontend Edit"
 msgstr "Редактировать на сайте"
 
-#: framework/addons/custom-404.php:202 framework/addons/barter-builder.php:373
+#: framework/addons/custom-404.php:202 framework/addons/footer-builder.php:373
 #: framework/addons/under-construction.php:181
 msgid "Preview"
 msgstr "Предпросмотр"
@@ -7951,7 +7951,7 @@ msgstr "Логотип"
 #: framework/addons/custom-login.php:191 framework/addons/custom-login.php:232
 #: framework/addons/favicons.php:204 framework/addons/favicons.php:220
 #: framework/addons/favicons.php:236 framework/addons/favicons.php:252
-#: framework/addons/favicons.php:268 framework/addons/barter-builder.php:444
+#: framework/addons/favicons.php:268 framework/addons/footer-builder.php:444
 #: framework/addons/header-builder.php:332
 #: framework/classes/post-metabox.php:343
 msgid "Upload"
@@ -7960,7 +7960,7 @@ msgstr "Закачать"
 #: framework/addons/custom-login.php:196 framework/addons/custom-login.php:237
 #: framework/addons/favicons.php:209 framework/addons/favicons.php:225
 #: framework/addons/favicons.php:241 framework/addons/favicons.php:257
-#: framework/addons/favicons.php:273 framework/addons/barter-builder.php:449
+#: framework/addons/favicons.php:273 framework/addons/footer-builder.php:449
 #: framework/addons/header-builder.php:337
 msgid "Preview Image"
 msgstr "Просмотр изображения"
@@ -7974,7 +7974,7 @@ msgid "Logo URL"
 msgstr "Ссылка логотипа"
 
 #: framework/addons/custom-login.php:227
-#: framework/addons/barter-builder.php:196
+#: framework/addons/footer-builder.php:196
 #: framework/addons/header-builder.php:149
 #: framework/classes/post-metabox.php:533
 #: framework/classes/post-metabox.php:795
@@ -7984,7 +7984,7 @@ msgid "Background Image"
 msgstr "Фоновое изображение"
 
 #: framework/addons/custom-login.php:245
-#: framework/addons/barter-builder.php:205
+#: framework/addons/footer-builder.php:205
 #: framework/addons/header-builder.php:150
 #: framework/customizer/settings/general.php:66
 #: framework/customizer/settings/general.php:422
@@ -8399,58 +8399,58 @@ msgstr "Значок для iPhone Retina"
 msgid "Apple iPad Retina Icon "
 msgstr "Значок для iPad Retina"
 
-#: framework/addons/barter-builder.php:95
-#: framework/addons/barter-builder.php:96
-#: framework/addons/barter-builder.php:483 framework/addons/theme-panel.php:128
+#: framework/addons/footer-builder.php:95
+#: framework/addons/footer-builder.php:96
+#: framework/addons/footer-builder.php:483 framework/addons/theme-panel.php:128
 msgid "Footer Builder"
 msgstr "Конструктор подвала"
 
-#: framework/addons/barter-builder.php:151
+#: framework/addons/footer-builder.php:151
 msgid "Footer Builder page"
 msgstr "Страница конструктора подвала"
 
-#: framework/addons/barter-builder.php:160
+#: framework/addons/footer-builder.php:160
 #: framework/customizer/customizer.php:102
 msgid "Footer Bottom"
 msgstr "Низ подвала"
 
-#: framework/addons/barter-builder.php:169
-#: framework/customizer/settings/barter_widgets.php:32
+#: framework/addons/footer-builder.php:169
+#: framework/customizer/settings/footer_widgets.php:32
 msgid "Fixed Footer"
 msgstr "Видимый подвал"
 
-#: framework/addons/barter-builder.php:178
+#: framework/addons/footer-builder.php:178
 #: framework/classes/post-metabox.php:961
-#: framework/customizer/settings/barter_widgets.php:40
+#: framework/customizer/settings/footer_widgets.php:40
 msgid "Footer Reveal"
 msgstr "Раскрытие подвала"
 
-#: framework/addons/barter-builder.php:311
+#: framework/addons/footer-builder.php:311
 msgid "None - Display Widgetized Footer"
 msgstr "Нет - использовать подвал с виджетами"
 
-#: framework/addons/barter-builder.php:322
+#: framework/addons/footer-builder.php:322
 #: framework/addons/header-builder.php:260
 msgid "Templatera Templates"
 msgstr ""
 
-#: framework/addons/barter-builder.php:338
+#: framework/addons/footer-builder.php:338
 #: framework/addons/header-builder.php:276
 #: framework/customizer/settings/general.php:456
 msgid "Pages"
 msgstr "Страницы"
 
-#: framework/addons/barter-builder.php:354
-msgid "Select your custom page for your barter layout."
+#: framework/addons/footer-builder.php:354
+msgid "Select your custom page for your footer layout."
 msgstr "Выберите страницу для использования в качестве подвала"
 
-#: framework/addons/barter-builder.php:488
+#: framework/addons/footer-builder.php:488
 msgid ""
-"By default the barter consists of a simple widgetized area. For more complex "
+"By default the footer consists of a simple widgetized area. For more complex "
 "layouts you can use the option below to select a page which will hold the "
-"content and layout for your site barter. Selecting a custom barter will "
-"remove all barter functions (barter widgets and barter customizer options) "
-"so you can create an entire barter using the Visual Composer and not load "
+"content and layout for your site footer. Selecting a custom footer will "
+"remove all footer functions (footer widgets and footer customizer options) "
+"so you can create an entire footer using the Visual Composer and not load "
 "that extra functions."
 msgstr ""
 "По-умолчанию подвал представляет собой область с виджетами. Однако, вы "
@@ -8885,7 +8885,7 @@ msgid "Breadcrumbs"
 msgstr "Навигационные цепочки"
 
 #: framework/addons/typography.php:138
-#: framework/customizer/settings/barter_widgets.php:165
+#: framework/customizer/settings/footer_widgets.php:165
 #: framework/customizer/settings/sidebar.php:113
 msgid "Headings"
 msgstr "Подзаголовки"
@@ -10164,18 +10164,18 @@ msgstr "Выберите вариант."
 #: framework/classes/post-metabox.php:940 framework/hooks/hooks.php:101
 #: functions.php:507
 msgid "Footer"
-msgstr "Подвал (barter)"
+msgstr "Подвал (footer)"
 
 #: framework/classes/post-metabox.php:951
 #: framework/customizer/customizer.php:98
-#: framework/customizer/settings/barter_widgets.php:23
+#: framework/customizer/settings/footer_widgets.php:23
 msgid "Footer Widgets"
-msgstr "Виджеты подвала (barter)"
+msgstr "Виджеты подвала (footer)"
 
 #: framework/classes/post-metabox.php:962
-#: framework/customizer/settings/barter_widgets.php:42
+#: framework/customizer/settings/footer_widgets.php:42
 msgid ""
-"Enable the barter reveal style. The barter will be placed in a fixed postion "
+"Enable the footer reveal style. The footer will be placed in a fixed postion "
 "and display on scroll. This setting is for the \"Full-Width\" layout only "
 "and desktops only."
 msgstr ""
@@ -10337,7 +10337,7 @@ msgid "Front-End Heading"
 msgstr "Редактировать на сайте"
 
 #: framework/classes/post-series.php:211
-#: framework/customizer/settings/barter_widgets.php:122
+#: framework/customizer/settings/footer_widgets.php:122
 #: framework/customizer/settings/header.php:596
 #: framework/customizer/settings/header.php:1210
 #: framework/customizer/settings/header.php:1305
@@ -11005,8 +11005,8 @@ msgid "Enable Globally"
 msgstr ""
 
 #: framework/customizer/settings/callout.php:27
-#: framework/customizer/settings/barter_bottom.php:26
-#: framework/customizer/settings/barter_widgets.php:25
+#: framework/customizer/settings/footer_bottom.php:26
+#: framework/customizer/settings/footer_widgets.php:25
 #: framework/customizer/settings/togglebar.php:25
 #: framework/customizer/settings/topbar.php:26
 msgid ""
@@ -11037,8 +11037,8 @@ msgid "Bottom Padding"
 msgstr "Нижнее поле"
 
 #: framework/customizer/settings/callout.php:136
-#: framework/customizer/settings/barter_bottom.php:115
-#: framework/customizer/settings/barter_widgets.php:152
+#: framework/customizer/settings/footer_bottom.php:115
+#: framework/customizer/settings/footer_widgets.php:152
 #: framework/customizer/settings/header.php:1236
 #: framework/customizer/settings/header.php:1337
 msgid "Links: Hover"
@@ -11065,18 +11065,18 @@ msgstr "Rel ссылки"
 msgid "Icon Select"
 msgstr ""
 
-#: framework/customizer/settings/barter_bottom.php:24
+#: framework/customizer/settings/footer_bottom.php:24
 msgid "Bottom Footer Area"
 msgstr "Нижняя область подвала."
 
-#: framework/customizer/settings/barter_bottom.php:34
+#: framework/customizer/settings/footer_bottom.php:34
 msgid "Copyright"
 msgstr "Copyright"
 
-#: framework/customizer/settings/barter_widgets.php:34
+#: framework/customizer/settings/footer_widgets.php:34
 msgid ""
-"This setting will not \"fix\" your barter per-se but will add a min-height "
-"to your #main container to keep your barter always at the bottom of the page."
+"This setting will not \"fix\" your footer per-se but will add a min-height "
+"to your #main container to keep your footer always at the bottom of the page."
 msgstr ""
 "Эта настройка добавляет параметр минимальной высоты к главному контейнеру, "
 "чтобы подвал всегда находился внизу окна браузера."
@@ -13501,7 +13501,7 @@ msgstr ""
 #, fuzzy
 #~ msgctxt "Theme Hook Location"
 #~ msgid "Footer"
-#~ msgstr "Подвал (barter)"
+#~ msgstr "Подвал (footer)"
 
 #, fuzzy
 #~ msgctxt "Theme Hook Location"

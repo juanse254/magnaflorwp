@@ -27,4 +27,4 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<?php get_barter(); ?>
+<?php get_footer(); ?>

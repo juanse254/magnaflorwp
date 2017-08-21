@@ -12,18 +12,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
 
-<?php wpex_hook_barter_before(); ?>
+<?php wpex_hook_footer_before(); ?>
 
 	<?php
-	// Display barter builder
-	if ( $page_id = wpex_barter_builder_id() ) : ?>
+	// Display footer builder
+	if ( $page_id = wpex_footer_builder_id() ) : ?>
 
-		<div id="barter-builder" class="barter-builder clr">
-			<div class="barter-builder-content clr container entry">
+		<div id="footer-builder" class="footer-builder clr">
+			<div class="footer-builder-content clr container entry">
 				<?php echo do_shortcode( get_post_field( 'post_content', $page_id ) ); ?>
-			</div><!-- .barter-builder-content -->
-		</div><!-- .barter-builder -->
+			</div><!-- .footer-builder-content -->
+		</div><!-- .footer-builder -->
 
 	<?php endif; ?>
 
-<?php wpex_hook_barter_after(); ?>
+<?php wpex_hook_footer_after(); ?>

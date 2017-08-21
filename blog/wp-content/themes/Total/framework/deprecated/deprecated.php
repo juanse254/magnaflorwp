@@ -110,12 +110,12 @@ function wpex_breadcrumbs( $post_id = '' ) {
 	$breadcrumbs->display();
 }
 
-function wpex_has_barter_widgets() {
-	return wpex_barter_has_widgets();
+function wpex_has_footer_widgets() {
+	return wpex_footer_has_widgets();
 }
 
-function wpex_display_barter_widgets() {
-	return wpex_barter_has_widgets();
+function wpex_display_footer_widgets() {
+	return wpex_footer_has_widgets();
 }
 
 function wpex_topbar_output() {
@@ -126,8 +126,8 @@ function wpex_top_bar_classes() {
 	return wpex_topbar_content_classes();
 }
 
-function wpex_barter_reveal_enabled( $post_id = '' ) {
-	return wpex_barter_has_reveal( $post_id );
+function wpex_footer_reveal_enabled( $post_id = '' ) {
+	return wpex_footer_has_reveal( $post_id );
 }
 
 function wpex_page_header_background_image_meta() {
@@ -177,8 +177,8 @@ function wpex_display_header() {
 	_deprecated_function( 'wpex_display_header', '2.0.0', 'wpex_has_header' );
 }
 
-function wpex_display_barter() {
-	_deprecated_function( 'wpex_display_barter', '2.0.0', 'wpex_has_barter' );
+function wpex_display_footer() {
+	_deprecated_function( 'wpex_display_footer', '2.0.0', 'wpex_has_footer' );
 }
 
 function wpex_page_title() {
@@ -209,16 +209,16 @@ function wpex_hook_sidebar_inner_default() {
 	_deprecated_function( 'wpex_hook_sidebar_inner_default', '2.0.0' );
 }
 
-function wpex_hook_barter_before_default() {
-	_deprecated_function( 'wpex_hook_barter_before_default', '2.0.0' );
+function wpex_hook_footer_before_default() {
+	_deprecated_function( 'wpex_hook_footer_before_default', '2.0.0' );
 }
 
-function wpex_hook_barter_inner_default() {
-	_deprecated_function( 'wpex_hook_barter_inner', '2.0.0' );
+function wpex_hook_footer_inner_default() {
+	_deprecated_function( 'wpex_hook_footer_inner', '2.0.0' );
 }
 
-function wpex_hook_barter_after_default() {
-	_deprecated_function( 'wpex_hook_barter_after', '2.0.0' );
+function wpex_hook_footer_after_default() {
+	_deprecated_function( 'wpex_hook_footer_after', '2.0.0' );
 }
 
 function wpex_hook_wrap_after_default() {
@@ -273,8 +273,8 @@ function wpex_header_output() {
 	_deprecated_function( 'wpex_header_output', '1.6.0', 'wpex_header_layout' );
 }
 
-function wpex_barter_copyright() {
-	_deprecated_function( 'wpex_barter_copyright', '1.6.0', 'get_template_part' );
+function wpex_footer_copyright() {
+	_deprecated_function( 'wpex_footer_copyright', '1.6.0', 'get_template_part' );
 }
 
 function wpex_top_bar_social() {

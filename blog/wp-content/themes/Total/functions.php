@@ -250,7 +250,7 @@ class WPEX_Theme_Setup {
 			require_once WPEX_FRAMEWORK_DIR . 'helpers/post-slider.php';
 			require_once WPEX_FRAMEWORK_DIR . 'helpers/page-header.php';
 			require_once WPEX_FRAMEWORK_DIR . 'helpers/callout.php';
-			require_once WPEX_FRAMEWORK_DIR . 'helpers/barter.php';
+			require_once WPEX_FRAMEWORK_DIR . 'helpers/footer.php';
 			require_once WPEX_FRAMEWORK_DIR . 'helpers/pagination.php';
 			require_once WPEX_FRAMEWORK_DIR . 'helpers/blog.php';
 			require_once WPEX_FRAMEWORK_DIR . 'helpers/instagram-feed.php';
@@ -504,7 +504,7 @@ class WPEX_Theme_Setup {
 			'main_menu'       => __( 'Main/Header', 'total' ),
 			'mobile_menu_alt' => __( 'Mobile Menu Alternative', 'total' ),
 			'mobile_menu'     => __( 'Mobile Icons', 'total' ),
-			'barter_menu'     => __( 'Footer', 'total' ),
+			'footer_menu'     => __( 'Footer', 'total' ),
 		) );
 
 		// Declare theme support

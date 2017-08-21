@@ -74,16 +74,16 @@ function wpex_template_parts() {
 		'cpt_single_media' => 'partials/cpt/cpt-single-media',
 
 		// Footer
-		'barter_callout'      => 'partials/barter/barter-callout',
-		'barter'              => 'partials/barter/barter-layout',
-		'barter_widgets'      => 'partials/barter/barter-widgets',
-		'barter_bottom'       => 'partials/barter/barter-bottom',
-		'barter_reveal_open'  => 'partials/barter/barter-reveal-open',
-		'barter_reveal_close' => 'partials/barter/barter-reveal-close',
+		'footer_callout'      => 'partials/footer/footer-callout',
+		'footer'              => 'partials/footer/footer-layout',
+		'footer_widgets'      => 'partials/footer/footer-widgets',
+		'footer_bottom'       => 'partials/footer/footer-bottom',
+		'footer_reveal_open'  => 'partials/footer/footer-reveal-open',
+		'footer_reveal_close' => 'partials/footer/footer-reveal-close',
 
 		// Footer Bottom
-		'barter_bottom_copyright' => 'partials/barter/barter-bottom-copyright',
-		'barter_bottom_menu'      => 'partials/barter/barter-bottom-menu',
+		'footer_bottom_copyright' => 'partials/footer/footer-bottom-copyright',
+		'footer_bottom_menu'      => 'partials/footer/footer-bottom-menu',
 
 		// Mobile
 		'mobile_searchform'  => 'partials/search/mobile-searchform',

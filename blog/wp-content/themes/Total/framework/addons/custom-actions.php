@@ -130,7 +130,7 @@ if ( ! class_exists( 'WPEX_User_Actions' ) ) {
 												'label' => 'WordPress',
 												'hooks' => array(
 													'wp_head',
-													'wp_barter',
+													'wp_footer',
 												),
 											),
 										);

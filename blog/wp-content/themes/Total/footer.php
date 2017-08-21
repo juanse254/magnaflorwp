@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the barter.
+ * The template for displaying the footer.
  *
  * @package Total WordPress Theme
  * @subpackage Templates
@@ -23,7 +23,7 @@
 
 <?php wpex_outer_wrap_after(); ?>
 
-<?php wp_barter(); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

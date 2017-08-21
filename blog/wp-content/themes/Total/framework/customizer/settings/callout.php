@@ -47,7 +47,7 @@ $this->sections['wpex_callout_aside_content'] = array(
 		array(
 			'id' => 'callout_text',
 			'transport' => 'partialRefresh',
-			'default' => 'I am the barter call-to-action block, here you can add some relevant/important information about your company or product. I can be disabled in the theme options.',
+			'default' => 'I am the footer call-to-action block, here you can add some relevant/important information about your company or product. I can be disabled in the theme options.',
 			'control' => array(
 				'label' => __( 'Content', 'total' ),
 				'type' => 'textarea',
@@ -63,7 +63,7 @@ $this->sections['wpex_callout_aside_content'] = array(
 				'description' => $pixel_desc,
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout-wrap',
+				'target' => '#footer-callout-wrap',
 				'alter' => 'padding-top',
 			),
 		),
@@ -76,67 +76,67 @@ $this->sections['wpex_callout_aside_content'] = array(
 				'description' => $pixel_desc,
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout-wrap',
+				'target' => '#footer-callout-wrap',
 				'alter' => 'padding-bottom',
 			),
 		),
 		array(
-			'id' => 'barter_callout_bg',
+			'id' => 'footer_callout_bg',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Background', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout-wrap',
+				'target' => '#footer-callout-wrap',
 				'alter' => 'background-color',
 			),
 		),
 		array(
-			'id' => 'barter_callout_border',
+			'id' => 'footer_callout_border',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Border Color', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout-wrap',
+				'target' => '#footer-callout-wrap',
 				'alter' => 'border-color',
 			),
 		),
 		array(
-			'id' => 'barter_callout_color',
+			'id' => 'footer_callout_color',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Text Color', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout-wrap',
+				'target' => '#footer-callout-wrap',
 				'alter' => 'color',
 			),
 		),
 		array(
-			'id' => 'barter_callout_link_color',
+			'id' => 'footer_callout_link_color',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Links', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '.barter-callout-content a',
+				'target' => '.footer-callout-content a',
 				'alter' => 'color',
 			),
 		),
 		array(
-			'id' => 'barter_callout_link_color_hover',
+			'id' => 'footer_callout_link_color_hover',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Links: Hover', 'total' ),
 			),
 			'inline_css' => array(
-			'target' => '.barter-callout-content a:hover',
+			'target' => '.footer-callout-content a:hover',
 			'alter' => 'color',
 			),
 		),
@@ -209,7 +209,7 @@ $this->sections['wpex_callout_button'] = array(
 				'description' => $padding_desc,
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout .theme-button',
+				'target' => '#footer-callout .theme-button',
 				'alter' => 'padding',
 			),
 		),
@@ -222,56 +222,56 @@ $this->sections['wpex_callout_button'] = array(
 				'description' => $pixel_desc,
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout .theme-button',
+				'target' => '#footer-callout .theme-button',
 				'alter' => 'border-radius',
 				'important' => 'true',
 			),
 		),
 		array(
-			'id' => 'barter_callout_button_bg',
+			'id' => 'footer_callout_button_bg',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Background', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout .theme-button',
+				'target' => '#footer-callout .theme-button',
 				'alter' => 'background',
 			),
 		),
 		array(
-			'id' => 'barter_callout_button_hover_bg',
+			'id' => 'footer_callout_button_hover_bg',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Background: Hover', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout .theme-button:hover',
+				'target' => '#footer-callout .theme-button:hover',
 				'alter' => 'background',
 			),
 		),
 		array(
-			'id' => 'barter_callout_button_color',
+			'id' => 'footer_callout_button_color',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Color', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout .theme-button',
+				'target' => '#footer-callout .theme-button',
 				'alter' => 'color',
 			),
 		),
 		array(
-			'id' => 'barter_callout_button_hover_color',
+			'id' => 'footer_callout_button_hover_color',
 			'transport' => 'postMessage',
 			'control' => array(
 				'type' => 'color',
 				'label' => __( 'Color: Hover', 'total' ),
 			),
 			'inline_css' => array(
-				'target' => '#barter-callout .theme-button:hover',
+				'target' => '#footer-callout .theme-button:hover',
 				'alter' => 'color',
 			),
 		),

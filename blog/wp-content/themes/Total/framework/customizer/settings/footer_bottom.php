@@ -13,11 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // General
-$this->sections['wpex_barter_bottom'] = array(
+$this->sections['wpex_footer_bottom'] = array(
 	'title' => __( 'General', 'total' ),
 	'settings' => array(
 		array(
-			'id' => 'barter_bottom',
+			'id' => 'footer_bottom',
 			'transport' => 'partialRefresh',
 			'default' => true,
 			'control' => array(
@@ -27,17 +27,17 @@ $this->sections['wpex_barter_bottom'] = array(
 			),
 		),
 		array(
-			'id' => 'barter_copyright_text',
+			'id' => 'footer_copyright_text',
 			'transport' => 'partialRefresh',
 			'default' => 'Copyright <a href="#">Your Business LLC.</a> - All Rights Reserved',
 			'control' => array(
 				'label' => __( 'Copyright', 'total' ),
 				'type' => 'textarea',
-				'active_callback' => 'wpex_cac_has_barter_bottom',
+				'active_callback' => 'wpex_cac_has_footer_bottom',
 			),
 		),
 		array(
-			'id' => 'bottom_barter_text_align',
+			'id' => 'bottom_footer_text_align',
 			'transport' => 'partialRefresh',
 			'control' =>  array(
 				'type' => 'select',
@@ -48,75 +48,75 @@ $this->sections['wpex_barter_bottom'] = array(
 					'right' => __( 'Right','total' ),
 					'center' => __( 'Center','total' ),
 				),
-				'active_callback'=> 'wpex_cac_has_barter_bottom',
+				'active_callback'=> 'wpex_cac_has_footer_bottom',
 			),
 		),
 		array(
-			'id' => 'bottom_barter_padding',
+			'id' => 'bottom_footer_padding',
 			'transport' => 'postMessage',
 			'control' =>  array(
 				'type' => 'text',
 				'label' => __( 'Padding', 'total' ),
 				'description' => $padding_desc,
-				'active_callback'=> 'wpex_cac_has_barter_bottom',
+				'active_callback'=> 'wpex_cac_has_footer_bottom',
 			),
 			'inline_css' => array(
-				'target' => '#barter-bottom-inner',
+				'target' => '#footer-bottom-inner',
 				'alter' => 'padding',
 			),
 		),
 		array(
-			'id' => 'bottom_barter_background',
+			'id' => 'bottom_footer_background',
 			'transport' => 'postMessage',
 			'control' =>  array(
 				'type' => 'color',
 				'label' => __( 'Background', 'total' ),
-				'active_callback'=> 'wpex_cac_has_barter_bottom',
+				'active_callback'=> 'wpex_cac_has_footer_bottom',
 			),
 			'inline_css' => array(
-				'target' => '#barter-bottom',
+				'target' => '#footer-bottom',
 				'alter' => 'background',
 			),
 		),
 		array(
-			'id' => 'bottom_barter_color',
+			'id' => 'bottom_footer_color',
 			'transport' => 'postMessage',
 			'control' =>  array(
 				'type' => 'color',
 				'label' => __( 'Color', 'total' ),
-				'active_callback'=> 'wpex_cac_has_barter_bottom',
+				'active_callback'=> 'wpex_cac_has_footer_bottom',
 			),
 			'inline_css' => array(
 				'target' => array(
-					'#barter-bottom',
-					'#barter-bottom p',
+					'#footer-bottom',
+					'#footer-bottom p',
 				),
 				'alter' => 'color',
 			),
 		),
 		array(
-			'id' => 'bottom_barter_link_color',
+			'id' => 'bottom_footer_link_color',
 			'transport' => 'postMessage',
 			'control' =>  array(
 				'type' => 'color',
 				'label' => __( 'Links', 'total' ),
-				'active_callback'=> 'wpex_cac_has_barter_bottom',
+				'active_callback'=> 'wpex_cac_has_footer_bottom',
 			),
 			'inline_css' => array(
-				'target' => '#barter-bottom a',
+				'target' => '#footer-bottom a',
 				'alter' => 'color',
 			),
 		),
 		array(
-			'id' => 'bottom_barter_link_color_hover',
+			'id' => 'bottom_footer_link_color_hover',
 			'transport' => 'postMessage',
 			'control' =>  array(
 				'type' => 'color',
 				'label' => __( 'Links: Hover', 'total' ),
-				'active_callback'=> 'wpex_cac_has_barter_bottom',
+				'active_callback'=> 'wpex_cac_has_footer_bottom',
 			),
 			'inline_css' => array(
-				'target' => '#barter-bottom a:hover',
+				'target' => '#footer-bottom a:hover',
 				'alter' => 'color',
 			),
 		),

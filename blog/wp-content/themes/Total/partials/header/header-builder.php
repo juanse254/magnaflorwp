@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Get page ID
 $page_id = wpex_header_builder_id();
 
-// Display barter builder
+// Display footer builder
 if ( $page_id ) :
 
 	// Live builder

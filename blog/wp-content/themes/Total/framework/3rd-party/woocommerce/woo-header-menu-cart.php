@@ -187,7 +187,7 @@ function wpex_cart_overlay_html() {
 		get_template_part( 'partials/cart/cart-overlay' );
 	}
 }
-add_action( 'wp_barter', 'wpex_cart_overlay_html' );
+add_action( 'wp_footer', 'wpex_cart_overlay_html' );
 
 /**
  * Add cart dropdown html

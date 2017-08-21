@@ -17,7 +17,7 @@ body { background: #e6e6e6 }
 /*add spacings*/
 .header-two #site-navigation,
 .header-three #site-navigation,
-#main, #barter-callout-wrap { margin-top: 20px }
+#main, #footer-callout-wrap { margin-top: 20px }
 
 /* Boxed Fixes
 --------------------------------------------------------------*/
@@ -90,15 +90,15 @@ body.shrink-fixed-header #site-header-sticky-wrapper.is-sticky #site-header { bo
 
 /* Footer
 --------------------------------------------------------------*/
-#barter { margin-top: 30px }
-#barter-callout-wrap { border: 1px solid #ddd }
+#footer { margin-top: 30px }
+#footer-callout-wrap { border: 1px solid #ddd }
 #site-scroll-top { bottom: 60px }
 .navbar-style-one,
-#barter-bottom-menu { right: 30px }
+#footer-bottom-menu { right: 30px }
 
-/*no unfolding barter please*/
-body.barter-has-reveal #main { margin-bottom: 0 !important }
-.barter-reveal { position: inherit }
+/*no unfolding footer please*/
+body.footer-has-reveal #main { margin-bottom: 0 !important }
+.footer-reveal { position: inherit }
 
 /* Social Share
 --------------------------------------------------------------*/

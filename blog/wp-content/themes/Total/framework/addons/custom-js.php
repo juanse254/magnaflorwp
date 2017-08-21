@@ -26,7 +26,7 @@ if ( ! class_exists( 'WPEX_Custom_JS' ) ) {
 			add_action( 'admin_init', array( $this,'register_settings' ) );
 			add_action( 'admin_enqueue_scripts',array( $this,'scripts' ) );
 			add_action( 'admin_notices', array( $this, 'notices' ) );
-			add_action( 'wp_barter' , array( $this, 'output_js' ), 99 );
+			add_action( 'wp_footer' , array( $this, 'output_js' ), 99 );
 		}
 
 		/**

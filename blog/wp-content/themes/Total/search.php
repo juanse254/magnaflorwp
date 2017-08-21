@@ -101,5 +101,5 @@ get_header(); ?>
 	</div><!-- #content-wrap -->
 
 <?php
-// Get site barter
-get_barter(); ?>
+// Get site footer
+get_footer(); ?>

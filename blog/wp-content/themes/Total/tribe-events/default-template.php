@@ -45,4 +45,4 @@ get_header(); ?>
 
 	</div><!-- #content-wrap -->
 
-<?php get_barter(); ?>
+<?php get_footer(); ?>

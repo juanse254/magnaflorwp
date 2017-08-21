@@ -30,7 +30,7 @@
 				this.widget_area.find('.sidebar-wpex-custom .widgets-sortables').each(function() {
 					if ( i >= wpexWidgetAreasLocalize.count ) {
 						var widgetID = $(this).attr('id')
-						$(this).append('<div class="wpex-widget-area-barter"><div class="wpex-widget-area-id">ID:<span class="description"> '+ widgetID +'</span></div><div class="wpex-widget-area-buttons"><a href="#" class="wpex-widget-area-delete button-primary">'+ wpexWidgetAreasLocalize.delete +'</a><a href="#" class="wpex-widget-area-delete-cancel button-secondary">'+ wpexWidgetAreasLocalize.cancel +'</a><a href="#" class="wpex-widget-area-delete-confirm button-primary">'+ wpexWidgetAreasLocalize.confirm +'</a></div></div>')
+						$(this).append('<div class="wpex-widget-area-footer"><div class="wpex-widget-area-id">ID:<span class="description"> '+ widgetID +'</span></div><div class="wpex-widget-area-buttons"><a href="#" class="wpex-widget-area-delete button-primary">'+ wpexWidgetAreasLocalize.delete +'</a><a href="#" class="wpex-widget-area-delete-cancel button-secondary">'+ wpexWidgetAreasLocalize.cancel +'</a><a href="#" class="wpex-widget-area-delete-confirm button-primary">'+ wpexWidgetAreasLocalize.confirm +'</a></div></div>')
 					}
 					i++;
 				} );

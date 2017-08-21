@@ -135,8 +135,8 @@ if ( ! class_exists( 'WPEX_WooCommerce_Config' ) ) {
 			// Add new typography settings
 			add_filter( 'wpex_typography_settings', array( 'WPEX_WooCommerce_Config', 'typography_settings' ) );
 
-			// Remove demo store notice from wp_barter place top of site
-			remove_action( 'wp_barter', 'woocommerce_demo_store' );
+			// Remove demo store notice from wp_footer place top of site
+			remove_action( 'wp_footer', 'woocommerce_demo_store' );
 			add_action( 'wpex_hook_wrap_top', 'woocommerce_demo_store', 0 );
 
 			// Alter shop icons
@@ -831,15 +831,15 @@ if ( ! class_exists( 'WPEX_WooCommerce_Config' ) ) {
 				.woocommerce-cart .cart-collaterals .cart_totals tr td,
 				.woocommerce-cart .cart-collaterals .cart_totals tr th,
 				.woocommerce table.shop_table tbody th,
-				.woocommerce table.shop_table tbart td,
-				.woocommerce table.shop_table tbart th,
+				.woocommerce table.shop_table tfoot td,
+				.woocommerce table.shop_table tfoot th,
 				.woocommerce .order_details,
 				.woocommerce .cart-collaterals .cross-sells,
 				.woocommerce-page .cart-collaterals .cross-sells,
 				.woocommerce .cart-collaterals .cart_totals,
 				.woocommerce-page .cart-collaterals .cart_totals,
 				.woocommerce .cart-collaterals h2, .woocommerce .cart-collaterals h2,
-				.woocommerce ul.order_details, .woocommerce .shop_table.order_details tbart th,
+				.woocommerce ul.order_details, .woocommerce .shop_table.order_details tfoot th,
 				.woocommerce .shop_table.customer_details th,
 				.woocommerce-checkout #payment ul.payment_methods,
 				.woocommerce .col2-set.addresses .col-1, .woocommerce .col2-set.addresses .col-2,

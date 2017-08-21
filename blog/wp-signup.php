@@ -894,10 +894,10 @@ if ( $active_signup == 'none' ) {
 </div>
 <?php
 /**
- * Fires after the sign-up forms, before wp_barter.
+ * Fires after the sign-up forms, before wp_footer.
  *
  * @since 3.0.0
  */
 do_action( 'after_signup_form' ); ?>
 
-<?php get_barter( 'wp-signup' );
+<?php get_footer( 'wp-signup' );

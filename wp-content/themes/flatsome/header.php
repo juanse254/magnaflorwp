@@ -21,7 +21,15 @@
 </head>
 
 <body <?php body_class(); // Body classes is added from inc/helpers-frontend.php ?>>
-
+<script type="text/javascript">
+    window._mfq = window._mfq || [];
+    (function() {
+        var mf = document.createElement("script");
+        mf.type = "text/javascript"; mf.async = true;
+        mf.src = "//cdn.mouseflow.com/projects/32c26a88-c032-44b1-a9f5-6a0a319bc264.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
+</script>
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'flatsome' ); ?></a>
 
 <div id="wrapper">

@@ -3319,7 +3319,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						// Connect to the Filesystem first.
 						$res = $this->fs_connect( array( WP_CONTENT_DIR, WP_PLUGIN_DIR ) );
 						if ( ! $res ) {
-							$this->skin->barter();
+							$this->skin->footer();
 							return false;
 						}
 
@@ -3414,9 +3414,9 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							'plugins' => $plugins,
 						) );
 
-						$this->skin->bulk_barter();
+						$this->skin->bulk_footer();
 
-						$this->skin->barter();
+						$this->skin->footer();
 
 						// Cleanup our hooks, in case something else does a upgrade on this connection.
 						/* [TGMPA - ] remove_filter('upgrader_clear_destination', array($this, 'delete_old_plugin')); */
@@ -3630,7 +3630,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					}
 
 					/**
-					 * Outputs the barter strings and necessary JS after each plugin installation.
+					 * Outputs the footer strings and necessary JS after each plugin installation.
 					 *
 					 * Checks for any errors and outputs them if they exist, else output
 					 * success strings.
@@ -3653,9 +3653,9 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 *
 					 * @since 2.2.0
 					 */
-					public function bulk_barter() {
+					public function bulk_footer() {
 						// Serve up the string to say installations (and possibly activations) are complete.
-						parent::bulk_barter();
+						parent::bulk_footer();
 
 						// Flush plugins cache so we can make sure that the installed plugins list is always up to date.
 						wp_clean_plugins_cache();
@@ -3706,7 +3706,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					}
 
 					/**
-					 * Flush barter output buffer and iterate $this->i to make sure the
+					 * Flush footer output buffer and iterate $this->i to make sure the
 					 * installation strings reference the correct plugin.
 					 *
 					 * @since      2.2.0

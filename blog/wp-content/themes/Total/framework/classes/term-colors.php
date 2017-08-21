@@ -27,7 +27,7 @@ if ( ! class_exists( 'WPEX_Term_Colors' ) ) {
 			if ( is_admin() ) {
 				add_action( 'admin_init', array( 'WPEX_Term_Colors', 'admin_init' ) );
 				add_action( 'admin_enqueue_scripts', array( 'WPEX_Term_Colors', 'admin_enqueue_scripts' ) );
-				add_action( 'admin_barter', array( 'WPEX_Term_Colors', 'color_picker_js' ) );
+				add_action( 'admin_footer', array( 'WPEX_Term_Colors', 'color_picker_js' ) );
 			}
 		}
 

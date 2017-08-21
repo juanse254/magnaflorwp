@@ -83,7 +83,7 @@ textarea,
 .tagcloud a,
 .site-title,
 .entry-title,
-.entry-barter,
+.entry-footer,
 .sticky-post,
 .page-title,
 .page-links,
@@ -95,8 +95,8 @@ textarea,
 .comment-form label,
 .no-comments,
 .required,
-.site-barter .site-title,
-.site-barter .site-title:after,
+.site-footer .site-title,
+.site-footer .site-title:after,
 .widecolumn label,
 .widecolumn .mu_register label {
 	font-family: Arial, Tahoma, sans-serif;
@@ -341,7 +341,7 @@ input[type="search"].search-field {
 	margin-left: 1.75em;
 }
 
-.entry-barter .avatar {
+.entry-footer .avatar {
 	margin-right: 0;
 	margin-left: 0.5384615385em;
 }
@@ -400,7 +400,7 @@ body:not(.search-results) .entry-summary .alignleft {
  * 8.4 - Footer
  */
 
-.site-barter .site-title:after {
+.site-footer .site-title:after {
 	padding-right: 0.538461538em;
 	padding-left: 0.307692308em;
 }
@@ -434,7 +434,7 @@ body:not(.search-results) .entry-summary .alignleft {
 	.post-thumbnail,
 	.entry-content,
 	.entry-summary,
-	.entry-barter,
+	.entry-footer,
 	.comments-area,
 	.image-navigation,
 	.post-navigation,
@@ -587,7 +587,7 @@ body:not(.search-results) .entry-summary .alignleft {
 	.post-thumbnail,
 	.entry-content,
 	.entry-summary,
-	.entry-barter,
+	.entry-footer,
 	.comments-area,
 	.image-navigation,
 	.post-navigation,
@@ -642,7 +642,7 @@ body:not(.search-results) .entry-summary .alignleft {
 	.no-sidebar .entry-header,
 	.no-sidebar .entry-content,
 	.no-sidebar .entry-summary,
-	.no-sidebar .entry-barter,
+	.no-sidebar .entry-footer,
 	.no-sidebar .comments-area,
 	.no-sidebar .image-navigation,
 	.no-sidebar .post-navigation,
@@ -695,7 +695,7 @@ body:not(.search-results) .entry-summary .alignleft {
 		margin-left: 0;
 	}
 
-	body:not(.search-results) article:not(.type-page) .entry-barter {
+	body:not(.search-results) article:not(.type-page) .entry-footer {
 		float: right;
 	}
 
@@ -705,7 +705,7 @@ body:not(.search-results) .entry-summary .alignleft {
 		margin-left: -100%;
 	}
 
-	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-barter {
+	body.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer {
 		margin-right: 15%;
 		margin-left: -100%;
 	}

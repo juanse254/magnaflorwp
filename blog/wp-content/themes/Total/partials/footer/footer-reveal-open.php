@@ -1,6 +1,6 @@
 <?php
 /**
- * Open the barter reveal container
+ * Open the footer reveal container
  *
  * @package Total WordPress theme
  * @subpackage Partials
@@ -12,4 +12,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
 
-<div class="barter-reveal-visible clr">
+<div class="footer-reveal-visible clr">

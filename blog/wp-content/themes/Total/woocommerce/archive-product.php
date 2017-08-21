@@ -115,4 +115,4 @@ get_header( 'shop' ); ?>
 
 		</div><!-- #content-wrap -->
 
-<?php get_barter( 'shop' ); ?>
+<?php get_footer( 'shop' ); ?>

@@ -73,20 +73,20 @@ function wpex_cac_has_scrolltop() {
 	return get_theme_mod( 'scroll_top', true );
 }
 
-function wpex_cac_has_barter_widgets() {
-	return get_theme_mod( 'barter_widgets', true );
+function wpex_cac_has_footer_widgets() {
+	return get_theme_mod( 'footer_widgets', true );
 }
 
 function wpex_cac_supports_reveal() {
-	if ( wpex_cac_has_barter_widgets() && ! wpex_cac_has_vertical_header() ) {
+	if ( wpex_cac_has_footer_widgets() && ! wpex_cac_has_vertical_header() ) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-function wpex_cac_has_barter_bottom() {
-	return get_theme_mod( 'barter_bottom', true );
+function wpex_cac_has_footer_bottom() {
+	return get_theme_mod( 'footer_bottom', true );
 }
 
 function wpex_cac_hasnt_custom_social_share() {

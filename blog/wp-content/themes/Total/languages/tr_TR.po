@@ -355,8 +355,8 @@ msgstr ""
 #: framework/customizer/settings/blog.php:152
 #: framework/customizer/settings/blog.php:166
 #: framework/customizer/settings/blog.php:199
-#: framework/customizer/settings/barter_bottom.php:46
-#: framework/customizer/settings/barter_widgets.php:222
+#: framework/customizer/settings/footer_bottom.php:46
+#: framework/customizer/settings/footer_widgets.php:222
 #: framework/customizer/settings/general.php:116
 #: framework/customizer/settings/general.php:294
 #: framework/customizer/settings/general.php:902
@@ -1116,8 +1116,8 @@ msgstr ""
 #: framework/classes/post-series.php:227 framework/classes/term-colors.php:99
 #: framework/classes/term-colors.php:157
 #: framework/customizer/settings/callout.php:259
-#: framework/customizer/settings/barter_bottom.php:86
-#: framework/customizer/settings/barter_widgets.php:104
+#: framework/customizer/settings/footer_bottom.php:86
+#: framework/customizer/settings/footer_widgets.php:104
 #: framework/customizer/settings/general.php:649
 #: framework/customizer/settings/general.php:817
 #: framework/customizer/settings/general.php:1030
@@ -1343,8 +1343,8 @@ msgstr "Font geişliği"
 #: framework/3rd-party/visual-composer/shortcodes/heading.php:210
 #: framework/3rd-party/visual-composer/shortcodes/list_item.php:88
 #: framework/3rd-party/visual-composer/shortcodes/teaser.php:88
-#: framework/customizer/settings/barter_bottom.php:44
-#: framework/customizer/settings/barter_widgets.php:220
+#: framework/customizer/settings/footer_bottom.php:44
+#: framework/customizer/settings/footer_widgets.php:220
 #: framework/customizer/settings/sidebar.php:164
 #, fuzzy
 msgid "Text Align"
@@ -1630,8 +1630,8 @@ msgstr "İndir"
 #: framework/classes/widgets/about.php:202
 #: framework/classes/widgets/social-fontawesome.php:413
 #: framework/classes/widgets/social.php:242
-#: framework/customizer/settings/barter_bottom.php:47
-#: framework/customizer/settings/barter_widgets.php:223
+#: framework/customizer/settings/footer_bottom.php:47
+#: framework/customizer/settings/footer_widgets.php:223
 #: framework/customizer/settings/general.php:732
 #: framework/customizer/settings/header.php:1067
 #: framework/customizer/settings/sidebar.php:167
@@ -1661,8 +1661,8 @@ msgstr "Sol"
 #: framework/classes/widgets/about.php:204
 #: framework/classes/widgets/social-fontawesome.php:415
 #: framework/classes/widgets/social.php:244
-#: framework/customizer/settings/barter_bottom.php:48
-#: framework/customizer/settings/barter_widgets.php:224
+#: framework/customizer/settings/footer_bottom.php:48
+#: framework/customizer/settings/footer_widgets.php:224
 #: framework/customizer/settings/general.php:734
 #: framework/customizer/settings/header.php:1068
 #: framework/customizer/settings/sidebar.php:168
@@ -1832,8 +1832,8 @@ msgstr "Görsel yüksekliği"
 #: framework/classes/widgets/about.php:203
 #: framework/classes/widgets/social-fontawesome.php:414
 #: framework/classes/widgets/social.php:243
-#: framework/customizer/settings/barter_bottom.php:49
-#: framework/customizer/settings/barter_widgets.php:225
+#: framework/customizer/settings/footer_bottom.php:49
+#: framework/customizer/settings/footer_widgets.php:225
 #: framework/customizer/settings/general.php:733
 #: framework/customizer/settings/sidebar.php:169
 #, fuzzy
@@ -3706,9 +3706,9 @@ msgstr ""
 #: framework/3rd-party/visual-composer/shortcodes/teaser.php:111
 #: framework/3rd-party/visual-composer/shortcodes/users_grid.php:345
 #: framework/customizer/settings/callout.php:208
-#: framework/customizer/settings/barter_bottom.php:59
-#: framework/customizer/settings/barter_widgets.php:77
-#: framework/customizer/settings/barter_widgets.php:206
+#: framework/customizer/settings/footer_bottom.php:59
+#: framework/customizer/settings/footer_widgets.php:77
+#: framework/customizer/settings/footer_widgets.php:206
 #: framework/customizer/settings/general.php:743
 #: framework/customizer/settings/general.php:956
 #: framework/customizer/settings/sidebar.php:44
@@ -3747,9 +3747,9 @@ msgstr "Üst kenar dolgusu"
 #: framework/customizer/settings/blog.php:466
 #: framework/customizer/settings/callout.php:88
 #: framework/customizer/settings/callout.php:235
-#: framework/customizer/settings/barter_bottom.php:73
-#: framework/customizer/settings/barter_widgets.php:91
-#: framework/customizer/settings/barter_widgets.php:193
+#: framework/customizer/settings/footer_bottom.php:73
+#: framework/customizer/settings/footer_widgets.php:91
+#: framework/customizer/settings/footer_widgets.php:193
 #: framework/customizer/settings/general.php:348
 #: framework/customizer/settings/general.php:673
 #: framework/customizer/settings/general.php:854
@@ -3933,7 +3933,7 @@ msgstr ""
 #: framework/classes/widgets/instagram-grid.php:209
 #: framework/classes/widgets/posts-grid.php:342
 #: framework/classes/widgets/users-grid.php:286
-#: framework/customizer/settings/barter_widgets.php:50
+#: framework/customizer/settings/footer_widgets.php:50
 #: framework/customizer/settings/portfolio.php:58
 #: framework/customizer/settings/staff.php:84
 #, fuzzy
@@ -3952,7 +3952,7 @@ msgstr "Mağaza kolonları"
 #: framework/classes/widgets/instagram-grid.php:219
 #: framework/classes/widgets/posts-grid.php:352
 #: framework/customizer/settings/blog.php:178
-#: framework/customizer/settings/barter_widgets.php:66
+#: framework/customizer/settings/footer_widgets.php:66
 #: framework/customizer/settings/portfolio.php:66
 #: framework/customizer/settings/staff.php:92
 msgid "Gap"
@@ -5207,7 +5207,7 @@ msgstr "Çerçeve rengi"
 #: framework/3rd-party/visual-composer/shortcodes/image_grid.php:368
 #: framework/3rd-party/visual-composer/shortcodes/post_type_grid.php:521
 #: framework/3rd-party/visual-composer/shortcodes/users_grid.php:222
-#: framework/customizer/settings/barter_widgets.php:174
+#: framework/customizer/settings/footer_widgets.php:174
 #: framework/customizer/settings/general.php:912
 #: framework/customizer/settings/sidebar.php:121
 msgid "Tag"
@@ -5426,8 +5426,8 @@ msgstr ""
 #: framework/3rd-party/visual-composer/shortcodes/image_grid.php:265
 #: framework/3rd-party/visual-composer/shortcodes/image_grid.php:271
 #: framework/customizer/settings/callout.php:124
-#: framework/customizer/settings/barter_bottom.php:102
-#: framework/customizer/settings/barter_widgets.php:139
+#: framework/customizer/settings/footer_bottom.php:102
+#: framework/customizer/settings/footer_widgets.php:139
 #: framework/customizer/settings/header.php:1207
 #: framework/customizer/settings/header.php:1297
 #, fuzzy
@@ -7161,7 +7161,7 @@ msgstr "Üst bar stili"
 
 #: framework/3rd-party/visual-composer/shortcodes/teaser.php:118
 #: framework/addons/custom-login.php:219
-#: framework/addons/barter-builder.php:187
+#: framework/addons/footer-builder.php:187
 #: framework/addons/header-builder.php:148
 #: framework/classes/post-metabox.php:788
 #: framework/classes/post-metabox.php:818
@@ -7535,8 +7535,8 @@ msgstr ""
 #: framework/addons/typography.php:247 framework/classes/image-sizes.php:253
 #: framework/customizer/settings/blog.php:51
 #: framework/customizer/settings/callout.php:17
-#: framework/customizer/settings/barter_bottom.php:17
-#: framework/customizer/settings/barter_widgets.php:17
+#: framework/customizer/settings/footer_bottom.php:17
+#: framework/customizer/settings/footer_widgets.php:17
 #: framework/customizer/settings/header.php:29
 #: framework/customizer/settings/layout.php:17
 #: framework/customizer/settings/sidebar.php:15
@@ -8315,20 +8315,20 @@ msgid ""
 "custom 404 page."
 msgstr ""
 
-#: framework/addons/custom-404.php:193 framework/addons/barter-builder.php:361
+#: framework/addons/custom-404.php:193 framework/addons/footer-builder.php:361
 #: framework/addons/header-builder.php:299
 #: framework/addons/under-construction.php:153
 msgid "Backend Edit"
 msgstr ""
 
-#: framework/addons/custom-404.php:198 framework/addons/barter-builder.php:367
+#: framework/addons/custom-404.php:198 framework/addons/footer-builder.php:367
 #: framework/addons/header-builder.php:305
 #: framework/addons/under-construction.php:158
 #, fuzzy
 msgid "Frontend Edit"
 msgstr "Sol konteyner genişliği"
 
-#: framework/addons/custom-404.php:202 framework/addons/barter-builder.php:373
+#: framework/addons/custom-404.php:202 framework/addons/footer-builder.php:373
 #: framework/addons/under-construction.php:163
 #, fuzzy
 msgid "Preview"
@@ -8421,7 +8421,7 @@ msgstr "Logo"
 #: framework/addons/custom-login.php:191 framework/addons/custom-login.php:232
 #: framework/addons/favicons.php:204 framework/addons/favicons.php:220
 #: framework/addons/favicons.php:236 framework/addons/favicons.php:252
-#: framework/addons/favicons.php:268 framework/addons/barter-builder.php:444
+#: framework/addons/favicons.php:268 framework/addons/footer-builder.php:444
 #: framework/addons/header-builder.php:332
 #: framework/classes/post-metabox.php:343
 msgid "Upload"
@@ -8430,7 +8430,7 @@ msgstr "Yükle"
 #: framework/addons/custom-login.php:196 framework/addons/custom-login.php:237
 #: framework/addons/favicons.php:209 framework/addons/favicons.php:225
 #: framework/addons/favicons.php:241 framework/addons/favicons.php:257
-#: framework/addons/favicons.php:273 framework/addons/barter-builder.php:449
+#: framework/addons/favicons.php:273 framework/addons/footer-builder.php:449
 #: framework/addons/header-builder.php:337
 #, fuzzy
 msgid "Preview Image"
@@ -8447,7 +8447,7 @@ msgid "Logo URL"
 msgstr "Blog URL'si"
 
 #: framework/addons/custom-login.php:227
-#: framework/addons/barter-builder.php:196
+#: framework/addons/footer-builder.php:196
 #: framework/addons/header-builder.php:149
 #: framework/classes/post-metabox.php:533
 #: framework/classes/post-metabox.php:795
@@ -8457,7 +8457,7 @@ msgid "Background Image"
 msgstr "Arkaplan fotoğrafı"
 
 #: framework/addons/custom-login.php:245
-#: framework/addons/barter-builder.php:205
+#: framework/addons/footer-builder.php:205
 #: framework/addons/header-builder.php:150
 #: framework/customizer/settings/general.php:66
 #: framework/customizer/settings/general.php:422
@@ -8887,65 +8887,65 @@ msgstr "Apple iPhone retina ikonu"
 msgid "Apple iPad Retina Icon "
 msgstr "Apple iPad retina ikonu"
 
-#: framework/addons/barter-builder.php:95
-#: framework/addons/barter-builder.php:96
-#: framework/addons/barter-builder.php:483 framework/addons/theme-panel.php:128
+#: framework/addons/footer-builder.php:95
+#: framework/addons/footer-builder.php:96
+#: framework/addons/footer-builder.php:483 framework/addons/theme-panel.php:128
 #, fuzzy
 msgid "Footer Builder"
 msgstr "Site altı çerçeveleri"
 
-#: framework/addons/barter-builder.php:151
+#: framework/addons/footer-builder.php:151
 #, fuzzy
 msgid "Footer Builder page"
 msgstr "Site altı çerçeveleri"
 
-#: framework/addons/barter-builder.php:160
+#: framework/addons/footer-builder.php:160
 #: framework/customizer/customizer.php:102
 #, fuzzy
 msgid "Footer Bottom"
 msgstr "Stilize"
 
-#: framework/addons/barter-builder.php:169
-#: framework/customizer/settings/barter_widgets.php:32
+#: framework/addons/footer-builder.php:169
+#: framework/customizer/settings/footer_widgets.php:32
 #, fuzzy
 msgid "Fixed Footer"
 msgstr "Site altını kaldırın."
 
-#: framework/addons/barter-builder.php:178
+#: framework/addons/footer-builder.php:178
 #: framework/classes/post-metabox.php:961
-#: framework/customizer/settings/barter_widgets.php:40
+#: framework/customizer/settings/footer_widgets.php:40
 #, fuzzy
 msgid "Footer Reveal"
 msgstr "Site altı vurgusu"
 
-#: framework/addons/barter-builder.php:311
+#: framework/addons/footer-builder.php:311
 msgid "None - Display Widgetized Footer"
 msgstr ""
 
-#: framework/addons/barter-builder.php:322
+#: framework/addons/footer-builder.php:322
 #: framework/addons/header-builder.php:260
 msgid "Templatera Templates"
 msgstr ""
 
-#: framework/addons/barter-builder.php:338
+#: framework/addons/footer-builder.php:338
 #: framework/addons/header-builder.php:276
 #: framework/customizer/settings/general.php:456
 msgid "Pages"
 msgstr ""
 
-#: framework/addons/barter-builder.php:354
+#: framework/addons/footer-builder.php:354
 #, fuzzy
-msgid "Select your custom page for your barter layout."
+msgid "Select your custom page for your footer layout."
 msgstr ""
 "Site altı vurgusunda kullanılaca özel içeriğinizi buraya girebilirsiniz."
 
-#: framework/addons/barter-builder.php:488
+#: framework/addons/footer-builder.php:488
 msgid ""
-"By default the barter consists of a simple widgetized area. For more complex "
+"By default the footer consists of a simple widgetized area. For more complex "
 "layouts you can use the option below to select a page which will hold the "
-"content and layout for your site barter. Selecting a custom barter will "
-"remove all barter functions (barter widgets and barter customizer options) "
-"so you can create an entire barter using the Visual Composer and not load "
+"content and layout for your site footer. Selecting a custom footer will "
+"remove all footer functions (footer widgets and footer customizer options) "
+"so you can create an entire footer using the Visual Composer and not load "
 "that extra functions."
 msgstr ""
 
@@ -9410,7 +9410,7 @@ msgid "Breadcrumbs"
 msgstr "Breadcrumbs"
 
 #: framework/addons/typography.php:138
-#: framework/customizer/settings/barter_widgets.php:165
+#: framework/customizer/settings/footer_widgets.php:165
 #: framework/customizer/settings/sidebar.php:113
 #, fuzzy
 msgid "Headings"
@@ -10803,14 +10803,14 @@ msgstr "Site altı"
 
 #: framework/classes/post-metabox.php:951
 #: framework/customizer/customizer.php:98
-#: framework/customizer/settings/barter_widgets.php:23
+#: framework/customizer/settings/footer_widgets.php:23
 msgid "Footer Widgets"
 msgstr "Site altı bileşenleri"
 
 #: framework/classes/post-metabox.php:962
-#: framework/customizer/settings/barter_widgets.php:42
+#: framework/customizer/settings/footer_widgets.php:42
 msgid ""
-"Enable the barter reveal style. The barter will be placed in a fixed postion "
+"Enable the footer reveal style. The footer will be placed in a fixed postion "
 "and display on scroll. This setting is for the \"Full-Width\" layout only "
 "and desktops only."
 msgstr ""
@@ -10977,7 +10977,7 @@ msgid "Front-End Heading"
 msgstr "Devamını gör"
 
 #: framework/classes/post-series.php:211
-#: framework/customizer/settings/barter_widgets.php:122
+#: framework/customizer/settings/footer_widgets.php:122
 #: framework/customizer/settings/header.php:596
 #: framework/customizer/settings/header.php:1194
 #: framework/customizer/settings/header.php:1281
@@ -11700,8 +11700,8 @@ msgid "Enable Globally"
 msgstr ""
 
 #: framework/customizer/settings/callout.php:27
-#: framework/customizer/settings/barter_bottom.php:26
-#: framework/customizer/settings/barter_widgets.php:25
+#: framework/customizer/settings/footer_bottom.php:26
+#: framework/customizer/settings/footer_widgets.php:25
 #: framework/customizer/settings/togglebar.php:25
 #: framework/customizer/settings/topbar.php:26
 msgid ""
@@ -11732,8 +11732,8 @@ msgid "Bottom Padding"
 msgstr "Üst kenar dolgusu"
 
 #: framework/customizer/settings/callout.php:136
-#: framework/customizer/settings/barter_bottom.php:115
-#: framework/customizer/settings/barter_widgets.php:152
+#: framework/customizer/settings/footer_bottom.php:115
+#: framework/customizer/settings/footer_widgets.php:152
 #: framework/customizer/settings/header.php:1220
 #: framework/customizer/settings/header.php:1313
 #, fuzzy
@@ -11759,18 +11759,18 @@ msgstr "Bağlantı adresi:"
 msgid "Icon Select"
 msgstr ""
 
-#: framework/customizer/settings/barter_bottom.php:24
+#: framework/customizer/settings/footer_bottom.php:24
 msgid "Bottom Footer Area"
 msgstr "Site altı sonu"
 
-#: framework/customizer/settings/barter_bottom.php:34
+#: framework/customizer/settings/footer_bottom.php:34
 msgid "Copyright"
 msgstr "Copyright"
 
-#: framework/customizer/settings/barter_widgets.php:34
+#: framework/customizer/settings/footer_widgets.php:34
 msgid ""
-"This setting will not \"fix\" your barter per-se but will add a min-height "
-"to your #main container to keep your barter always at the bottom of the page."
+"This setting will not \"fix\" your footer per-se but will add a min-height "
+"to your #main container to keep your footer always at the bottom of the page."
 msgstr ""
 
 #: framework/customizer/settings/general.php:17
@@ -16228,13 +16228,13 @@ msgstr ""
 #~ msgid "Footer Callout: Button Target"
 #~ msgstr "Site altı vurgu alanı buton hedefi"
 
-#~ msgid "Select your barter callout button link target window."
+#~ msgid "Select your footer callout button link target window."
 #~ msgstr "Site altı vurgu alanı butonu bağlantı hedefi penceresini seçin."
 
 #~ msgid "Footer Callout: Button Rel"
 #~ msgstr "Site altı vurgu alanı butonu bağlantı ilgisi"
 
-#~ msgid "Select your barter callout button link rel value."
+#~ msgid "Select your footer callout button link rel value."
 #~ msgstr "Site altı vurgu alanı butonu bağlantı ilgisi değerini seçin."
 
 #, fuzzy
@@ -17050,7 +17050,7 @@ msgstr ""
 
 #, fuzzy
 #~ msgid ""
-#~ "Enter a url for your barter callout button. Leave blank to disable and "
+#~ "Enter a url for your footer callout button. Leave blank to disable and "
 #~ "show the content full-width."
 #~ msgstr "Site altı vurgu alanı butonu URL'sini buraya girin."
 
@@ -17554,19 +17554,19 @@ msgstr ""
 #~ msgstr ""
 #~ "Bu alana eklenecek bileşenler bbPress yan barında görüntülenecektir."
 
-#~ msgid "Widgets in this area are used in the first barter column"
+#~ msgid "Widgets in this area are used in the first footer column"
 #~ msgstr ""
 #~ "Bu alana eklenecek bileşenler 1. site alt barında görüntülenecektir."
 
-#~ msgid "Widgets in this area are used in the second barter column"
+#~ msgid "Widgets in this area are used in the second footer column"
 #~ msgstr ""
 #~ "Bu alana eklenecek bileşenler 2. site alt barında görüntülenecektir."
 
-#~ msgid "Widgets in this area are used in the third barter column"
+#~ msgid "Widgets in this area are used in the third footer column"
 #~ msgstr ""
 #~ "Bu alana eklenecek bileşenler 3. site alt barında görüntülenecektir."
 
-#~ msgid "Widgets in this area are used in the fourth barter column"
+#~ msgid "Widgets in this area are used in the fourth footer column"
 #~ msgstr ""
 #~ "Bu alana eklenecek bileşenler 4. site alt barında görüntülenecektir."
 
@@ -17907,13 +17907,13 @@ msgstr ""
 #~ "lighter font) on or off."
 #~ msgstr "Sosyal paylaşım bağlantılarının gösterimini açın veya kapayın."
 
-#~ msgid "Toggle the callout area in the barter on or off."
+#~ msgid "Toggle the callout area in the footer on or off."
 #~ msgstr "Site altı vurgulu içerik alanını açın veya kapayın."
 
-#~ msgid "Toggle the barter widgets on or off."
+#~ msgid "Toggle the footer widgets on or off."
 #~ msgstr "Site altı bileşenlerinin kullanımı açın veya kapayın."
 
-#~ msgid "Toggle the bottom barter area on or off."
+#~ msgid "Toggle the bottom footer area on or off."
 #~ msgstr "Site altı sonu kullanımına izin verin veya engelleyin."
 
 #~ msgid "Toggle the scroll to top button on or off."
@@ -18014,11 +18014,11 @@ msgstr ""
 #~ msgid "Disable Footer Callout"
 #~ msgstr "Sita altı vurgusunu kaldırın"
 
-#~ msgid "Check to disable the barter callout area if active."
+#~ msgid "Check to disable the footer callout area if active."
 #~ msgstr "Sita altı vurgusunu kaldırmak için seçin."
 
 #~ msgid ""
-#~ "Check to disable the main barter area. This will also include the callout "
+#~ "Check to disable the main footer area. This will also include the callout "
 #~ "and copyright."
 #~ msgstr ""
 #~ "Ana site altını kaldırmak için seçin. Bu seçeneği işaretleyerek aynı "

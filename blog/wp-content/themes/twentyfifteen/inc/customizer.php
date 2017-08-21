@@ -381,7 +381,7 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	.post-navigation,
 	.pagination,
 	.secondary,
-	.site-barter,
+	.site-footer,
 	.hentry,
 	.page-header,
 	.page-content,
@@ -431,8 +431,8 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	.comment-navigation a:hover,
 	.comment-navigation a:focus,
 	.widget-title,
-	.entry-barter a:hover,
-	.entry-barter a:focus,
+	.entry-footer a:hover,
+	.entry-footer a:focus,
 	.comment-metadata a:hover,
 	.comment-metadata a:focus,
 	.pingback .edit-link a:hover,
@@ -453,7 +453,7 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	.author-description a,
 	.taxonomy-description a,
 	.textwidget a,
-	.entry-barter a:hover,
+	.entry-footer a:hover,
 	.comment-metadata a:hover,
 	.pingback .edit-link a:hover,
 	.comment-list .reply a:hover,
@@ -496,8 +496,8 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	.comment-navigation a,
 	.widget,
 	.author-heading,
-	.entry-barter,
-	.entry-barter a,
+	.entry-footer,
+	.entry-footer a,
 	.taxonomy-description,
 	.page-links > .page-links-title,
 	.entry-caption,
@@ -559,7 +559,7 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	.widget_nav_menu .sub-menu,
 	.widget_pages .children,
 	.site-header,
-	.site-barter,
+	.site-footer,
 	.hentry + .hentry,
 	.author-info,
 	.entry-content .page-links a,
@@ -625,7 +625,7 @@ function twentyfifteen_get_color_scheme_css( $colors ) {
 	}
 
 	/* Meta Background Color */
-	.entry-barter {
+	.entry-footer {
 		background-color: {$colors['meta_box_background_color']};
 	}
 
@@ -770,4 +770,4 @@ function twentyfifteen_color_scheme_css_template() {
 	</script>
 	<?php
 }
-add_action( 'customize_controls_print_barter_scripts', 'twentyfifteen_color_scheme_css_template' );
+add_action( 'customize_controls_print_footer_scripts', 'twentyfifteen_color_scheme_css_template' );

@@ -124,7 +124,7 @@ class WPEX_Visual_Composer_Config {
 		add_action( 'wp_enqueue_scripts', array( 'WPEX_Visual_Composer_Config', 'load_composer_front_css' ), 0 );
 		add_action( 'wp_enqueue_scripts', array( 'WPEX_Visual_Composer_Config', 'load_remove_styles' ) );
 		add_action( 'vc_frontend_editor_render',  array( 'WPEX_Visual_Composer_Config', 'remove_editor_font_awesome' ) );
-		add_action( 'wp_barter', array( 'WPEX_Visual_Composer_Config', 'remove_barter_scripts' ) );
+		add_action( 'wp_footer', array( 'WPEX_Visual_Composer_Config', 'remove_footer_scripts' ) );
 
 		// Admin/iFrame scrips
 		add_action( 'admin_enqueue_scripts', array( 'WPEX_Visual_Composer_Config', 'admin_scripts' ) );
@@ -246,7 +246,7 @@ class WPEX_Visual_Composer_Config {
 	 *
 	 * @since 2.1.0
 	 */
-	public static function remove_barter_scripts() {
+	public static function remove_footer_scripts() {
 
 		// JS
 		wp_dequeue_script( 'vc_pageable_owl-carousel' );

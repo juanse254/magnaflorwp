@@ -64,11 +64,11 @@ function wpex_vc_remove_plugin_license_tab() { ?>
 		} ) ( jQuery );
 	</script>
 <?php }
-add_action( 'admin_barter-toplevel_page_vc-general', 'wpex_vc_remove_plugin_license_tab' );
-add_action( 'admin_barter-visual-composer_page_vc-roles', 'wpex_vc_remove_plugin_license_tab' );
-add_action( 'admin_barter-visual-composer_page_vc-automapper', 'wpex_vc_remove_plugin_license_tab' );
-add_action( 'admin_barter-visual-composer_page_templatera', 'wpex_vc_remove_plugin_license_tab' );
-add_action( 'admin_barter-visual-composer_page_vc-templatera', 'wpex_vc_remove_plugin_license_tab' );
+add_action( 'admin_footer-toplevel_page_vc-general', 'wpex_vc_remove_plugin_license_tab' );
+add_action( 'admin_footer-visual-composer_page_vc-roles', 'wpex_vc_remove_plugin_license_tab' );
+add_action( 'admin_footer-visual-composer_page_vc-automapper', 'wpex_vc_remove_plugin_license_tab' );
+add_action( 'admin_footer-visual-composer_page_templatera', 'wpex_vc_remove_plugin_license_tab' );
+add_action( 'admin_footer-visual-composer_page_vc-templatera', 'wpex_vc_remove_plugin_license_tab' );
 
 // Disable VC updater
 function wpex_disable_vc_updater() {

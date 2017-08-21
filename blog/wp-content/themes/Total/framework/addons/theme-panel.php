@@ -124,7 +124,7 @@ if ( ! class_exists( 'WPEX_Theme_Panel' ) ) {
 					'icon'     => 'dashicons dashicons-editor-insertmore',
 					'category' => $s_core,
 				),
-				'barter_builder' => array(
+				'footer_builder' => array(
 					'label'    => __( 'Footer Builder', 'total' ),
 					'icon'     => 'dashicons dashicons-editor-insertmore',
 					'category' => $s_core,
@@ -667,8 +667,8 @@ if ( ! class_exists( 'WPEX_Theme_Panel' ) ) {
 			}
 
 			// Footer builder
-			if ( wpex_get_mod( 'barter_builder_enable', true ) ) {
-				require_once $dir . 'barter-builder.php';
+			if ( wpex_get_mod( 'footer_builder_enable', true ) ) {
+				require_once $dir . 'footer-builder.php';
 			}
 
 			// Custom WordPress gallery output

@@ -176,7 +176,7 @@ var wpex = {};
                 self.stickyHeaderMenu();
                 self.stickyVcexNavbar();
                 self.headerOverlayOffset();
-                self.barterReveal();  // Footer Reveal => Must run before fixed barter!!!
+                self.footerReveal();  // Footer Reveal => Must run before fixed footer!!!
                 self.fixedFooter();
                 self.titleBreadcrumbsFix();
 
@@ -324,14 +324,14 @@ var wpex = {};
                 self.config.mobileMenuBreakpoint  = wpexLocalize.mobileMenuBreakpoint;
             }
 
-            // Check if fixed barter is enabled
-            if ( self.config.$body.hasClass( 'wpex-has-fixed-barter' ) ) {
+            // Check if fixed footer is enabled
+            if ( self.config.$body.hasClass( 'wpex-has-fixed-footer' ) ) {
                 self.config.hasFixedFooter = true;
             }
             
             // Footer reveal
-            self.config.$barterReveal = $( '.barter-reveal-visible' );
-            if ( self.config.$barterReveal.length && self.config.$siteWrap && self.config.$siteMain ) {
+            self.config.$footerReveal = $( '.footer-reveal-visible' );
+            if ( self.config.$footerReveal.length && self.config.$siteWrap && self.config.$siteMain ) {
                 self.config.$hasFooterReveal = true;
             }
 
@@ -2025,7 +2025,7 @@ var wpex = {};
          *
          * @since 2.0.0
          */
-        barterReveal: function() {
+        footerReveal: function() {
             var self = this;
 
             // Return if disabled
@@ -2034,60 +2034,60 @@ var wpex = {};
             }
 
             // Footer reveal
-            var $barterReveal = self.config.$barterReveal;
+            var $footerReveal = self.config.$footerReveal;
 
             function showHide() {
 
                 // Disabled under 960
                 if ( self.config.viewportWidth < 960 ) {
-                    if ( $barterReveal.hasClass( 'barter-reveal' ) ) {
-                        $barterReveal.toggleClass( 'barter-reveal barter-reveal-visible' );
+                    if ( $footerReveal.hasClass( 'footer-reveal' ) ) {
+                        $footerReveal.toggleClass( 'footer-reveal footer-reveal-visible' );
                         self.config.$siteWrap.css( 'margin-bottom', '' );
                     }
                     return;
                 }
 
                 var $hideFooter         = false,
-                    $barterRevealHeight = $barterReveal.outerHeight(),
+                    $footerRevealHeight = $footerReveal.outerHeight(),
                     windowHeight       = self.config.windowHeight,
                     $heightCheck        = 0;
 
-                if ( $barterReveal.hasClass( 'barter-reveal' ) ) {
+                if ( $footerReveal.hasClass( 'footer-reveal' ) ) {
                     $heightCheck = self.config.$siteWrap.outerHeight() + self.config.localScrollOffset;
                 } else {
-                    $heightCheck = self.config.$siteWrap.outerHeight() + self.config.localScrollOffset - $barterRevealHeight;
+                    $heightCheck = self.config.$siteWrap.outerHeight() + self.config.localScrollOffset - $footerRevealHeight;
                 }
 
                 // Check window height
-                if ( ( windowHeight > $barterRevealHeight ) && ( $heightCheck  > windowHeight ) ) {
+                if ( ( windowHeight > $footerRevealHeight ) && ( $heightCheck  > windowHeight ) ) {
                     $hideFooter = true;
                 }
 
                 // Footer Reveal
-                if ( $hideFooter && $barterReveal.hasClass( 'barter-reveal-visible' ) ) {
+                if ( $hideFooter && $footerReveal.hasClass( 'footer-reveal-visible' ) ) {
                     self.config.$siteWrap.css( {
-                        'margin-bottom': $barterRevealHeight
+                        'margin-bottom': $footerRevealHeight
                     } );
-                    $barterReveal.removeClass( 'barter-reveal-visible' );
-                    $barterReveal.addClass( 'barter-reveal' );
+                    $footerReveal.removeClass( 'footer-reveal-visible' );
+                    $footerReveal.addClass( 'footer-reveal' );
                 }
 
                 // Visible Footer
-                if ( ! $hideFooter && $barterReveal.hasClass( 'barter-reveal' ) ) {
+                if ( ! $hideFooter && $footerReveal.hasClass( 'footer-reveal' ) ) {
                     self.config.$siteWrap.css( 'margin-bottom', '' );
-                    $barterReveal.removeClass( 'barter-reveal' );
-                    $barterReveal.removeClass( 'wpex-visible' );
-                    $barterReveal.addClass( 'barter-reveal-visible' );
+                    $footerReveal.removeClass( 'footer-reveal' );
+                    $footerReveal.removeClass( 'wpex-visible' );
+                    $footerReveal.addClass( 'footer-reveal-visible' );
                 }
 
             }
 
             function reveal() {
-                if ( $barterReveal.hasClass( 'barter-reveal' ) ) {
+                if ( $footerReveal.hasClass( 'footer-reveal' ) ) {
                     if ( self.scrolledToBottom( self.config.$siteMain ) ) {
-                        $barterReveal.addClass( 'wpex-visible' );
+                        $footerReveal.addClass( 'wpex-visible' );
                     } else {
-                        $barterReveal.removeClass( 'wpex-visible' );
+                        $footerReveal.removeClass( 'wpex-visible' );
                     }
                 }
             }
@@ -2110,7 +2110,7 @@ var wpex = {};
         },
 
         /**
-         * Set min height on main container to prevent issue with extra space below barter
+         * Set min height on main container to prevent issue with extra space below footer
          *
          * @since 3.1.1
          */

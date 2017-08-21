@@ -32,7 +32,7 @@ class WPEX_Disable_Google_Services {
 		add_action( 'wp_print_scripts', array( 'WPEX_Disable_Google_Services', 'remove_scripts' ), 10 );
 
 		// Remove inline scripts
-		add_action( 'wp_barter', array( 'WPEX_Disable_Google_Services', 'remove_inline_scripts' ), 10 );
+		add_action( 'wp_footer', array( 'WPEX_Disable_Google_Services', 'remove_inline_scripts' ), 10 );
 
 	}
 
@@ -46,7 +46,7 @@ class WPEX_Disable_Google_Services {
 	}
 
 	/**
-	 * Remove barter scripts
+	 * Remove footer scripts
 	 *
 	 * @since 2.1.0
 	 */

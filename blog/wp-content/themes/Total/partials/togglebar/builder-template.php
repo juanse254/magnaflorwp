@@ -21,7 +21,7 @@
 		<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
 	</div><!-- .container -->
 
-<?php wp_barter(); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

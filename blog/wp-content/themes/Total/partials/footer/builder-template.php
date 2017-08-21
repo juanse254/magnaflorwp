@@ -1,6 +1,6 @@
 <?php
 /**
- * Template used for the VC live editor when modifying your barter builder content
+ * Template used for the VC live editor when modifying your footer builder content
  *
  * @package Total WordPress Theme
  * @subpackage Templates
@@ -17,13 +17,13 @@
 
 <body <?php body_class(); ?><?php wpex_schema_markup( 'body' ); ?>>
 
-	<div id="barter-builder" class="barter-builder clr">
-		<div class="barter-builder-content clr container entry">
+	<div id="footer-builder" class="footer-builder clr">
+		<div class="footer-builder-content clr container entry">
 			<?php while ( have_posts() ) : the_post(); the_content(); endwhile; ?>
-		</div><!-- .barter-builder-content -->
-	</div><!-- .barter-builder -->
+		</div><!-- .footer-builder-content -->
+	</div><!-- .footer-builder -->
 
-<?php wp_barter(); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

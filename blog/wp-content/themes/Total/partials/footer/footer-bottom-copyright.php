@@ -13,10 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get copyright info
-$copyright = wpex_get_mod( 'barter_copyright_text', 'Copyright <a href="#">Your Business LLC.</a> - All Rights Reserved' );
+$copyright = wpex_get_mod( 'footer_copyright_text', 'Copyright <a href="#">Your Business LLC.</a> - All Rights Reserved' );
 
 // Translate the theme option
-$copyright = wpex_translate_theme_mod( 'barter_copyright_text', $copyright );
+$copyright = wpex_translate_theme_mod( 'footer_copyright_text', $copyright );
 
 // Return if there isn't any copyright content to display
 if ( ! $copyright ) {

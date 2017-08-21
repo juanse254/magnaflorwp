@@ -77,7 +77,7 @@ blockquote small,
 .widget_rss .rss-date,
 .widget_rss cite,
 .author-heading,
-.entry-barter,
+.entry-footer,
 .page-title,
 .page-links,
 .entry-caption,
@@ -696,7 +696,7 @@ img.alignleft {
 		padding: 0;
 	}
 
-	.site-barter {
+	.site-footer {
 		float: right;
 		margin: 0 35.2941% 0 0;
 	}

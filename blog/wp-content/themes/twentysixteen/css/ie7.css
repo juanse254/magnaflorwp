@@ -13,7 +13,7 @@ Description: IE7 specific style.
 .entry-header,
 .entry-summary,
 .entry-content,
-.entry-barter,
+.entry-footer,
 .page-header,
 .page-content,
 .post-thumbnail,
@@ -26,7 +26,7 @@ Description: IE7 specific style.
 
 .site-header,
 .sidebar,
-.site-barter,
+.site-footer,
 .widecolumn {
 	padding-right: 28px;
 	padding-left: 28px;
@@ -114,7 +114,7 @@ Description: IE7 specific style.
 	zoom : 1;
 }
 
-.entry-barter > span {
+.entry-footer > span {
 	margin-right: 14px;
 }
 
@@ -165,7 +165,7 @@ Description: IE7 specific style.
 	margin-left: 0;
 }
 
-.rtl .entry-barter > span {
+.rtl .entry-footer > span {
 	margin-right: 14px;
 	margin-left: 0;
 }

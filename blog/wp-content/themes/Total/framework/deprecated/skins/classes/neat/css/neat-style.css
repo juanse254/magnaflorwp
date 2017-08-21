@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 body,
 body.boxed-main-layout #wrap,
-body.barter-has-reveal #main { background: #f6f6f6 }
+body.footer-has-reveal #main { background: #f6f6f6 }
 
 body a:hover { text-decoration: none; color: #000; }
 #site-scroll-top { background: #fff; border-color: #eee; color: #ddd; }
@@ -13,7 +13,7 @@ body a:hover { text-decoration: none; color: #000; }
 #login-template-form { background: #fff; border: 1px solid #ddd; border-radius: 4px; }
 
 /* General > Headings */
-h1, h2, h3, h4, h5, h6, #sidebar .widget-title, .barter-widget .widget-title { font-weight: normal; }
+h1, h2, h3, h4, h5, h6, #sidebar .widget-title, .footer-widget .widget-title { font-weight: normal; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #000; }
 
 /* General > Theme Heading */
@@ -335,7 +335,7 @@ body .vc_text_separator_six span { background-color: #f6f6f6 }
 /*--------------------------------------------------------------
 - Footer
 --------------------------------------------------------------*/
-#barter-callout-wrap { background: #fff; border-color: #e4e4e4; }
+#footer-callout-wrap { background: #fff; border-color: #e4e4e4; }
 
 /*--------------------------------------------------------------
 - WooCommerce
@@ -365,8 +365,8 @@ body .vc_text_separator_six span { background-color: #f6f6f6 }
 .woocommerce ul.cart_list li a,
 .woocommerce ul.product_list_widget li a { color: #000; }
 
-#barter .woocommerce ul.cart_list li a,
-#barter .woocommerce ul.product_list_widget li a { color: #fff; }
+#footer .woocommerce ul.cart_list li a,
+#footer .woocommerce ul.product_list_widget li a { color: #fff; }
 
 /* WooCommerce > Entries */
 .woocommerce ul.products li.product h3:hover,
@@ -400,8 +400,8 @@ body .vc_text_separator_six span { background-color: #f6f6f6 }
 .woocommerce-page .cross-sells,
 .woocommerce .cart_totals,
 .woocommerce .cross-sells,
-.woocommerce-checkout-review-order-table tbart th,
-.woocommerce .shop_table.order_details tbart th,
+.woocommerce-checkout-review-order-table tfoot th,
+.woocommerce .shop_table.order_details tfoot th,
 .woocommerce .shop_table.customer_details th { background: #fefefe; }
 
 .woocommerce-checkout #payment div.payment_box { background: #eee; }
@@ -413,8 +413,8 @@ body .vc_text_separator_six span { background-color: #f6f6f6 }
 .woocommerce-cart .cart-collaterals .cart_totals tr td,
 .woocommerce-cart .cart-collaterals .cart_totals tr th,
 .woocommerce table.shop_table tbody th,
-.woocommerce table.shop_table tbart td,
-.woocommerce table.shop_table tbart th,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th,
 .woocommerce .order_details,
 .woocommerce .cart-collaterals .cross-sells,
 .woocommerce-page .cart-collaterals .cross-sells,
@@ -423,7 +423,7 @@ body .vc_text_separator_six span { background-color: #f6f6f6 }
 .woocommerce .cart-collaterals h2,
 .woocommerce .cart-collaterals h2,
 .woocommerce ul.order_details,
-.woocommerce .shop_table.order_details tbart th,
+.woocommerce .shop_table.order_details tfoot th,
 .woocommerce .shop_table.customer_details th,
 .woocommerce .col2-set.addresses .col-1,
 .woocommerce .col2-set.addresses .col-2 { border-color: #e4e4e4; }
@@ -432,9 +432,9 @@ body .vc_text_separator_six span { background-color: #f6f6f6 }
 - bbPress
 --------------------------------------------------------------*/
 #bbpress-forums li.bbp-header,
-#bbpress-forums li.bbp-barter { background: #78b153 }
+#bbpress-forums li.bbp-footer { background: #78b153 }
 #bbpress-forums li.bbp-header,
-#bbpress-forums li.bbp-barter,
+#bbpress-forums li.bbp-footer,
 .content-area .forum-titles { color: #fff }
 .forums div.bbp-reply-content a { color: #fff }
 .forums div.bbp-reply-content a:hover { color: #d4e6c8 }
