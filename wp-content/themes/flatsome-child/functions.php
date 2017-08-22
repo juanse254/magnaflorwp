@@ -98,13 +98,28 @@ add_action('wp_head', 'favicons_add');
 function favicons_add(){
 
 }
-//REDIRECTS TO CART
+//RAY REDIRECTS TO CART
 
 /**
  * Set a custom add to cart URL to redirect to
  * @return string
  */
 function custom_add_to_cart_redirect() { 
-    return 'https://magnaflor.com/cart/'; 
+    return '/cart/'; 
 }
 add_filter( 'woocommerce_add_to_cart_redirect', 'custom_add_to_cart_redirect' );
+
+//RAY THIS SETS THE US AS DEFAULT COUNTRY
+add_filter( 'default_checkout_billing_country', 'change_default_checkout_country' );
+add_filter( 'default_checkout_shipping_country', 'change_default_checkout_country' );
+
+function change_default_checkout_country() {
+  return 'US'; // country code
+}
+
+//RAY THIS REDIRECTS THE CONTINUE SHOPPING BUTTON TO THE MAIN SHOP PAGE
+function custom_continue_shopping_redirect_url () {
+   
+    return "/shop/"; 
+}
+add_filter('woocommerce_continue_shopping_redirect', 'custom_continue_shopping_redirect_url');
