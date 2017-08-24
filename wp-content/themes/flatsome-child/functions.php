@@ -123,3 +123,7 @@ function custom_continue_shopping_redirect_url () {
     return "/shop/"; 
 }
 add_filter('woocommerce_continue_shopping_redirect', 'custom_continue_shopping_redirect_url');
+
+//Add variations as rows in emails and listings (for delivery date)
+add_filter( 'woocommerce_product_variation_title_include_attributes', '__return_false' );
+
