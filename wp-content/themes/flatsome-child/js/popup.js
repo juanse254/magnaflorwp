@@ -34,7 +34,7 @@ function Popup() {
     var h2Header2 = document.createElement('p');
     h2Header2.appendChild(document.createTextNode('And 3 day free shipping on all orders!'));
     var imgHeader = document.createElement('img');
-    imgHeader.setAttribute("src","/wp-content/uploads/2017/07/imgpsh_fullsize-1.png");
+    imgHeader.setAttribute("src","/wp-content/uploads/2017/08/imgpsh_fullsize-3.png");
     imgHeader.setAttribute("class","img-responsive");
     imgHeader.setAttribute("alt","Promo 15% off");
     imgHeader.setAttribute("style","margin: auto; max-height:300px");
