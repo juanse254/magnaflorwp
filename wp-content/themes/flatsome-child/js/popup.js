@@ -82,6 +82,7 @@ function Popup() {
 		        inputregister1.setAttribute("id","register_first_time");
                 inputregister1.setAttribute("class","woocommerce-Button button");
                 inputregister1.setAttribute("name","register");
+		inputregister1.setAttribute("style","margin-left: 15%");
                 inputregister1.setAttribute("value","Register");
                 inputregister1.setAttribute("onclick","location.href='/my-account/'");
             register_button.appendChild(inputregister1);

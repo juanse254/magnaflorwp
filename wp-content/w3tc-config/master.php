@@ -236,7 +236,7 @@
     "minify.css.groups": [],
     "minify.js.http2push": false,
     "minify.js.enable": true,
-    "minify.js.engine": "js",
+    "minify.js.engine": "googleccjs",
     "minify.js.combine.header": false,
     "minify.js.header.embed_type": "blocking",
     "minify.js.combine.body": false,

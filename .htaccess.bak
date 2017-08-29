@@ -1,0 +1,408 @@
+Header add Access-Control-Allow-Origin "*"
+Header add Access-Control-Allow-Headers "*"
+Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+#w3TC cache
+RewriteCond %{HTTPS} =on
+RewriteRule .* - [E=W3TC_SSL:_ssl]
+RewriteCond %{SERVER_PORT} =443
+RewriteRule .* - [E=W3TC_SSL:_ssl]
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteRule .* - [E=W3TC_ENC:_gzip]
+RewriteCond %{HTTP_COOKIE} w3tc_preview [NC]
+RewriteRule .* - [E=W3TC_PREVIEW:_preview]
+RewriteCond %{REQUEST_METHOD} !=POST
+RewriteCond %{QUERY_STRING} =""
+RewriteCond %{REQUEST_URI} \/$
+RewriteCond %{HTTP_COOKIE} !(comment_author|wp\-postpass|w3tc_logged_out|wordpress_logged_in|wptouch_switch_toggle) [NC]
+RewriteCond "%{DOCUMENT_ROOT}/wp-content/cache/page_enhanced/%{HTTP_HOST}/%{REQUEST_URI}/_index%{ENV:W3TC_SSL}%{ENV:W3TC_PREVIEW}.html%{ENV:W3TC_ENC}" -f
+RewriteRule .* "/wp-content/cache/page_enhanced/%{HTTP_HOST}/%{REQUEST_URI}/_index%{ENV:W3TC_SSL}%{ENV:W3TC_PREVIEW}.html%{ENV:W3TC_ENC}" [L]
+
+
+Redirect 301 /alba-rose-white /product/alba/
+Redirect 301 /amelia-rose-white /product/amelia/
+Redirect 301 /amsterdam-rose-peach /product/amsterdam/
+Redirect 301 /bikini-rose-yellow /product/bikini/
+Redirect 301 /black-rose-tinted /product/black/
+Redirect 301 /blizzard-rose-white /product/blizzard/
+Redirect 301 /blush /product/blush/
+Redirect 301 /brighton-rose-yellow /product/brighton/
+Redirect 301 /butterscotch-rose-yellow /product/butterscotch/
+Redirect 301 /cabaret-rose-bicolor /product/cabaret/
+Redirect 301 /carpe-diem-rose-peach /product/carpe-diem/
+Redirect 301 /carrousel /product/carrousel/
+Redirect 301 /chery-oh /product/cherry-oh/
+Redirect 301 /chilis-rose-orange /product/chilis/
+Redirect 301 /coffee-break-rose-brown /product/coffe-break/
+Redirect 301 /cool-water-rose-lavander /product/cool-water/
+Redirect 301 /coral-reef-wholesale-roses-peach /product/coral-reef/
+Redirect 301 /creme-de-la-creme-rose-cream /product/creme-de-la-creme/
+Redirect 301 /deep-purple /product/deep-purple/
+Redirect 301 /deja-vu /product/deja-vu/
+Redirect 301 /dekora-rose-pink /product/dekora/
+Redirect 301 /encanto-rose /product/encanto/
+Redirect 301 /engagement-rose-pink /product/engagement/
+Redirect 301 /esperance-rose-bicolor /product/esperance/
+Redirect 301 /explorer-rose-red /product/explorer/
+Redirect 301 /faith-rose-light-pink /product/faith/
+Redirect 301 /fenice-rose-pink /product/fenice/
+Redirect 301 /fidji-rose-orange /product/fidji/
+Redirect 301 /first-lady-rose-white /product/first-lady/
+Redirect 301 /forever-young-rose-red /product/forever-young/
+Redirect 301 /free-spirit-rose-orange /product/free-spirit/
+Redirect 301 /freedom-rose-red /product/freedom/
+Redirect 301 /frutteto-wholesale-pink-rose /product/frutteto/
+Redirect 301 /geraldine-rose-pink /product/geraldine/
+Redirect 301 /green-tea-rose-green /product/green-tea/
+Redirect 301 /hearts-rose-red /product/hearts/
+Redirect 301 /hermosa-rose-pink /product/hermosa/
+Redirect 301 /high-and-arena-rose-peach /product/high-and-arena/
+Redirect 301 /high-flame-wholesale-roses-bicolor /product/high-flame/
+Redirect 301 /high-and-magic-rose-bicolor-yellow /product/high-magic/
+Redirect 301 /high-and-peace-rose-white /product/high-and-peace/
+Redirect 301 /high-and-pure-rose-white /product/high-and-pure/
+Redirect 301 /hot-lady-rose-wholesale /product/hot-lady/
+Redirect 301 /high-blooming /product/hot-merengue/
+Redirect 301 /hummer-rose-yellow /product/hummer/
+Redirect 301 /iguana-rose-orange /product/iguana/
+Redirect 301 /iguazu-rose-brown /product/iguazu/
+Redirect 301 /impulse-rose-orange /product/impulse/
+Redirect 301 /intense-yellow-rose /product/intense/
+Redirect 301 /la-perla-rose-cream /product/la-perla/
+Redirect 301 /latina-rose-yellow /product/latina/
+Redirect 301 /lemonade-rose-green /product/lemonade/
+Redirect 301 /leonidas-rose-brown /product/leonidas/
+Redirect 301 /limbo-rose-green /product/limbo/
+Redirect 301 /malibu-rose-wholesale /product/malibu/
+Redirect 301 /manitou-rose-orange /product/manitou/
+Redirect 301 /marilena-rose-pink /product/marilena/
+Redirect 301 /milva-rose-orange /product/milva/
+Redirect 301 /mohana-rose-yellow /product/mohana/
+Redirect 301 /mondial-rose-white /product/mondial/
+Redirect 301 /moody-blues-rose-lavander /product/moody-blues/
+Redirect 301 /mother-of-pearl-rose-light-pink /product/mother-of-pearl/
+Redirect 301 /movie-star-rose-orange /product/movie-star/
+Redirect 301 /nautica-rose-pink /product/nautica/
+Redirect 301 /nectarine-wholesale-rose-peach /product/nectarine/
+Redirect 301 /nena-rose-light-pink /product/nena/
+Redirect 301 /nina-wholesale-roses-orange-red /product/nina/
+Redirect 301 /ocean-song-rose-lavender /product/ocean-song/
+Redirect 301 /orange-crush-rose /product/orange-crush/
+Redirect 301 /peach-aubade-wholesale-rose /product/peach-aubade/
+Redirect 301 /pink-floyd-rose-hot-pink /product/pink-floyd/
+Redirect 301 /pink-o-hara-rose-pink /product/pink-o-hara/
+Redirect 301 /polar-star-rose-white /product/polar-star/
+Redirect 301 /proud-rose-white /product/proud/
+Redirect 301 /purple-haze-rose /product/purple-haze/
+Redirect 301 /quick-sand-rose-cream /product/quicksand/
+Redirect 301 /rainbow /product/rainbow/
+Redirect 301 /red-unique-wholesale-rose /product/red-unique/
+Redirect 301 /riviera-rose-bicolor-pink-hot-pink /product/riviera/
+Redirect 301 /rosita-vendela-rose-pink /product/rosita-vendela/
+Redirect 301 /sahara-rose-cream /product/sahara/
+Redirect 301 /santana-rose-orange /product/santana/
+Redirect 301 /senorita-rose /product/senorita/
+Redirect 301 /sexy-ed /product/sexy-red/
+Redirect 301 /star-2000-rose-orange /product/star-2000/
+Redirect 301 /stardust-rose-yellow /product/stardust/
+Redirect 301 /super-green-rose /product/super-green/
+Redirect 301 /sweet-unique-rose /product/sweet-unique/
+Redirect 301 /sweetness-rose-bicolor-cream-hot-pink /product/sweetness/
+Redirect 301 /talea-rose-cream /product/talea/
+Redirect 301 /tara-rose-yellow /product/tara/
+Redirect 301 /tibet-rose-white /product/tibet/
+Redirect 301 /tiffany-rose-peach /product/tiffany/
+Redirect 301 /topaz-rose-bicolor /product/topaz/
+Redirect 301 /tutti-frutti-bicolor-wholesale-rose /product/tutti-frutti/
+Redirect 301 /twilight-wholesale-peach-rose /product/twilight/
+Redirect 301 /variance-pink-wholesale-rose /product/variance/
+Redirect 301 /vendela-rose-white /product/vendela/
+Redirect 301 /versilia-rose-peach /product/versilia/
+Redirect 301 /white-chocolate-rose-white /product/white-chocolate/
+Redirect 301 /white-o-hara-rose-white /product/white-o-hara/
+Redirect 301 /wimbledon-rose-green /product/wimbledon/
+Redirect 301 /yellow-coral-rose-yellow /product/yellow-coral/
+Redirect 301 /wholesale-roses /product-category/bulk-wholesale-roses/
+Redirect 301 /wholesale-roses/alba-rose-white /product/alba/
+Redirect 301 /wholesale-roses/amelia-rose-white /product/amelia/
+Redirect 301 /wholesale-roses/amsterdam-rose-peach /product/amsterdam/
+Redirect 301 /wholesale-roses/bikini-rose-yellow /product/bikini/
+Redirect 301 /wholesale-roses/black-rose-tinted /product/black/
+Redirect 301 /wholesale-roses/blizzard-rose-white /product/blizzard/
+Redirect 301 /wholesale-roses/blush /product/blush/
+Redirect 301 /wholesale-roses/brighton-rose-yellow /product/brighton/
+Redirect 301 /wholesale-roses/butterscotch-rose-yellow /product/butterscotch/
+Redirect 301 /wholesale-roses/cabaret-rose-bicolor /product/cabaret/
+Redirect 301 /wholesale-roses/carpe-diem-rose-peach /product/carpe-diem/
+Redirect 301 /wholesale-roses/carrousel /product/carrousel/
+Redirect 301 /wholesale-roses/chery-oh /product/cherry-oh/
+Redirect 301 /wholesale-roses/chilis-rose-orange /product/chilis/
+Redirect 301 /wholesale-roses/coffee-break-rose-brown /product/coffe-break/
+Redirect 301 /wholesale-roses/cool-water-rose-lavander /product/cool-water/
+Redirect 301 /wholesale-roses/coral-reef-wholesale-roses-peach /product/coral-reef/
+Redirect 301 /wholesale-roses/creme-de-la-creme-rose-cream /product/creme-de-la-creme/
+Redirect 301 /wholesale-roses/deep-purple /product/deep-purple/
+Redirect 301 /wholesale-roses/deja-vu /product/deja-vu/
+Redirect 301 /wholesale-roses/dekora-rose-pink /product/dekora/
+Redirect 301 /wholesale-roses/encanto-rose /product/encanto/
+Redirect 301 /wholesale-roses/engagement-rose-pink /product/engagement/
+Redirect 301 /wholesale-roses/esperance-rose-bicolor /product/esperance/
+Redirect 301 /wholesale-roses/explorer-rose-red /product/explorer/
+Redirect 301 /wholesale-roses/faith-rose-light-pink /product/faith/
+Redirect 301 /wholesale-roses/fenice-rose-pink /product/fenice/
+Redirect 301 /wholesale-roses/fidji-rose-orange /product/fidji/
+Redirect 301 /wholesale-roses/first-lady-rose-white /product/first-lady/
+Redirect 301 /wholesale-roses/forever-young-rose-red /product/forever-young/
+Redirect 301 /wholesale-roses/free-spirit-rose-orange /product/free-spirit/
+Redirect 301 /wholesale-roses/freedom-rose-red /product/freedom/
+Redirect 301 /wholesale-roses/frutteto-wholesale-pink-rose /product/frutteto/
+Redirect 301 /wholesale-roses/geraldine-rose-pink /product/geraldine/
+Redirect 301 /wholesale-roses/green-tea-rose-green /product/green-tea/
+Redirect 301 /wholesale-roses/hearts-rose-red /product/hearts/
+Redirect 301 /wholesale-roses/hermosa-rose-pink /product/hermosa/
+Redirect 301 /wholesale-roses/high-and-arena-rose-peach /product/high-and-arena/
+Redirect 301 /wholesale-roses/high-flame-wholesale-roses-bicolor /product/high-flame/
+Redirect 301 /wholesale-roses/high-and-magic-rose-bicolor-yellow /product/high-magic/
+Redirect 301 /wholesale-roses/high-and-peace-rose-white /product/high-and-peace/
+Redirect 301 /wholesale-roses/high-and-pure-rose-white /product/high-and-pure/
+Redirect 301 /wholesale-roses/hot-lady-rose-wholesale /product/hot-lady/
+Redirect 301 /wholesale-roses/high-blooming /product/hot-merengue/
+Redirect 301 /wholesale-roses/hummer-rose-yellow /product/hummer/
+Redirect 301 /wholesale-roses/iguana-rose-orange /product/iguana/
+Redirect 301 /wholesale-roses/iguazu-rose-brown /product/iguazu/
+Redirect 301 /wholesale-roses/impulse-rose-orange /product/impulse/
+Redirect 301 /wholesale-roses/intense-yellow-rose /product/intense/
+Redirect 301 /wholesale-roses/la-perla-rose-cream /product/la-perla/
+Redirect 301 /wholesale-roses/latina-rose-yellow /product/latina/
+Redirect 301 /wholesale-roses/lemonade-rose-green /product/lemonade/
+Redirect 301 /wholesale-roses/leonidas-rose-brown /product/leonidas/
+Redirect 301 /wholesale-roses/limbo-rose-green /product/limbo/
+Redirect 301 /wholesale-roses/malibu-rose-wholesale /product/malibu/
+Redirect 301 /wholesale-roses/manitou-rose-orange /product/manitou/
+Redirect 301 /wholesale-roses/marilena-rose-pink /product/marilena/
+Redirect 301 /wholesale-roses/milva-rose-orange /product/milva/
+Redirect 301 /wholesale-roses/mohana-rose-yellow /product/mohana/
+Redirect 301 /wholesale-roses/mondial-rose-white /product/mondial/
+Redirect 301 /wholesale-roses/moody-blues-rose-lavander /product/moody-blues/
+Redirect 301 /wholesale-roses/mother-of-pearl-rose-light-pink /product/mother-of-pearl/
+Redirect 301 /wholesale-roses/movie-star-rose-orange /product/movie-star/
+Redirect 301 /wholesale-roses/nautica-rose-pink /product/nautica/
+Redirect 301 /wholesale-roses/nectarine-wholesale-rose-peach /product/nectarine/
+Redirect 301 /wholesale-roses/nena-rose-light-pink /product/nena/
+Redirect 301 /wholesale-roses/nina-wholesale-roses-orange-red /product/nina/
+Redirect 301 /wholesale-roses/ocean-song-rose-lavender /product/ocean-song/
+Redirect 301 /wholesale-roses/orange-crush-rose /product/orange-crush/
+Redirect 301 /wholesale-roses/peach-aubade-wholesale-rose /product/peach-aubade/
+Redirect 301 /wholesale-roses/pink-floyd-rose-hot-pink /product/pink-floyd/
+Redirect 301 /wholesale-roses/pink-o-hara-rose-pink /product/pink-o-hara/
+Redirect 301 /wholesale-roses/polar-star-rose-white /product/polar-star/
+Redirect 301 /wholesale-roses/proud-rose-white /product/proud/
+Redirect 301 /wholesale-roses/purple-haze-rose /product/purple-haze/
+Redirect 301 /wholesale-roses/quick-sand-rose-cream /product/quicksand/
+Redirect 301 /wholesale-roses/rainbow /product/rainbow/
+Redirect 301 /wholesale-roses/red-unique-wholesale-rose /product/red-unique/
+Redirect 301 /wholesale-roses/riviera-rose-bicolor-pink-hot-pink /product/riviera/
+Redirect 301 /wholesale-roses/rosita-vendela-rose-pink /product/rosita-vendela/
+Redirect 301 /wholesale-roses/sahara-rose-cream /product/sahara/
+Redirect 301 /wholesale-roses/santana-rose-orange /product/santana/
+Redirect 301 /wholesale-roses/senorita-rose /product/senorita/
+Redirect 301 /wholesale-roses/sexy-ed /product/sexy-red/
+Redirect 301 /wholesale-roses/star-2000-rose-orange /product/star-2000/
+Redirect 301 /wholesale-roses/stardust-rose-yellow /product/stardust/
+Redirect 301 /wholesale-roses/super-green-rose /product/super-green/
+Redirect 301 /wholesale-roses/sweet-unique-rose /product/sweet-unique/
+Redirect 301 /wholesale-roses/sweetness-rose-bicolor-cream-hot-pink /product/sweetness/
+Redirect 301 /wholesale-roses/talea-rose-cream /product/talea/
+Redirect 301 /wholesale-roses/tara-rose-yellow /product/tara/
+Redirect 301 /wholesale-roses/tibet-rose-white /product/tibet/
+Redirect 301 /wholesale-roses/tiffany-rose-peach /product/tiffany/
+Redirect 301 /wholesale-roses/topaz-rose-bicolor /product/topaz/
+Redirect 301 /wholesale-roses/tutti-frutti-bicolor-wholesale-rose /product/tutti-frutti/
+Redirect 301 /wholesale-roses/twilight-wholesale-peach-rose /product/twilight/
+Redirect 301 /wholesale-roses/variance-pink-wholesale-rose /product/variance/
+Redirect 301 /wholesale-roses/vendela-rose-white /product/vendela/
+Redirect 301 /wholesale-roses/versilia-rose-peach /product/versilia/
+Redirect 301 /wholesale-roses/white-chocolate-rose-white /product/white-chocolate/
+Redirect 301 /wholesale-roses/white-o-hara-rose-white /product/white-o-hara/
+Redirect 301 /wholesale-roses/wimbledon-rose-green /product/wimbledon/
+Redirect 301 /wholesale-roses/yellow-coral-rose-yellow /product/yellow-coral/
+Redirect 301 /wholesale-roses/white-roses /product-category/bulk-wholesale-roses/white-roses/
+Redirect 301 /wholesale-roses/white-roses/alba-rose-white /product/alba/
+Redirect 301 /wholesale-roses/white-roses/amelia-rose-white /product/amelia/
+Redirect 301 /wholesale-roses/white-roses/blizzard-rose-white /product/blizzard/
+Redirect 301 /wholesale-roses/white-roses/first-lady-rose-white /product/first-lady/
+Redirect 301 /wholesale-roses/white-roses/high-and-peace-rose-white /product/high-and-peace/
+Redirect 301 /wholesale-roses/white-roses/high-and-pure-rose-white /product/high-and-pure/
+Redirect 301 /wholesale-roses/white-roses/mondial-rose-white /product/mondial/
+Redirect 301 /wholesale-roses/white-roses/polar-star-rose-white /product/polar-star/
+Redirect 301 /wholesale-roses/white-roses/proud-rose-white /product/proud/
+Redirect 301 /wholesale-roses/white-roses/tibet-rose-white /product/tibet/
+Redirect 301 /wholesale-roses/white-roses/white-chocolate-rose-white /product/white-chocolate/
+Redirect 301 /wholesale-roses/white-roses/white-o-hara-rose-white /product/white-o-hara/
+Redirect 301 /wholesale-roses/cream-roses /product-category/bulk-wholesale-roses/cream-roses/
+Redirect 301 /wholesale-roses/cream-roses/creme-de-la-creme-rose-cream /product/creme-de-la-creme/
+Redirect 301 /wholesale-roses/cream-roses/la-perla-rose-cream /product/la-perla/
+Redirect 301 /wholesale-roses/cream-roses/quick-sand-rose-cream /product/quicksand/
+Redirect 301 /wholesale-roses/cream-roses/sahara-rose-cream /product/sahara/
+Redirect 301 /wholesale-roses/cream-roses/talea-rose-cream /product/talea/
+Redirect 301 /wholesale-roses/cream-roses/vendela-rose-white /product/vendela/
+Redirect 301 /wholesale-roses/peach-roses /product-category/bulk-wholesale-roses/peach-roses/
+Redirect 301 /wholesale-roses/peach-roses/amsterdam-rose-peach /product/amsterdam/
+Redirect 301 /wholesale-roses/peach-roses/carpe-diem-rose-peach /product/carpe-diem/
+Redirect 301 /wholesale-roses/peach-roses/coral-reef-wholesale-roses-peach /product/coral-reef/
+Redirect 301 /wholesale-roses/peach-roses/high-and-arena-rose-peach /product/high-and-arena/
+Redirect 301 /wholesale-roses/peach-roses/nectarine-wholesale-rose-peach /product/nectarine/
+Redirect 301 /wholesale-roses/peach-roses/peach-aubade-wholesale-rose /product/peach-aubade/
+Redirect 301 /wholesale-roses/peach-roses/tiffany-rose-peach /product/tiffany/
+Redirect 301 /wholesale-roses/peach-roses/twilight-wholesale-peach-rose /product/twilight/
+Redirect 301 /wholesale-roses/peach-roses/versilia-rose-peach /product/versilia/
+Redirect 301 /wholesale-roses/light-pink-roses /product-category/bulk-wholesale-roses/light-pink-roses/
+Redirect 301 /wholesale-roses/light-pink-roses/faith-rose-light-pink /product/faith/
+Redirect 301 /wholesale-roses/light-pink-roses/frutteto-wholesale-pink-rose /product/frutteto/
+Redirect 301 /wholesale-roses/light-pink-roses/marilena-rose-pink /product/marilena/
+Redirect 301 /wholesale-roses/light-pink-roses/mother-of-pearl-rose-light-pink /product/mother-of-pearl/
+Redirect 301 /wholesale-roses/light-pink-roses/nena-rose-light-pink /product/nena/
+Redirect 301 /wholesale-roses/light-pink-roses/pink-o-hara-rose-pink /product/pink-o-hara/
+Redirect 301 /wholesale-roses/light-pink-roses/senorita-rose /product/senorita/
+Redirect 301 /wholesale-roses/pink-roses /product-category/bulk-wholesale-roses/pink-roses/
+Redirect 301 /wholesale-roses/pink-roses/dekora-rose-pink /product/dekora/
+Redirect 301 /wholesale-roses/pink-roses/engagement-rose-pink /product/engagement/
+Redirect 301 /wholesale-roses/pink-roses/fenice-rose-pink /product/fenice/
+Redirect 301 /wholesale-roses/pink-roses/geraldine-rose-pink /product/geraldine/
+Redirect 301 /wholesale-roses/pink-roses/hermosa-rose-pink /product/hermosa/
+Redirect 301 /wholesale-roses/pink-roses/malibu-rose-wholesale /product/malibu/
+Redirect 301 /wholesale-roses/pink-roses/nautica-rose-pink /product/nautica/
+Redirect 301 /wholesale-roses/pink-roses/rosita-vendela-rose-pink /product/rosita-vendela/
+Redirect 301 /wholesale-roses/pink-roses/sweet-unique-rose /product/sweet-unique/
+Redirect 301 /wholesale-roses/pink-roses/variance-pink-wholesale-rose /product/variance/
+Redirect 301 /wholesale-roses/hot-pink-roses /product-category/bulk-wholesale-roses/hot-pink-roses/
+Redirect 301 /wholesale-roses/hot-pink-roses/chery-oh /product/cherry-oh/
+Redirect 301 /wholesale-roses/hot-pink-roses/deep-purple /product/deep-purple/
+Redirect 301 /wholesale-roses/hot-pink-roses/hot-lady-rose-wholesale /product/hot-lady/
+Redirect 301 /wholesale-roses/hot-pink-roses/pink-floyd-rose-hot-pink /product/pink-floyd/
+Redirect 301 /wholesale-roses/hot-pink-roses/topaz-rose-bicolor /product/topaz/
+Redirect 301 /wholesale-roses/lavander-roses /product-category/bulk-wholesale-roses/lavender-roses/
+Redirect 301 /wholesale-roses/lavander-roses/cool-water-rose-lavander /product/cool-water/
+Redirect 301 /wholesale-roses/lavander-roses/moody-blues-rose-lavander /product/moody-blues/
+Redirect 301 /wholesale-roses/lavander-roses/ocean-song-rose-lavender /product/ocean-song/
+Redirect 301 /wholesale-roses/lavander-roses/purple-haze-rose /product/purple-haze/
+Redirect 301 /wholesale-roses/yellow-roses /product-category/bulk-wholesale-roses/yellow-roses/
+Redirect 301 /wholesale-roses/yellow-roses/bikini-rose-yellow /product/bikini/
+Redirect 301 /wholesale-roses/yellow-roses/brighton-rose-yellow /product/brighton/
+Redirect 301 /wholesale-roses/yellow-roses/butterscotch-rose-yellow /product/butterscotch/
+Redirect 301 /wholesale-roses/yellow-roses/deja-vu /product/deja-vu/
+Redirect 301 /wholesale-roses/yellow-roses/high-flame-wholesale-roses-bicolor /product/high-flame/
+Redirect 301 /wholesale-roses/yellow-roses/hummer-rose-yellow /product/hummer/
+Redirect 301 /wholesale-roses/yellow-roses/intense-yellow-rose /product/intense/
+Redirect 301 /wholesale-roses/yellow-roses/latina-rose-yellow /product/latina/
+Redirect 301 /wholesale-roses/yellow-roses/mohana-rose-yellow /product/mohana/
+Redirect 301 /wholesale-roses/yellow-roses/stardust-rose-yellow /product/stardust/
+Redirect 301 /wholesale-roses/yellow-roses/tara-rose-yellow /product/tara/
+Redirect 301 /wholesale-roses/yellow-roses/tutti-frutti-bicolor-wholesale-rose /product/tutti-frutti/
+Redirect 301 /wholesale-roses/yellow-roses/yellow-coral-rose-yellow /product/yellow-coral/
+Redirect 301 /wholesale-roses/orange-roses /product-category/bulk-wholesale-roses/orange-roses/
+Redirect 301 /wholesale-roses/orange-roses/chilis-rose-orange /product/chilis/
+Redirect 301 /wholesale-roses/orange-roses/encanto-rose /product/encanto/
+Redirect 301 /wholesale-roses/orange-roses/fidji-rose-orange /product/fidji/
+Redirect 301 /wholesale-roses/orange-roses/free-spirit-rose-orange /product/free-spirit/
+Redirect 301 /wholesale-roses/orange-roses/iguana-rose-orange /product/iguana/
+Redirect 301 /wholesale-roses/orange-roses/impulse-rose-orange /product/impulse/
+Redirect 301 /wholesale-roses/orange-roses/intense-yellow-rose /product/intense/
+Redirect 301 /wholesale-roses/orange-roses/manitou-rose-orange /product/manitou/
+Redirect 301 /wholesale-roses/orange-roses/milva-rose-orange /product/milva/
+Redirect 301 /wholesale-roses/orange-roses/movie-star-rose-orange /product/movie-star/
+Redirect 301 /wholesale-roses/orange-roses/nina-wholesale-roses-orange-red /product/nina/
+Redirect 301 /wholesale-roses/orange-roses/orange-crush-rose /product/orange-crush/
+Redirect 301 /wholesale-roses/orange-roses/santana-rose-orange /product/santana/
+Redirect 301 /wholesale-roses/orange-roses/star-2000-rose-orange /product/star-2000/
+Redirect 301 /wholesale-roses/orange-roses/tutti-frutti-bicolor-wholesale-rose /product/tutti-frutti/
+Redirect 301 /wholesale-roses/red-roses /product-category/bulk-wholesale-roses/red-roses/
+Redirect 301 /wholesale-roses/red-roses/explorer-rose-red /product/explorer/
+Redirect 301 /wholesale-roses/red-roses/forever-young-rose-red /product/forever-young/
+Redirect 301 /wholesale-roses/red-roses/freedom-rose-red /product/freedom/
+Redirect 301 /wholesale-roses/red-roses/hearts-rose-red /product/hearts/
+Redirect 301 /wholesale-roses/red-roses/red-unique-wholesale-rose /product/red-unique/
+Redirect 301 /wholesale-roses/red-roses/sexy-ed /product/sexy-red/
+Redirect 301 /wholesale-roses/brown-roses /product-category/bulk-wholesale-roses/brown-roses/
+Redirect 301 /wholesale-roses/brown-roses/coffee-break-rose-brown /product/coffe-break/
+Redirect 301 /wholesale-roses/brown-roses/leonidas-rose-brown /product/leonidas/
+Redirect 301 /wholesale-roses/green-roses /product-category/bulk-wholesale-roses/green-roses/
+Redirect 301 /wholesale-roses/green-roses/green-tea-rose-green /product/green-tea/
+Redirect 301 /wholesale-roses/green-roses/lemonade-rose-green /product/lemonade/
+Redirect 301 /wholesale-roses/green-roses/limbo-rose-green /product/limbo/
+Redirect 301 /wholesale-roses/green-roses/super-green-rose /product/super-green/
+Redirect 301 /wholesale-roses/green-roses/wimbledon-rose-green /product/wimbledon/
+Redirect 301 /wholesale-roses/bicolor-roses /product-category/bulk-wholesale-roses/bicolor-roses/
+Redirect 301 /wholesale-roses/bicolor-roses/blush /product/blush/
+Redirect 301 /wholesale-roses/bicolor-roses/cabaret-rose-bicolor /product/cabaret/
+Redirect 301 /wholesale-roses/bicolor-roses/carrousel /product/carrousel/
+Redirect 301 /wholesale-roses/bicolor-roses/esperance-rose-bicolor /product/esperance/
+Redirect 301 /wholesale-roses/bicolor-roses/high-flame-wholesale-roses-bicolor /product/high-flame/
+Redirect 301 /wholesale-roses/bicolor-roses/high-and-magic-rose-bicolor-yellow /product/high-magic/
+Redirect 301 /wholesale-roses/bicolor-roses/high-blooming /product/hot-merengue/
+Redirect 301 /wholesale-roses/bicolor-roses/iguazu-rose-brown /product/iguazu/
+Redirect 301 /wholesale-roses/bicolor-roses/intense-yellow-rose /product/intense/
+Redirect 301 /wholesale-roses/bicolor-roses/malibu-rose-wholesale /product/malibu/
+Redirect 301 /wholesale-roses/bicolor-roses/riviera-rose-bicolor-pink-hot-pink /product/riviera/
+Redirect 301 /wholesale-roses/bicolor-roses/sweetness-rose-bicolor-cream-hot-pink /product/sweetness/
+Redirect 301 /wholesale-roses/bicolor-roses/tutti-frutti-bicolor-wholesale-rose /product/tutti-frutti/
+Redirect 301 /wholesale-roses/tinted-roses /product-category/bulk-wholesale-roses/tinted-roses/
+Redirect 301 /wholesale-roses/tinted-roses/black-rose-tinted /product/black/
+Redirect 301 /wholesale-roses/tinted-roses/rainbow /product/rainbow/
+Redirect 301 /apple/bikini-rose-yellow /product/bikini/
+Redirect 301 /apple/brighton-rose-yellow /product/brighton/
+Redirect 301 /apple/butterscotch-rose-yellow /product/butterscotch/
+Redirect 301 /apple/mohana-rose-yellow /product/mohana/
+Redirect 301 /apple/stardust-rose-yellow /product/stardust/
+Redirect 301 /apple/tara-rose-yellow /product/tara/
+Redirect 301 /apple/tiffany-rose-peach /product/tiffany/
+Redirect 301 /apple/versilia-rose-peach /product/versilia/
+Redirect 301 /apple/yellow-coral-rose-yellow /product/yellow-coral/
+#Redirect 301 /free-samples /free-samples/
+#Redirect 301 /wedding-flowers /wedding-flowers/
+Redirect 301 /about-us /about/
+#Redirect 301 /shipping-information /shipping-information/
+#Redirect 301 /refund-policy /refund-policy/
+
+</IfModule>
+
+# BEGIN W3TC Browser Cache
+<IfModule mod_deflate.c>
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/bmp application/java application/msword application/vnd.ms-fontobject application/x-msdownload image/x-icon image/webp application/json application/vnd.ms-access application/vnd.ms-project application/x-font-otf application/vnd.ms-opentype application/vnd.oasis.opendocument.database application/vnd.oasis.opendocument.chart application/vnd.oasis.opendocument.formula application/vnd.oasis.opendocument.graphics application/vnd.oasis.opendocument.presentation application/vnd.oasis.opendocument.spreadsheet application/vnd.oasis.opendocument.text audio/ogg application/pdf application/vnd.ms-powerpoint image/svg+xml application/x-shockwave-flash image/tiff application/x-font-ttf application/vnd.ms-opentype audio/wav application/vnd.ms-write application/font-woff application/font-woff2 application/vnd.ms-excel
+    <IfModule mod_mime.c>
+        # DEFLATE by extension
+        AddOutputFilter DEFLATE js css htm html xml
+    </IfModule>
+    </IfModule>
+</IfModule>
+<FilesMatch "\.(html|htm|rtf|rtx|svg|txt|xsd|xsl|xml|HTML|HTM|RTF|RTX|SVG|TXT|XSD|XSL|XML)$">
+    <IfModule mod_headers.c>
+        Header append Vary User-Agent env=!dont-vary
+    </IfModule>
+</FilesMatch>
+<FilesMatch "\.(bmp|class|doc|docx|eot|exe|ico|webp|json|mdb|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|pot|pps|ppt|pptx|svg|svgz|swf|tif|tiff|ttf|ttc|_ttf|wav|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|BMP|CLASS|DOC|DOCX|EOT|EXE|ICO|WEBP|JSON|MDB|MPP|OTF|_OTF|ODB|ODC|ODF|ODG|ODP|ODS|ODT|OGG|PDF|POT|PPS|PPT|PPTX|SVG|SVGZ|SWF|TIF|TIFF|TTF|TTC|_TTF|WAV|WRI|WOFF|WOFF2|XLA|XLS|XLSX|XLT|XLW)$">
+    <IfModule mod_headers.c>
+         Header unset Last-Modified
+    </IfModule>
+</FilesMatch>
+# END W3TC Browser Cache
+
+#leverage cache juanse254
+<IfModule mod_expires.c>
+	<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|svg)$">
+		Header set Cache-Control "max-age=302400, public"
+	</FilesMatch>
+</IfModule>
