@@ -37,7 +37,7 @@ function Popup() {
     imgHeader.setAttribute("src","/wp-content/uploads/2017/08/imgpsh_fullsize-3.png");
     imgHeader.setAttribute("class","img-responsive");
     imgHeader.setAttribute("alt","Promo 15% off");
-    imgHeader.setAttribute("style","margin: auto; max-height:300px");
+    imgHeader.setAttribute("style","margin: auto; max-height:300px; width:100%");
    // headerDiv.appendChild(h2Header);
    // headerDiv.appendChild(h1Header);
    // headerDiv.appendChild(h2Header2);
